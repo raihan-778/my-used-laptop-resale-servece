@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleSignOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((err) => console.error(err));
+  };
+
   return (
     <div className="navbar neutral my-5  rounded-xl">
       <div className="navbar-start">
@@ -27,24 +36,30 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
+            <Link to="/">Home</Link>
+
+            {user?.email ? (
               <Link to="/" className="justify-between">
                 Dashboard
               </Link>
-            </li>
-            <li>
-              <Link to="login">Login</Link>
-            </li>
+            ) : (
+              <Link to="/login">Login</Link>
+            )}
           </ul>
+        </div>
+        <div className="avatar online placeholder">
+          <div className="bg-neutral-focus text-neutral-content rounded-full w-12">
+            <img src="https://i.ibb.co/NNNYxtS/logo.jpg" alt="logo" />
+          </div>
         </div>
         <Link
           to="/"
           className="btn btn-ghost normal-case font-semibold text-2xl"
         >
-          RT<sub>ReliableTech</sub>
+          RT
+          <sub className="text-green-300">
+            <small>ReliableTech</small>
+          </sub>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -52,16 +67,25 @@ const Navbar = () => {
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link to="dashboard">Dashboard</Link>
-          </li>
-          <li>
-            <Link to="login">Login</Link>
-          </li>
+          {user?.email ? (
+            <li>
+              <Link to="/dashboard" className="justify-between">
+                Dashboard
+              </Link>
+            </li>
+          ) : (
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          )}
         </ul>
       </div>
       <div className="navbar-end">
-        <button className="btn">Sign Out</button>
+        {user?.email && (
+          <button onClick={handleSignOut} className="btn">
+            Sign Out
+          </button>
+        )}
       </div>
     </div>
   );
