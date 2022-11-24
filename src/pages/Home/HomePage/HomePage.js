@@ -1,9 +1,12 @@
 import React from "react";
+import Features from "../Features/Features";
+import Header from "../Header/Header";
 
 const HomePage = () => {
   return (
-    <div>
-      <h2>This is home page</h2>
+    <div className="mx-5">
+      <Header></Header>
+      <Features></Features>
     </div>
   );
 };

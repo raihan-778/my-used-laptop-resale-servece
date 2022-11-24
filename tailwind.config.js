@@ -12,7 +12,7 @@ module.exports = {
 
             accent: "#1FB2A6",
 
-            neutral: "#191D24",
+            neutral: "#001253",
 
             "base-100": "#2A303C",
 
@@ -22,7 +22,7 @@ module.exports = {
 
             warning: "#FBBD23",
 
-            error: "#F87272",
+            error: "#E14D2A",
           },
         },
       ],
