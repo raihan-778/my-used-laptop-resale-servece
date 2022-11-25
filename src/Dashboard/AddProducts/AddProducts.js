@@ -1,5 +1,9 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
+import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import LoadingSpinner from "../../sharedPage/LoadingSpinner/LoadingSpinner";
 
 const AddProducts = () => {
   const navigate = useNavigate();
@@ -10,17 +14,6 @@ const AddProducts = () => {
   } = useForm();
   const imgHostKey = process.env.REACT_APP_imgbb_key;
 
-  const { data: sepcialities = [], isLoading } = useQuery({
-    queryKey: ["speciality"],
-    queryFn: async () => {
-      const res = await fetch("http://localhost:5000/appointmentSpeciality");
-      const data = await res.json();
-      return data;
-    },
-  });
-  if (isLoading) {
-    return <LoadingSpinner></LoadingSpinner>;
-  }
   /*
 img:ce9c20640044f2f3784a2967dfce6506 
  */
@@ -71,79 +64,78 @@ img:ce9c20640044f2f3784a2967dfce6506
       <form onSubmit={handleSubmit(handleAddProduct)}>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Enter Your Name</span>
+            <span className="label-text">Enter Product Name</span>
           </label>
           <input
-            {...register("name", {
+            {...register("productName", {
               maxLength: 20,
               required: "Namd field cannot be empty",
             })}
             type="text"
             placeholder="Type your name"
-            name="name"
+            name="productName"
             className="input input-bordered w-full max-w-xs"
           />
-          {errors.name?.type === "required" && (
+          {errors.productName?.type === "required" && (
             <p className="text-orange-600" role="alert">
-              {errors.name?.message}
+              {errors.productName?.message}
             </p>
           )}
         </div>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Enter Your Email</span>
+            <span className="label-text">Enter reSale Price</span>
           </label>
           <input
-            {...register("email", {
+            {...register("reSalePrice", {
               required: "Please enter a valid email address",
             })}
             type="email"
             placeholder="Type here"
-            name="email"
+            name="reSalePrice"
             className="input input-bordered w-full max-w-xs"
           />
-          {errors.email && (
+          {errors.reSalePrice && (
             <p className="text-orange-600" role="alert">
-              {errors.email?.message}
+              {errors.reSalePrice?.message}
             </p>
           )}
         </div>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Speciality</span>
+            <span className="label-text">Product condition</span>
           </label>
         </div>
         <select
-          {...register("speciality", {
-            required: "Please select a speciality",
+          {...register("condition", {
+            required: "Please select product condition",
           })}
           className="select select-bordered w-full max-w-xs"
         >
           <option disabled selected>
-            Pick a Speciality.
+            Product Condition
           </option>
-          {sepcialities.map((speciality) => (
-            <option key={speciality._id}>{speciality.name}</option>
-          ))}
+          <option>Good</option>
+          <option>Fair</option>
+          <option>Excellent</option>
         </select>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Enter Your Name</span>
+            <span className="label-text">Enter product Description</span>
           </label>
           <input
-            {...register("img")}
+            {...register("imgUrl")}
             type="file"
             placeholder="Type your name"
-            name="img"
+            name="imgUrl"
             className="input input-bordered w-full max-w-xs"
           />
-          {errors.img?.type === "required" && (
+          {errors.imgUrl?.type === "required" && (
             <p className="text-orange-600" role="alert">
-              {errors.img?.message}
+              {errors.imgUrl?.message}
             </p>
           )}
         </div>
-
         <input
           className="btn mt-5 w-full max-w-xs btn-accent"
           value="Add A Doctor"
