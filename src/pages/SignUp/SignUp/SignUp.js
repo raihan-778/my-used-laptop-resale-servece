@@ -30,7 +30,7 @@ const SignUp = () => {
         };
         updateUserInfo(userInfo)
           .then(() => {
-            console.log(data.name, data.email);
+            console.log(data.name, data.email, data.select);
           })
           .catch((err) => console.error(err));
       })
@@ -105,6 +105,24 @@ const SignUp = () => {
                 {errors.email?.message}
               </p>
             )}
+          </div>
+          <div className="form-control w-full max-w-xs">
+            <label className="label">
+              <span className="label-text">Select User Type?</span>
+            </label>
+            <select
+              {...register("option", {
+                required: "Please enter a valid email address",
+              })}
+              name="option"
+              type="select"
+              className="select select-bordered w-full max-w-xs"
+            >
+              <option selected default>
+                Buyer
+              </option>
+              <option>Seller</option>
+            </select>
           </div>
           <div className="form-control w-full max-w-xs">
             <label className="label">
