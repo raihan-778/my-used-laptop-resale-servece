@@ -30,7 +30,8 @@ const SignUp = () => {
         };
         updateUserInfo(userInfo)
           .then(() => {
-            console.log(data.name, data.email, data.select);
+            console.log(data.name, data.email, data.type);
+            saveUser(data.name, data.email, data.type);
           })
           .catch((err) => console.error(err));
       })
@@ -41,8 +42,8 @@ const SignUp = () => {
       });
   };
 
-  const saveUser = (name, email) => {
-    const user = { name, email };
+  const saveUser = (name, email, type) => {
+    const user = { name, email, type };
     fetch("http://localhost:5000/users", {
       method: "POST",
       headers: {
@@ -111,17 +112,17 @@ const SignUp = () => {
               <span className="label-text">Select User Type?</span>
             </label>
             <select
-              {...register("option", {
+              {...register("type", {
                 required: "Please enter a valid email address",
               })}
-              name="option"
+              name="type"
               type="select"
               className="select select-bordered w-full max-w-xs"
             >
               <option selected default>
-                Buyer
+                buyer
               </option>
-              <option>Seller</option>
+              <option>seller</option>
             </select>
           </div>
           <div className="form-control w-full max-w-xs">

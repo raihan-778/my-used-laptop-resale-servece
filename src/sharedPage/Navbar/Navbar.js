@@ -39,6 +39,7 @@ const Navbar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <Link to="/">Home</Link>
+            <Link to="/blog">Blog</Link>
 
             {user?.email ? (
               <Link to="/" className="justify-between">
@@ -68,6 +69,9 @@ const Navbar = () => {
         <ul className="menu menu-horizontal p-0">
           <li>
             <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/blog">Blog</Link>
           </li>
           {user?.email ? (
             <li>

@@ -2,79 +2,81 @@
   {
     "categoryName": "Lenovo",
     "categoryId": 2,
-    "products": [
-      {
-        "productName": "Lenovo Idea Pad 3",
-        "imgUrl": "https://i.ibb.co/XzczMVv/Lenovo1.jpg",
-        "location": "HaliShahar, Chittagong",
-        "reSalePrice": 35000,
-        "OriginalPrice": 70000,
-        "useDuration": "One year",
-        "postTime": "22th November 2022",
-        "sellerName": "Rafiqul Islam"
-      },
-      {
-        "productName": "ThinkPad L13 Yoga Gen 3",
-        "imgUrl": "https://i.ibb.co/HrKrqjW/lenovo2.webp",
-        "location": "Banani,Dhaka",
-        "reSalePrice": 78000,
-        "OriginalPrice": 125000,
-        "useDuration": "1.5 Years",
-        "postTime": "23th November 2022",
-        "sellerName": "Kabir Ahmed"
-      }
-    ]
+    "productName": "Lenovo Idea Pad 3",
+    "imgUrl": "https://i.ibb.co/XzczMVv/Lenovo1.jpg",
+    "location": "HaliShahar, Chittagong",
+    "reSalePrice": 35000,
+    "OriginalPrice": 70000,
+    "Description": "Fairly Used with care. No dent or scrached. Everything is working well.Nothing is repaird.",
+    "useDuration": "One year",
+    "postTime": "22th November 2022",
+    "sellerName": "Rafiqul Islam"
+  },
+  {
+    "categoryName": "Lenovo",
+    "categoryId": 2,
+    "productName": "ThinkPad L13 Yoga Gen 3",
+    "imgUrl": "https://i.ibb.co/HrKrqjW/lenovo2.webp",
+    "location": "Banani,Dhaka",
+    "reSalePrice": 78000,
+    "OriginalPrice": 125000,
+    "Description": "Fairly Used with care. No dent or scrached. Everything is working well.Nothing is repaird.",
+    "useDuration": "1.5 Years",
+    "postTime": "23th November 2022",
+    "sellerName": "Kabir Ahmed"
   },
   {
     "categoryName": "HP",
     "categoryId": 1,
-    "products": [
-      {
-        "productName": "HP ENVY x360 Laptop 2-in-1 15t-ew000",
-        "imgUrl": "https://i.ibb.co/dMXwcWt/hp1.png",
-        "location": "Gulshan, Dhaka",
-        "reSalePrice": 45000,
-        "OriginalPrice": 68000,
-        "useDuration": "Six Months",
-        "postTime": "24th November 2022",
-        "sellerName": "Foysal Islam"
-      },
-      {
-        "productName": "HP Spectre x360 16 2-in-1 Laptop - 16t-f100",
-        "imgUrl": "https://i.ibb.co/1ZRzHQN/hp2.png",
-        "location": "Badda,Dhaka",
-        "reSalePrice": 130000,
-        "OriginalPrice": 90000,
-        "useDuration": "Eight Months",
-        "postTime": "25th November 2022",
-        "sellerName": "Abdul Gani"
-      }
-    ]
+    "productName": "HP ENVY x360 Laptop 2-in-1 15t-ew000",
+    "imgUrl": "https://i.ibb.co/dMXwcWt/hp1.png",
+    "location": "Gulshan, Dhaka",
+    "reSalePrice": 45000,
+    "OriginalPrice": 68000,
+    "Description": "Fairly Used with care. No dent or scrached. Everything is working well.Nothing is repaird.",
+    "useDuration": "Six Months",
+    "postTime": "24th November 2022",
+    "sellerName": "Foysal Islam"
   },
+  {
+    "categoryName": "HP",
+    "categoryId": 1,
+    "productName": "HP Spectre x360 16 2-in-1 Laptop - 16t-f100",
+    "imgUrl": "https://i.ibb.co/1ZRzHQN/hp2.png",
+    "location": "Badda,Dhaka",
+    "reSalePrice": 130000,
+    "OriginalPrice": 90000,
+    "Description": "Fairly Used with care. No dent or scrached. Everything is working well.Nothing is repaird.",
+    "useDuration": "Eight Months",
+    "postTime": "25th November 2022",
+    "sellerName": "Abdul Gani"
+  },
+
   {
     "categoryName": "Dell",
     "categoryId": 3,
-    "products": [
-      {
-        "productName": "XPS Laptops & 2-in-1 PCs",
-        "imgUrl": "https://i.ibb.co/bP4FyCn/dell1.jpg",
-        "location": "Gulshan, Dhaka",
-        "reSalePrice": 65000,
-        "OriginalPrice": 105000,
-        "useDuration": "Eleven Months",
-        "postTime": "24th November 2022",
-        "sellerName": "Jaber Islam"
-      },
-      {
-        "productName": "Inspiron 16 2-in-1 Laptop",
-        "imgUrl": "https://i.ibb.co/F59sWRZ/dell2.webp",
-        "location": "Badda,Dhaka",
-        "reSalePrice": 125000,
-        "OriginalPrice": 75000,
-        "useDuration": "Nine Months",
-        "postTime": "25th November 2022",
-        "sellerName": "Jubayer Ahmed"
-      }
-    ]
+    "productName": "XPS Laptops & 2-in-1 PCs",
+    "imgUrl": "https://i.ibb.co/bP4FyCn/dell1.jpg",
+    "location": "Gulshan, Dhaka",
+    "reSalePrice": 65000,
+    "OriginalPrice": 105000,
+    "Description": "Fairly Used with care. No dent or scrached. Everything is working well.Nothing is repaird.",
+    "useDuration": "Eleven Months",
+    "postTime": "24th November 2022",
+    "sellerName": "Jaber Islam"
+  },
+
+  {
+    "categoryName": "Dell",
+    "categoryId": 3,
+    "productName": "Inspiron 16 2-in-1 Laptop",
+    "imgUrl": "https://i.ibb.co/F59sWRZ/dell2.webp",
+    "location": "Badda,Dhaka",
+    "reSalePrice": 125000,
+    "OriginalPrice": 75000,
+    "Description": "Fairly Used with care. No dent or scrached. Everything is working well.Nothing is repaird.",
+    "useDuration": "Nine Months",
+    "postTime": "25th November 2022",
+    "sellerName": "Jubayer Ahmed"
   }
 ]

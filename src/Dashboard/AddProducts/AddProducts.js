@@ -1,9 +1,7 @@
-import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import LoadingSpinner from "../../sharedPage/LoadingSpinner/LoadingSpinner";
 
 const AddProducts = () => {
   const navigate = useNavigate();
@@ -32,28 +30,35 @@ img:ce9c20640044f2f3784a2967dfce6506
       .then((imgData) => {
         if (imgData.success) {
           console.log(imgData.data.url);
-          const doctor = {
-            name: data.name,
-            email: data.email,
-            speciality: data.speciality,
-            image: imgData.data.url,
+          const product = {
+            productName: data.productName,
+            sellerName: data.sellerName,
+            description: data.description,
+            image: imgData.data.imgUrl,
+            price: data.reSalePrice,
+            originalPrice: data.originalPrice,
+            condition: data.condition,
+            categoryName: data.categoryName,
+            categoryId: data.categoryId,
+            location: data.location,
+            phone: data.phoneNumber,
+            useDuration: data.useDuration,
+            postTiem: data.postTime,
           };
 
-          //save doctors info in the database
+          //save products info in the database
 
-          fetch(`http://localhost:5000/doctors`, {
+          fetch(`http://localhost:5000/allproducts`, {
             method: "POST",
             headers: {
               "content-type": "application/json",
-              authorization: `bearer ${localStorage.getItem("access_token")}`,
             },
-            body: JSON.stringify(doctor),
+            body: JSON.stringify(product),
           })
             .then((res) => res.json())
             .then((result) => {
               console.log(result);
-              toast.success(`${data.name} Added Successful`);
-              navigate("/dashboard/managedoctors");
+              toast.success(`${data.productName} Added Successful`);
             });
         }
       });
@@ -62,6 +67,7 @@ img:ce9c20640044f2f3784a2967dfce6506
   return (
     <div>
       <form onSubmit={handleSubmit(handleAddProduct)}>
+        {/* Product Name */}
         <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text">Enter Product Name</span>
@@ -82,6 +88,7 @@ img:ce9c20640044f2f3784a2967dfce6506
             </p>
           )}
         </div>
+        {/* Product price */}
         <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text">Enter reSale Price</span>
@@ -90,7 +97,7 @@ img:ce9c20640044f2f3784a2967dfce6506
             {...register("reSalePrice", {
               required: "Please enter a valid email address",
             })}
-            type="email"
+            type="text"
             placeholder="Type here"
             name="reSalePrice"
             className="input input-bordered w-full max-w-xs"
@@ -101,6 +108,27 @@ img:ce9c20640044f2f3784a2967dfce6506
             </p>
           )}
         </div>
+        {/* Product Original Price */}
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Enter Original Price</span>
+          </label>
+          <input
+            {...register("originalPrice", {
+              required: "Please enter a valid email address",
+            })}
+            type="text"
+            placeholder="Type here"
+            name="reSalePrice"
+            className="input input-bordered w-full max-w-xs"
+          />
+          {errors.reSalePrice && (
+            <p className="text-orange-600" role="alert">
+              {errors.reSalePrice?.message}
+            </p>
+          )}
+        </div>
+        {/* Product condition */}
         <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text">Product condition</span>
@@ -119,14 +147,151 @@ img:ce9c20640044f2f3784a2967dfce6506
           <option>Fair</option>
           <option>Excellent</option>
         </select>
+        {/* Product Category */}
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Enter product Description</span>
+            <span className="label-text">Product Category</span>
+          </label>
+        </div>
+        <select
+          {...register("categoryName", {
+            required: "Please select product Category",
+          })}
+          className="select select-bordered w-full max-w-xs"
+        >
+          <option disabled selected>
+            Product Category
+          </option>
+          <option>HP</option>
+          <option>Lenovo</option>
+          <option>Dell</option>
+        </select>
+
+        {/* Category id */}
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Product Category Id</span>
+          </label>
+        </div>
+        <select
+          {...register("categoryId", {
+            required: "Please select product Category",
+          })}
+          className="select select-bordered w-full max-w-xs"
+        >
+          <option disabled selected>
+            Product Id
+          </option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
+        {/* Phone Number */}
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Enter Phone Number</span>
+          </label>
+          <input
+            {...register("phoneNumber", {
+              required: "Please enter a valid email address",
+            })}
+            type="text"
+            placeholder="Type here"
+            name="phoneNumber"
+            className="input input-bordered w-full max-w-xs"
+          />
+          {errors.phoneNumber && (
+            <p className="text-orange-600" role="alert">
+              {errors.phoneNumber?.message}
+            </p>
+          )}
+        </div>
+        {/* Location */}
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Enter Your Location Name</span>
+          </label>
+          <input
+            {...register("location", {
+              required: "Please enter a valid email address",
+            })}
+            type="text"
+            placeholder="Type here"
+            name="location"
+            className="input input-bordered w-full max-w-xs"
+          />
+        </div>
+        {/* Product Description */}
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Product Description</span>
+          </label>
+          <input
+            {...register("description", {
+              required: "enter short description",
+            })}
+            type="text"
+            placeholder="Type here"
+            name="location"
+            className="input input-bordered w-full max-w-xs"
+          />
+        </div>
+        {/* Seller Name */}
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Seller Name</span>
+          </label>
+          <input
+            {...register("sellerName", {
+              required: "enter seller Name",
+            })}
+            type="text"
+            placeholder="Type here"
+            name="sallerName"
+            className="input input-bordered w-full max-w-xs"
+          />
+        </div>
+        {/* Product Used Duration */}
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Product Used Duration</span>
+          </label>
+          <input
+            {...register("useDuration", {
+              required: "enter used Duration",
+            })}
+            type="text"
+            placeholder="Type here"
+            name="usedDuration"
+            className="input input-bordered w-full max-w-xs"
+          />
+        </div>
+        {/* Posted Time */}
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Product Posted time</span>
+          </label>
+          <input
+            {...register("postTime", {
+              required: "enter Posted Time",
+            })}
+            type="text"
+            placeholder="Type here"
+            name="postTime"
+            className="input input-bordered w-full max-w-xs"
+          />
+        </div>
+
+        {/* Product Image */}
+
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Enter Product Image</span>
           </label>
           <input
             {...register("imgUrl")}
             type="file"
-            placeholder="Type your name"
+            placeholder="Type image url"
             name="imgUrl"
             className="input input-bordered w-full max-w-xs"
           />
@@ -136,9 +301,10 @@ img:ce9c20640044f2f3784a2967dfce6506
             </p>
           )}
         </div>
+
         <input
           className="btn mt-5 w-full max-w-xs btn-accent"
-          value="Add A Doctor"
+          value="Add Product"
           type="submit"
         />
       </form>
