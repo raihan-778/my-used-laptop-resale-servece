@@ -1,8 +1,12 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
 
 const SingleCategoryProducts = () => {
+  const categoryData = useLoaderData();
+  console.log(categoryData);
   return (
     <div>
+      <h2>This is Single Category</h2>
       {/* <div className="card w-96 bg-base-100 shadow-xl">
           <figure className="px-10 pt-10">
             <img src={product.imgUrl} alt="Shoes" className="rounded-xl" />

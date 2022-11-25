@@ -206,6 +206,7 @@ img:ce9c20640044f2f3784a2967dfce6506
             </p>
           )}
         </div>
+
         {/* Location */}
         <div className="form-control w-full max-w-xs">
           <label className="label">
@@ -301,7 +302,7 @@ img:ce9c20640044f2f3784a2967dfce6506
             </p>
           )}
         </div>
-
+        {/* Submit Button */}
         <input
           className="btn mt-5 w-full max-w-xs btn-accent"
           value="Add Product"

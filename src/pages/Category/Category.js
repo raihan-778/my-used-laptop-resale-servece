@@ -25,17 +25,13 @@ const Category = () => {
           All Products Categories
         </h2>
         {categories?.map((category) => (
-          <div>
+          <>
             <li key={category._id}>
-              <Link to={`/categories/${category.categoryId}`}>
+              <Link to={`/categories/${category._id}`}>
                 {category.categoryName}
               </Link>
             </li>
-            <SingleCategoryProducts
-              key={category._id}
-              category={category}
-            ></SingleCategoryProducts>
-          </div>
+          </>
         ))}
       </ul>
     </div>
