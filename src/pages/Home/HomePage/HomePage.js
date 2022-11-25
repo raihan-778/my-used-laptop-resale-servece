@@ -1,4 +1,5 @@
 import React from "react";
+import Blog from "../../Blog/Blog";
 import Features from "../Features/Features";
 import Header from "../Header/Header";
 
