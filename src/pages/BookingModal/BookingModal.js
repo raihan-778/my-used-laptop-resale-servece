@@ -2,7 +2,7 @@ import { useContext } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
-const BookingModal = ({ categoryProduct, refetch, isLoading }) => {
+const BookingModal = ({ category, refetch, isLoading }) => {
   const { user } = useContext(AuthContext);
   // const [booked, setBooked] = useState(null);
 
@@ -17,7 +17,7 @@ const BookingModal = ({ categoryProduct, refetch, isLoading }) => {
     sellerName,
     location,
     productName,
-  } = categoryProduct;
+  } = category;
 
   const handleBooking = (event) => {
     event.preventDefault();

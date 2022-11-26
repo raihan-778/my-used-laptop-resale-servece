@@ -7,14 +7,19 @@ import DashboardLayout from "../../Layout/DashboardLayout/DashboardLayout";
 import Root from "../../Layout/RootLayout/Root";
 import Blog from "../../pages/Blog/Blog";
 import Category from "../../pages/Category/Category";
-import SingleCategoryProducts from "../../pages/Category/SingleCategoryProducts";
+
 import Error from "../../pages/ErrorPage/Error";
 import HomePage from "../../pages/Home/HomePage/HomePage";
 import Login from "../../pages/SignUp/Login/Login ";
 import SignUp from "../../pages/SignUp/SignUp/SignUp";
-import AddProducts from "../../Dashboard/AddProducts/AddProducts";
+
 import AllBuyer from "../../Dashboard/AllBuyer/AllBuyer";
 import ReportedItem from "../../Dashboard/ReportedItem/ReportedItem";
+
+import CategoryProducts from "../../pages/Category/CategoryProducts/CategoryProducts";
+import PrivateRoute from "../../PrivateRoute/PrivateRoute/PrivateRoute";
+import AddProducts from "../../Dashboard/AddProducts/AddProcucts";
+import AddProduct from "../../Dashboard/AddProducts/AddProduct";
 
 export const router = createBrowserRouter([
   {
@@ -43,8 +48,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "/categories/:categoryName",
-        element: <SingleCategoryProducts></SingleCategoryProducts>,
-        loader: async (params) => {
+        element: (
+          <PrivateRoute>
+            <CategoryProducts></CategoryProducts>,
+          </PrivateRoute>
+        ),
+        loader: async ({ params }) => {
           return fetch(
             `http://localhost:5000/categories/${params.categoryName}`
           );
@@ -71,7 +80,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard/addproducts",
-        element: <AddProducts></AddProducts>,
+        element: <AddProduct></AddProduct>,
       },
       {
         path: "/dashboard/reporteditem",

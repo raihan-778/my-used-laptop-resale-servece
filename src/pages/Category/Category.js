@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+
 import { Link } from "react-router-dom";
 import LoadingSpinner from "../../sharedPage/LoadingSpinner/LoadingSpinner";
 
@@ -25,13 +26,11 @@ const Category = () => {
           All Products Categories
         </h2>
         {categories?.map((category) => (
-          <>
-            <li key={category._id}>
-              <Link to={`/categories/${category.categoryName}`}>
-                {category.categoryName}
-              </Link>
-            </li>
-          </>
+          <button>
+            <Link to={`/categories/${category.categoryName}`}>
+              {category.categoryName}
+            </Link>
+          </button>
         ))}
       </ul>
     </div>
