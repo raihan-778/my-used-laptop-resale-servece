@@ -1,29 +1,29 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 
 const SingleCategoryProducts = () => {
   const categoryData = useLoaderData();
-  console.log(categoryData);
+  const { categoryId, categoryName } = categoryData;
+
+  const url = `http://localhost:5000/allproducts?id=${categoryId}`;
+
+  const { data: categoryProducts = [] } = useQuery({
+    queryKey: ["allproducts", categoryId],
+    queryFn: async () => {
+      const res = await fetch(url);
+      const data = await res.json();
+      console.log(data);
+      return data;
+    },
+  });
+
   return (
     <div>
       <h2>This is Single Category</h2>
-      {/* <div className="card w-96 bg-base-100 shadow-xl">
-          <figure className="px-10 pt-10">
-            <img src={product.imgUrl} alt="Shoes" className="rounded-xl" />
-          </figure>
-          <div className="card-body items-center text-center">
-            <h2 className="card-title">{product.productName}</h2>
-            <p>{product.location}</p>
-            <p>ReSale Price: {product?.reSalePrice} tk</p>
-            <p> Original Price{product?.originalPrice} tk</p>
-            <p> Use Duration: {product?.useDuration} </p>
-            <p> Posted Date: {product?.postTime} </p>
-            <p> Seller Name: {product?.sellerName} </p>
-            <div className="card-actions">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>; */}
+      {categoryProducts.map((categoryProduct) => (
+        <h2>{categoryProduct?.categoryName}</h2>
+      ))}
     </div>
   );
 };
