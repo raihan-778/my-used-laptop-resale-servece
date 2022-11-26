@@ -1,8 +1,8 @@
 import React from "react";
 import BookingModal from "../../BookingModal/BookingModal";
 
-const ProductCard = ({ categoryProduct }) => {
-  console.log(categoryProduct);
+const ProductCard = ({ singleProduct }) => {
+  console.log(singleProduct);
   const {
     categoryName,
     imgUrl,
@@ -13,7 +13,7 @@ const ProductCard = ({ categoryProduct }) => {
     sellerName,
     location,
     productName,
-  } = categoryProduct;
+  } = singleProduct;
   return (
     <div className="card my-5 card-compact w-96 mx-auto neutral shadow-xl">
       <figure>
@@ -30,8 +30,8 @@ const ProductCard = ({ categoryProduct }) => {
         <p>Seller Name: {sellerName}</p>
         <div className="card-actions justify-end">
           <BookingModal
-            key={categoryProduct._id}
-            categoryProduct={categoryProduct}
+            key={singleProduct._id}
+            singleProduct={singleProduct}
           ></BookingModal>
           <label htmlFor="booking-modal" className="btn btn-primary">
             Book Now

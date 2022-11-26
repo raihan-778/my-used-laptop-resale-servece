@@ -42,10 +42,13 @@ export const router = createBrowserRouter([
         element: <Category></Category>,
       },
       {
-        path: "/categories/:id",
+        path: "/categories/:categoryName",
         element: <SingleCategoryProducts></SingleCategoryProducts>,
-        loader: async ({ params }) =>
-          fetch(`http://localhost:5000/categories/${params.id}`),
+        loader: async (params) => {
+          return fetch(
+            `http://localhost:5000/categories/${params.categoryName}`
+          );
+        },
       },
     ],
   },
