@@ -22,11 +22,14 @@ const Category = () => {
   return (
     <div>
       <ul className="menu menu-compact lg:menu-normal bg-base-100 w-56 p-2 rounded-box">
-        <h2 className="text-xl font-semibold text-left text-cyan-400">
-          All Products Categories
-        </h2>
+        <span className="border rounded-xl py-2">
+          {" "}
+          <h2 className="text-xl font-semibold text-center  text-cyan-400">
+            All Products Categories
+          </h2>
+        </span>
         {categories?.map((category) => (
-          <button>
+          <button className="btn btn-outline btn-accent my-3">
             <Link to={`/categories/${category.categoryName}`}>
               {category.categoryName}
             </Link>
