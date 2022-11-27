@@ -2,13 +2,13 @@ import React from "react";
 
 const Blog = () => {
   return (
-    <div className="neutral rounded-xl my-3 py-3">
+    <div className="neutral rounded-xl mx-5 my-3 py-3">
       <h2 className="text-3xl  font-bold p-5  text-sky-500">
         Let's gathered some knowledge on React & JavaScript!
       </h2>
 
-      <div className="rounded-xl my-5">
-        <div className="collapse rounded-xl my-2 ">
+      <div className="rounded-xl mx-16 my-5">
+        <div className="collapse  rounded-xl my-2 ">
           <input type="checkbox" className="peer" />
           <div className="collapse-title text-2xl font-semibold bg-primary text-peer-checked:bg-neutral peer-checked:text-secondary-content">
             What is a unit test in react?
@@ -54,7 +54,7 @@ const Blog = () => {
         </div>
       </div>
 
-      <div className="rounded-xl my-5">
+      <div className="rounded-xl mx-16 my-5">
         <div className="collapse rounded-xl my-2 ">
           <input type="checkbox" className="peer" />
           <div className="collapse-title text-2xl font-semibold bg-primary text-peer-checked:bg-neutral peer-checked:text-secondary-content">
@@ -73,7 +73,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
-      <div className="rounded-xl my-5">
+      <div className="rounded-xl mx-16 my-5">
         <div className="collapse rounded-xl my-2 ">
           <input type="checkbox" className="peer" />
           <div className="collapse-title text-2xl font-semibold bg-primary text-peer-checked:bg-neutral peer-checked:text-secondary-content">
@@ -117,7 +117,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
-      <div className="rounded-xl my-5">
+      <div className="rounded-xl mx-16 my-5">
         <div className="collapse rounded-xl my-2 ">
           <input type="checkbox" className="peer" />
           <div className="collapse-title text-2xl font-semibold bg-primary text-peer-checked:bg-neutral peer-checked:text-secondary-content">

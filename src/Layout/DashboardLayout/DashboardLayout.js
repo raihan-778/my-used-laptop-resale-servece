@@ -14,19 +14,18 @@ const DashboardLayout = () => {
     <div>
       <Navbar></Navbar>
 
-      <h2>This is Dashboard layout</h2>
-      <div className="drawer neutral drawer-mobile">
+      <div className="drawer neutral px-5 drawer-mobile">
         <input
           id="dashboard-drawer"
           type="checkbox"
           className="drawer-toggle"
         />
-        <div className="drawer-content w-full ">
+        <div className="drawer-content w-100">
           <Outlet></Outlet>
         </div>
         <div className="drawer-side">
           <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 text-base-content">
+          <ul className="menu p-4 w-52 text-base-content">
             <li>
               <Link to="/dashboard">My Products</Link>
             </li>

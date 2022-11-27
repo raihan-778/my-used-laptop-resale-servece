@@ -5,10 +5,10 @@ import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 const SellersProduct = () => {
   const { user } = useContext(AuthContext);
 
-  const url = `http://localhost:5000/buyersproducts?email=${user?.email}`;
+  const url = `http://localhost:5000/sellersproducts?email=${user?.email}`;
 
   const { data: myproducts = [] } = useQuery({
-    queryKey: ["buyersproducts", user?.email],
+    queryKey: ["sellersproducts", user?.email],
     queryFn: async () => {
       const res = await fetch(url);
       const data = await res.json();
@@ -49,6 +49,9 @@ const SellersProduct = () => {
                   <button className="btn btn-sm btn-outline my-2 btn-secondary">
                     Delete
                   </button>
+                  <div className="badge badge-secondary mb-2 badge-outline">
+                    Available
+                  </div>
                   <button className="btn btn-sm btn-primary">Advertise</button>
                 </div>
               </td>

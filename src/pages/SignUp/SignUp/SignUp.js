@@ -2,7 +2,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 
 const SignUp = () => {
@@ -25,6 +25,7 @@ const SignUp = () => {
         setSignupError("");
         console.log(result.user);
         toast("user created successfully");
+
         const userInfo = {
           displayName: data.name,
         };

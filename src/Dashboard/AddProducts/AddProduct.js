@@ -32,7 +32,7 @@ const AddProduct = () => {
             sellerName: data.sellername,
             email: data.email,
             useDuration: data.useduration,
-            reSalePrice: data.price,
+            price: data.price,
             image: imgData.data.url,
             condition: data.condition,
             posTiem: data.posttime,
@@ -117,6 +117,8 @@ const AddProduct = () => {
               type="text"
               placeholder="Type here"
               name="email"
+              disabled
+              defaultValue={user?.email}
               className="input input-bordered w-full max-w-xs"
             />
             {errors.email && (
@@ -225,6 +227,26 @@ const AddProduct = () => {
             {errors.originalprice && (
               <p className="text-orange-600" role="alert">
                 {errors.originalprice?.message}
+              </p>
+            )}
+          </div>
+          {/* Product resale Price */}
+          <div className="form-control w-full max-w-xs">
+            <label className="label">
+              <span className="label-text">Enter Resel Price</span>
+            </label>
+            <input
+              {...register("price", {
+                required: "Please enter a valid email address",
+              })}
+              type="text"
+              placeholder="Type here"
+              name="price"
+              className="input input-bordered w-full max-w-xs"
+            />
+            {errors.price && (
+              <p className="text-orange-600" role="alert">
+                {errors.price?.message}
               </p>
             )}
           </div>
