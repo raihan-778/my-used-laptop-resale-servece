@@ -91,7 +91,6 @@ const AddProduct = () => {
             </label>
             <input
               {...register("name", {
-                maxLength: 20,
                 required: "Namd field cannot be empty",
               })}
               type="text"
@@ -115,7 +114,7 @@ const AddProduct = () => {
               {...register("email", {
                 required: "Please enter a valid email address",
               })}
-              type="email"
+              type="text"
               placeholder="Type here"
               name="email"
               className="input input-bordered w-full max-w-xs"
@@ -157,7 +156,7 @@ const AddProduct = () => {
               type="text"
               name="sellername"
               disabled={user.name}
-              defaultChecked={user.name}
+              defaultValue={user.name}
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs"
             />

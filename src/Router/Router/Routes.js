@@ -95,6 +95,9 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/sellersproducts",
         element: <SellersProduct></SellersProduct>,
+        loader: async ({ params }) => {
+          return fetch(``);
+        },
       },
       {
         path: "/dashboard/reporteditem",

@@ -40,16 +40,19 @@ const Navbar = () => {
           >
             <Link to="/">Home</Link>
             <Link to="/blog">Blog</Link>
-            <label
-              htmlFor="dashboard-drawer"
-              className="btn btn-primary drawer-button"
-            >
-              Open drawer
-            </label>
+
             {user?.email ? (
-              <Link to="/dashboard" className="justify-between">
-                Dashboard
-              </Link>
+              <>
+                <label
+                  htmlFor="dashboard-drawer"
+                  className="btn btn-primary drawer-button"
+                >
+                  Open drawer
+                </label>
+                <Link to="/dashboard" className="justify-between">
+                  Dashboard
+                </Link>
+              </>
             ) : (
               <Link to="/login">Login</Link>
             )}
@@ -93,9 +96,12 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {user?.email && (
-          <button onClick={handleSignOut} className="btn">
-            Sign Out
-          </button>
+          <>
+            <div className="badge badge-outline">{user?.email}</div>
+            <button onClick={handleSignOut} className="btn">
+              Sign Out
+            </button>
+          </>
         )}
       </div>
     </div>
