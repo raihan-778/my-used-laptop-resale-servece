@@ -6,7 +6,7 @@ const ProductCard = ({ category }) => {
   const { user } = useContext(AuthContext);
   const {
     categoryName,
-    imgUrl,
+    image,
     postTime,
     reSalePrice,
     originalPrice,
@@ -18,7 +18,7 @@ const ProductCard = ({ category }) => {
   return (
     <div className="card my-5 card-compact w-96 mx-auto neutral shadow-xl">
       <figure>
-        <img src={imgUrl} className="h-72 border rounded-xl p-3" alt="Shoes" />
+        <img src={image} className="h-72 border rounded-xl p-3" alt="Shoes" />
       </figure>
       <div className="card-body text-left">
         <h2 className="card-title">{productName}</h2>
@@ -26,8 +26,10 @@ const ProductCard = ({ category }) => {
         <p>Post Date: {postTime}</p>
         <p>Location: {location}</p>
         <p>Used Duration: {useDuration}</p>
-        <p>Original Price: {originalPrice}</p>
-        <p>ReSale Price: {reSalePrice}</p>
+        <p className="badge badge-secondary">Original Price: {originalPrice}</p>
+        <p className="badge badge-accent badge-outline">
+          ReSale Price: {reSalePrice}
+        </p>
         <p>Seller Name: {sellerName}</p>
         <div className="card-actions justify-end">
           <BookingModal key={category._id} category={category}></BookingModal>

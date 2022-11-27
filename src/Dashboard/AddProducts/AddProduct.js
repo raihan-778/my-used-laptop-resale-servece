@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const AddProduct = () => {
+  const { user } = useContext(AuthContext);
   const {
     register,
     formState: { errors },
@@ -154,6 +156,8 @@ const AddProduct = () => {
               })}
               type="text"
               name="sellername"
+              disabled={user.name}
+              defaultChecked={user.name}
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs"
             />

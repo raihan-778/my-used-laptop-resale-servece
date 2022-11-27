@@ -18,8 +18,8 @@ import ReportedItem from "../../Dashboard/ReportedItem/ReportedItem";
 
 import CategoryProducts from "../../pages/Category/CategoryProducts/CategoryProducts";
 import PrivateRoute from "../../PrivateRoute/PrivateRoute/PrivateRoute";
-import AddProducts from "../../Dashboard/AddProducts/AddProcucts";
 import AddProduct from "../../Dashboard/AddProducts/AddProduct";
+import AdminRoute from "../../PrivateRoute/AdminRoute/AdminRoute";
 
 export const router = createBrowserRouter([
   {
@@ -64,7 +64,11 @@ export const router = createBrowserRouter([
   {
     path: "/dashboard",
     errorElement: <DisplayError></DisplayError>,
-    element: <DashboardLayout></DashboardLayout>,
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "/dashboard",
@@ -84,7 +88,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard/reporteditem",
-        element: <ReportedItem></ReportedItem>,
+        element: (
+          <AdminRoute>
+            <ReportedItem></ReportedItem>
+          </AdminRoute>
+        ),
       },
     ],
   },
