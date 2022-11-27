@@ -28,25 +28,20 @@ const BookingModal = ({ category, refetch, isLoading }) => {
     const productName = form.productName.value;
     const phone = form.phone.value;
     const price = form.price.value;
-    const meatingLocation = form.location.value;
+    const meetingLocation = form.location.value;
     const categoryName = form.categoryName.value;
     const categoryId = form.categoryId.value;
     const booking = {
-      buyerName,
+      buyerName: buyerName,
       email,
-      phone,
-      meatingLocation,
-      price,
+      Phone: phone,
+      MeetingLocation: meetingLocation,
+      Price: price,
       productName,
-      categoryName,
-      categoryId,
+      Category: categoryName,
+      categoryId: categoryId,
     };
-    //todo list
-    /*
-     *send data to the server
-     *and once data is saved then close the modal
-     *and display success toast
-     */
+
     fetch("http://localhost:5000/booking", {
       method: "POST",
       headers: {
@@ -91,7 +86,7 @@ const BookingModal = ({ category, refetch, isLoading }) => {
               disabled={user}
               defaultValue={user?.displayName}
               placeholder="Input you name"
-              className="input text-lime-900 font-bold input-bordered input-xs w-full "
+              className="input text-cyan-400 font-bold input-bordered input-xs w-full "
             />
             <input
               type="email"
@@ -99,7 +94,7 @@ const BookingModal = ({ category, refetch, isLoading }) => {
               disabled={user}
               defaultValue={user?.email}
               placeholder="Your email"
-              className="input text-lime-900 font-bold input-bordered input-xs w-full "
+              className="input text-cyan-400 font-bold input-bordered input-xs w-full "
             />
             <input
               type="text"
@@ -107,7 +102,7 @@ const BookingModal = ({ category, refetch, isLoading }) => {
               disabled={user}
               defaultValue={categoryName}
               placeholder="category name"
-              className="input text-lime-900 font-bold input-bordered input-xs w-full "
+              className="input text-cyan-400 font-bold input-bordered input-xs w-full "
             />
             <input
               type="text"
@@ -115,7 +110,7 @@ const BookingModal = ({ category, refetch, isLoading }) => {
               disabled={user}
               defaultValue={categoryId}
               placeholder="category name"
-              className="input text-lime-900 font-bold input-bordered input-xs w-full "
+              className="input text-cyan-400 font-bold input-bordered input-xs w-full "
             />
             <input
               type="text"
@@ -123,7 +118,7 @@ const BookingModal = ({ category, refetch, isLoading }) => {
               disabled={user}
               defaultValue={productName}
               placeholder="Product Name"
-              className="input text-lime-900 font-bold input-bordered input-xs w-full "
+              className="input text-cyan-400 font-bold input-bordered input-xs w-full "
             />
             <input
               type="text"
@@ -131,19 +126,19 @@ const BookingModal = ({ category, refetch, isLoading }) => {
               disabled={user}
               defaultValue={reSalePrice}
               placeholder="Product Name"
-              className="input text-lime-900 font-bold input-bordered input-xs w-full "
+              className="input text-cyan-400 font-bold input-bordered input-xs w-full "
             />
             <input
               type="text"
               name="phone"
               placeholder="Phone number"
-              className="input text-lime-900 input-bordered input-xs w-full "
+              className="input text-cyan-400 input-bordered input-xs w-full "
             />
             <input
               type="text"
               name="location"
               placeholder="location"
-              className="input text-lime-900 input-bordered input-xs w-full "
+              className="input text-cyan-400 input-bordered input-xs w-full "
             />
             <br />
             <input

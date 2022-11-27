@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 import BookingModal from "../../BookingModal/BookingModal";
 
 const ProductCard = ({ category }) => {
+  const { user } = useContext(AuthContext);
   const {
     categoryName,
     imgUrl,
