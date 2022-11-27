@@ -3,7 +3,7 @@ import React from "react";
 const Blog = () => {
   return (
     <div className="neutral rounded-xl my-3 py-3">
-      <h2 className="text-3xl  font-bold p-5  text-base-100">
+      <h2 className="text-3xl  font-bold p-5  text-sky-500">
         Let's gathered some knowledge on React & JavaScript!
       </h2>
 

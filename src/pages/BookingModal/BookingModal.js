@@ -2,13 +2,18 @@ import { useContext } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
-const BookingModal = ({ category, refetch, isLoading }) => {
+const BookingModal = ({
+  category,
+
+  refetch,
+  isLoading,
+}) => {
   const { user } = useContext(AuthContext);
   // const [booked, setBooked] = useState(null);
 
   const {
     categoryName,
-    imgUrl,
+    image,
     categoryId,
     postTime,
     reSalePrice,
@@ -28,17 +33,19 @@ const BookingModal = ({ category, refetch, isLoading }) => {
     const productName = form.productName.value;
     const phone = form.phone.value;
     const price = form.price.value;
+    const image = form.image.value;
     const meetingLocation = form.location.value;
     const categoryName = form.categoryName.value;
     const categoryId = form.categoryId.value;
     const booking = {
       buyerName: buyerName,
       email,
-      Phone: phone,
+      phone: phone,
       MeetingLocation: meetingLocation,
-      Price: price,
+      price: price,
       productName,
-      Category: categoryName,
+      image,
+      category: categoryName,
       categoryId: categoryId,
     };
 
@@ -110,6 +117,14 @@ const BookingModal = ({ category, refetch, isLoading }) => {
               disabled={user}
               defaultValue={categoryId}
               placeholder="category name"
+              className="input text-cyan-400 font-bold input-bordered input-xs w-full "
+            />
+            <input
+              type="img"
+              name="image"
+              disabled
+              defaultValue={image}
+              placeholder="Input you name"
               className="input text-cyan-400 font-bold input-bordered input-xs w-full "
             />
             <input

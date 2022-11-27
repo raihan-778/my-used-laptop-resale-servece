@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 import BookingModal from "../../BookingModal/BookingModal";
 
 const ProductCard = ({ category }) => {
   const { user } = useContext(AuthContext);
+
   const {
     categoryName,
     image,
@@ -15,6 +16,8 @@ const ProductCard = ({ category }) => {
     location,
     productName,
   } = category;
+
+  const { product, setProduct } = useState(category);
   return (
     <div className="card my-5 card-compact w-96 mx-auto neutral shadow-xl">
       <figure>
@@ -32,7 +35,13 @@ const ProductCard = ({ category }) => {
         </p>
         <p>Seller Name: {sellerName}</p>
         <div className="card-actions justify-end">
-          <BookingModal key={category._id} category={category}></BookingModal>
+          <BookingModal
+            setproduct={setProduct}
+            product={product}
+            key={category._id}
+            category={category}
+          ></BookingModal>
+
           <label htmlFor="booking-modal" className="btn btn-primary">
             Book Now
           </label>

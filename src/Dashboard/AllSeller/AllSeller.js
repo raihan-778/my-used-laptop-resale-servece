@@ -30,10 +30,10 @@ const AllSeller = () => {
               <th>Delete User</th>
             </tr>
           </thead>
-          {sellerInfo.map((seller) => (
+          {sellerInfo.map((seller, i) => (
             <tbody>
               <tr>
-                <th>1</th>
+                <th>{i + 1}</th>
                 <td>
                   <span className="indicator-item badge badge-primary">
                     verified

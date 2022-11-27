@@ -20,6 +20,8 @@ import CategoryProducts from "../../pages/Category/CategoryProducts/CategoryProd
 import PrivateRoute from "../../PrivateRoute/PrivateRoute/PrivateRoute";
 import AddProduct from "../../Dashboard/AddProducts/AddProduct";
 import AdminRoute from "../../PrivateRoute/AdminRoute/AdminRoute";
+import BuyersProduct from "../../Dashboard/MyProducts/BuyersProduct/BuyersProduct";
+import SellersProduct from "../../Dashboard/MyProducts/SellersProduct/SellersProduct";
 
 export const router = createBrowserRouter([
   {
@@ -85,6 +87,14 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/addproducts",
         element: <AddProduct></AddProduct>,
+      },
+      {
+        path: "/dashboard/buyersproducts",
+        element: <BuyersProduct></BuyersProduct>,
+      },
+      {
+        path: "/dashboard/sellersproducts",
+        element: <SellersProduct></SellersProduct>,
       },
       {
         path: "/dashboard/reporteditem",

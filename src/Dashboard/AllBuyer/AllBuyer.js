@@ -30,10 +30,10 @@ const AllBuyer = () => {
               <th>Delete User</th>
             </tr>
           </thead>
-          {buyerInfo.map((buyer) => (
+          {buyerInfo.map((buyer, i) => (
             <tbody>
               <tr>
-                <th>1</th>
+                <th>{i + 1}</th>
                 <td>
                   <div className="grid w-32 rounded-xl h-12 bg-base-300 place-items-center">
                     {buyer.name}

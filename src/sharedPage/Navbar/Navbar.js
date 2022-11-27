@@ -40,9 +40,14 @@ const Navbar = () => {
           >
             <Link to="/">Home</Link>
             <Link to="/blog">Blog</Link>
-
+            <label
+              htmlFor="dashboard-drawer"
+              className="btn btn-primary drawer-button"
+            >
+              Open drawer
+            </label>
             {user?.email ? (
-              <Link to="/" className="justify-between">
+              <Link to="/dashboard" className="justify-between">
                 Dashboard
               </Link>
             ) : (
