@@ -66,7 +66,7 @@ const AddProduct = () => {
       <div>
         <h2 className="text-xl  font-bold">Add Product</h2>
         <form onSubmit={handleSubmit(handleAddProduct)}>
-          <div className="form-control w-full max-w-s">
+          <div className="form-control w-full text-slate-700 max-w-s">
             <label className="label">
               <span className="label-text">Enter Product Image</span>
             </label>
@@ -75,7 +75,7 @@ const AddProduct = () => {
               type="file"
               placeholder="Type image url"
               name="img"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered neutral  w-full max-w-xs"
             />
             {errors.img?.type === "required" && (
               <p className="text-orange-600" role="alert">
@@ -96,7 +96,7 @@ const AddProduct = () => {
               type="text"
               placeholder="Type your name"
               name="name"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered neutral  w-full max-w-xs"
             />
             {errors.name?.type === "required" && (
               <p className="text-orange-600" role="alert">
@@ -115,11 +115,11 @@ const AddProduct = () => {
                 required: "Please enter a valid email address",
               })}
               type="text"
-              placeholder="Type here"
+              placeholder="Type your Email"
               name="email"
-              disabled
+              disabled={user.email}
               defaultValue={user?.email}
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered neutral max-w-xs"
             />
             {errors.email && (
               <p className="text-orange-600" role="alert">
@@ -138,7 +138,7 @@ const AddProduct = () => {
               })}
               name="condition"
               type="select"
-              className="select select-bordered w-full max-w-xs"
+              className="select select-bordered neutral w-full max-w-xs"
             >
               <option selected default>
                 Excellent
@@ -160,7 +160,7 @@ const AddProduct = () => {
               disabled={user.name}
               defaultValue={user.name}
               placeholder="Type here"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered neutral  text-slate-700 w-full max-w-xs"
             />
           </div>
           {/* Product Description */}
@@ -175,7 +175,7 @@ const AddProduct = () => {
               type="text"
               placeholder="Type here"
               name="description"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered neutral  w-full max-w-xs"
             />
           </div>
           {/* Product Used Duration */}
@@ -190,7 +190,7 @@ const AddProduct = () => {
               type="text"
               placeholder="Type here"
               name="useduration"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered neutral  w-full max-w-xs"
             />
           </div>
           {/* Posted Time */}
@@ -206,7 +206,7 @@ const AddProduct = () => {
               placeholder="Type here"
               name="posttime"
               defaultValue={new Date()}
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered neutral  w-full max-w-xs"
             />
           </div>
 
@@ -222,7 +222,7 @@ const AddProduct = () => {
               type="text"
               placeholder="Type here"
               name="originalprice"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered neutral  w-full max-w-xs"
             />
             {errors.originalprice && (
               <p className="text-orange-600" role="alert">
@@ -242,7 +242,7 @@ const AddProduct = () => {
               type="text"
               placeholder="Type here"
               name="price"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered neutral  w-full max-w-xs"
             />
             {errors.price && (
               <p className="text-orange-600" role="alert">
@@ -261,7 +261,7 @@ const AddProduct = () => {
             {...register("categoryname", {
               required: "Please select product Category",
             })}
-            className="select select-bordered w-full max-w-xs"
+            className="select select-bordered neutral text-slate-700 w-full max-w-xs"
           >
             <option disabled selected>
               Product Category
@@ -280,7 +280,7 @@ const AddProduct = () => {
             {...register("categoryid", {
               required: "Please select product Category",
             })}
-            className="select select-bordered w-full max-w-xs"
+            className="select select-bordered neutral w-full max-w-xs"
           >
             <option disabled selected>
               Category Id
@@ -301,7 +301,7 @@ const AddProduct = () => {
               type="text"
               placeholder="Type here"
               name="phonenumber"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered neutral  w-full max-w-xs"
             />
             {errors.phonenumber && (
               <p className="text-orange-600" role="alert">
@@ -321,7 +321,7 @@ const AddProduct = () => {
               type="text"
               placeholder="Type here"
               name="location"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered neutral  w-full max-w-xs"
             />
           </div>
 

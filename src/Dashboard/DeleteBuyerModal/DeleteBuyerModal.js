@@ -1,28 +1,26 @@
 import React from "react";
 
-const DeleteUserModal = ({
+const DeleteBuyerModal = ({
   title,
   message,
-  cancelDeleteSeller,
-  modalData,
+  cancelDeletBuyer,
   successAction,
+  modalData,
 }) => {
-  console.log(modalData);
-
   return (
     <div>
       {/* The button to open modal */}
 
       {/* Put this part before </body> tag */}
-      <input type="checkbox" id="delete-user-modal" className="modal-toggle" />
+      <input type="checkbox" id="delete-buyer-modal" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box">
           <h3 className="font-bold text-lg">{title}</h3>
           <p className="py-4">{message}</p>
           <div className="modal-action">
             <label
-              htmlFor="delete-user-modal"
-              onClik={cancelDeleteSeller}
+              htmlFor="delete-buyer-modal"
+              onClik={cancelDeletBuyer}
               cancelDeleteSeller
               className="btn"
             >
@@ -30,7 +28,7 @@ const DeleteUserModal = ({
             </label>
             <label
               onClick={successAction(modalData)}
-              htmlFor="delete-user-modal"
+              htmlFor="delete-buyer-modal"
               className="btn"
             >
               Confirm Delet
@@ -42,4 +40,4 @@ const DeleteUserModal = ({
   );
 };
 
-export default DeleteUserModal;
+export default DeleteBuyerModal;

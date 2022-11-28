@@ -20,14 +20,14 @@ const DashboardLayout = () => {
           type="checkbox"
           className="drawer-toggle"
         />
-        <div className="drawer-content w-100">
+        <div className="drawer-content bg-slate-700 w-100">
           <Outlet></Outlet>
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side  neutral">
           <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-52 text-base-content">
+          <ul className="menu p-4 w-52 text-gray-100">
             <li>
-              <Link to="/dashboard">My Products</Link>
+              <Link to="/dashboard">Booked Products</Link>
             </li>
 
             <li>
@@ -40,6 +40,7 @@ const DashboardLayout = () => {
               )}
               {isSeller && !isAdmin && (
                 <>
+                  <Link to="/dashboard/sellersproducts">Seller Product</Link>
                   <Link to="/dashboard/addproducts">Add Products</Link>
                 </>
               )}

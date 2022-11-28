@@ -9,11 +9,13 @@ import SellersProduct from "./SellersProduct/SellersProduct";
 const Myproducts = () => {
   const { user } = useContext(AuthContext);
   const { isSeller } = useSeller(user.email);
+  console.log(isSeller);
 
   return (
     <>
       <div>
-        <SellersProduct></SellersProduct>
+        {isSeller && <SellersProduct></SellersProduct>}
+        <BuyersProduct></BuyersProduct>
 
         {/* <Link to="/dashboard/sellersproducts">
           <button className="btn btn-primary">Sellers Product</button>

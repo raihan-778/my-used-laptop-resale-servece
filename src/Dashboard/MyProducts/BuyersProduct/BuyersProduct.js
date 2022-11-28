@@ -17,7 +17,7 @@ const BuyersProduct = () => {
   });
   return (
     <div className="overflow-x-auto">
-      <table className="table w-full">
+      <table className="table text-slate-700 w-full">
         <thead>
           <tr>
             <th></th>
@@ -49,7 +49,7 @@ const BuyersProduct = () => {
                   <button className="btn btn-sm btn-outline my-2 btn-secondary">
                     Delete
                   </button>
-                  <button className="btn btn-sm btn-primary">Advertise</button>
+                  <button className="btn btn-sm btn-primary">Pay Now</button>
                 </div>
               </td>
             </tr>

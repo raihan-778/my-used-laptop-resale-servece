@@ -1,9 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useState } from "react";
+import toast from "react-hot-toast";
 import LoadingSpinner from "../../sharedPage/LoadingSpinner/LoadingSpinner";
+import DeleteBuyerModal from "../DeleteBuyerModal/DeleteBuyerModal";
 
 const AllBuyer = () => {
-  const { data: buyerInfo = [], isLoading } = useQuery({
+  const [deleteBuyer, setDeleteBuyer] = useState("");
+  const {
+    data: buyerInfo = [],
+    refetch,
+    isLoading,
+  } = useQuery({
     queryKey: ["buyres"],
     queryFn: () =>
       fetch("http://localhost:5000/buyers")
@@ -14,14 +21,33 @@ const AllBuyer = () => {
         }),
   });
 
+  const cancelDeletBuyer = () => {
+    setDeleteBuyer("");
+  };
+
+  const handleDeleteBuyer = (buyer) => {
+    console.log(buyer);
+    fetch(`http://localhost:5000/users/${buyer.email}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.deletedCount > 0) {
+          toast.success(`buyer ${buyer.name} deleted successfully`);
+        }
+        refetch();
+      });
+  };
+
   if (isLoading) {
     return <LoadingSpinner></LoadingSpinner>;
   }
 
   return (
     <div>
-      <div className="overflow-x-auto">
-        <table className="table w-full mx-auto">
+      <div className="overflow-x-auto ">
+        <table className="table w-full text-slate-700 mx-auto">
           <thead>
             <tr>
               <th></th>
@@ -41,14 +67,30 @@ const AllBuyer = () => {
                 </td>
                 <td>{buyer.email}</td>
                 <td>
-                  <button className="btn btn-outline btn-secondary">
+                  <label
+                    onClick={() => {
+                      setDeleteBuyer(buyer);
+                    }}
+                    htmlFor="delete-buyer-modal"
+                    className="btn-sx text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm text-center py-1 mr-2 mb-2 px-2"
+                  >
                     Delete
-                  </button>
+                  </label>
                 </td>
               </tr>
             </tbody>
           ))}
         </table>
+        {deleteBuyer && (
+          <DeleteBuyerModal
+            title={"Do you want to remove this buyer!"}
+            message={`Once you have confirmed to remove buyer <>${deleteBuyer.name}</>
+             it cannot be undone.`}
+            cancelDeletBuyer={cancelDeletBuyer}
+            successAction={handleDeleteBuyer}
+            modalData={deleteBuyer}
+          ></DeleteBuyerModal>
+        )}
       </div>
     </div>
   );

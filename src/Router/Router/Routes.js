@@ -22,6 +22,7 @@ import AddProduct from "../../Dashboard/AddProducts/AddProduct";
 import AdminRoute from "../../PrivateRoute/AdminRoute/AdminRoute";
 import BuyersProduct from "../../Dashboard/MyProducts/BuyersProduct/BuyersProduct";
 import SellersProduct from "../../Dashboard/MyProducts/SellersProduct/SellersProduct";
+import SellerRoute from "../../PrivateRoute/SellerRoute/SellerRoute";
 
 export const router = createBrowserRouter([
   {
@@ -74,7 +75,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: <Myproducts></Myproducts>,
+        element: <BuyersProduct></BuyersProduct>,
       },
       {
         path: "/dashboard/allbuyer",
@@ -86,7 +87,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard/addproducts",
-        element: <AddProduct></AddProduct>,
+        element: (
+          <SellerRoute>
+            <AddProduct></AddProduct>
+          </SellerRoute>
+        ),
       },
       {
         path: "/dashboard/buyersproducts",
@@ -94,7 +99,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard/sellersproducts",
-        element: <SellersProduct></SellersProduct>,
+        element: (
+          <SellerRoute>
+            <SellersProduct></SellersProduct>
+          </SellerRoute>
+        ),
         loader: async ({ params }) => {
           return fetch(``);
         },

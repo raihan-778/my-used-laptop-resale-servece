@@ -29,7 +29,7 @@ const AllSeller = () => {
 
   const handleDeleteseller = (seller) => {
     console.log(seller);
-    fetch(`http://localhost:5000/sellers/${seller.email}`, {
+    fetch(`http://localhost:5000/users/${seller.email}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -48,8 +48,8 @@ const AllSeller = () => {
 
   return (
     <div>
-      <div className="overflow-x-auto">
-        <table className="table w-full">
+      <div className="overflow-x-auto ">
+        <table className="table w-full  text-slate-700">
           <thead>
             <tr>
               <th></th>

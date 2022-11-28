@@ -17,7 +17,7 @@ const SellersProduct = () => {
   });
   return (
     <div className="overflow-x-auto">
-      <table className="table w-full">
+      <table className="table   text-slate-700 w-full">
         <thead>
           <tr>
             <th></th>

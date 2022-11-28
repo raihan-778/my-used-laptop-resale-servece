@@ -5,6 +5,10 @@ const useAdmin = (email) => {
   const [isAdminLoading, setIsAdminLoading] = useState(true);
   const [isAdmin, setIsAdmin] = useState("");
 
+  if ((email, isAdminLoading)) {
+    <LoadingSpinner></LoadingSpinner>;
+  }
+
   useEffect(() => {
     if (email) {
       fetch(`http://localhost:5000/users/admin/${email}`)

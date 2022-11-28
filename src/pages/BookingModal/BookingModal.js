@@ -93,7 +93,7 @@ const BookingModal = ({
               disabled={user}
               defaultValue={user?.displayName}
               placeholder="Input you name"
-              className="input text-cyan-400 font-bold input-bordered input-xs w-full "
+              className=" text-slate-700 bodrder rounded-xl py-5 font-bold input-bordered neutral input-xs w-full"
             />
             <input
               type="email"
@@ -101,7 +101,7 @@ const BookingModal = ({
               disabled={user}
               defaultValue={user?.email}
               placeholder="Your email"
-              className="input text-cyan-400 font-bold input-bordered input-xs w-full "
+              className=" text-slate-700 bodrder rounded-xl py-5 font-bold input-bordered neutral input-xs w-full "
             />
             <input
               type="text"
@@ -109,7 +109,7 @@ const BookingModal = ({
               disabled={user}
               defaultValue={categoryName}
               placeholder="category name"
-              className="input text-cyan-400 font-bold input-bordered input-xs w-full "
+              className=" text-slate-700 bodrder rounded-xl py-5 font-bold input-bordered neutral input-xs w-full "
             />
             <input
               type="text"
@@ -117,7 +117,7 @@ const BookingModal = ({
               disabled={user}
               defaultValue={categoryId}
               placeholder="category name"
-              className="input text-cyan-400 font-bold input-bordered input-xs w-full "
+              className=" text-slate-700 bodrder rounded-xl py-5 font-bold input-bordered neutral input-xs w-full "
             />
             <input
               type="img"
@@ -125,7 +125,7 @@ const BookingModal = ({
               disabled
               defaultValue={image}
               placeholder="Input you name"
-              className="input text-cyan-400 font-bold input-bordered input-xs w-full "
+              className=" text-slate-700 bodrder rounded-xl py-5 font-bold input-bordered neutral input-xs w-full "
             />
             <input
               type="text"
@@ -133,7 +133,7 @@ const BookingModal = ({
               disabled={user}
               defaultValue={productName}
               placeholder="Product Name"
-              className="input text-cyan-400 font-bold input-bordered input-xs w-full "
+              className=" text-slate-700 bodrder rounded-xl py-5 font-bold input-bordered neutral input-xs w-full "
             />
             <input
               type="text"
@@ -141,19 +141,19 @@ const BookingModal = ({
               disabled={user}
               defaultValue={reSalePrice}
               placeholder="Product Name"
-              className="input text-cyan-400 font-bold input-bordered input-xs w-full "
+              className=" text-slate-700 bodrder rounded-xl py-5 font-bold input-bordered neutral input-xs w-full "
             />
             <input
               type="text"
               name="phone"
               placeholder="Phone number"
-              className="input text-cyan-400 input-bordered input-xs w-full "
+              className=" text-slate-700 bodrder rounded-xl py-5 input-bordered neutral input-xs w-full "
             />
             <input
               type="text"
               name="location"
               placeholder="location"
-              className="input text-cyan-400 input-bordered input-xs w-full "
+              className=" text-slate-700 bodrder rounded-xl py-5 input-bordered neutral input-xs w-full "
             />
             <br />
             <input
