@@ -45,13 +45,16 @@ const AddProduct = () => {
 
           //save doctors info in the database
 
-          fetch("http://localhost:5000/allproducts", {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(doctor),
-          })
+          fetch(
+            "https://b612-used-products-resale-server-side-raihan-778.vercel.app/allproducts",
+            {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(doctor),
+            }
+          )
             .then((res) => res.json())
             .then((result) => {
               console.log(result);

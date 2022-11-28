@@ -80,6 +80,9 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
+            <Link to="/allproducts">All Products</Link>
+          </li>
+          <li>
             <Link to="/blog">Blog</Link>
           </li>
           {user?.email ? (

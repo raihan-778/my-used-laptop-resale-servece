@@ -23,6 +23,7 @@ import AdminRoute from "../../PrivateRoute/AdminRoute/AdminRoute";
 import BuyersProduct from "../../Dashboard/MyProducts/BuyersProduct/BuyersProduct";
 import SellersProduct from "../../Dashboard/MyProducts/SellersProduct/SellersProduct";
 import SellerRoute from "../../PrivateRoute/SellerRoute/SellerRoute";
+import AllProducts from "../../pages/AllProducts/AllProducts";
 
 export const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ export const router = createBrowserRouter([
         element: <Blog></Blog>,
       },
       {
+        path: "/allproducts",
+        element: <AllProducts></AllProducts>,
+      },
+      {
         path: "/categories",
         element: <Category></Category>,
       },
@@ -58,7 +63,7 @@ export const router = createBrowserRouter([
         ),
         loader: async ({ params }) => {
           return fetch(
-            `http://localhost:5000/categories/${params.categoryName}`
+            `https://b612-used-products-resale-server-side-raihan-778.vercel.app/categories/${params.categoryName}`
           );
         },
       },

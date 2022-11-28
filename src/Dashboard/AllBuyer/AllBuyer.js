@@ -13,7 +13,9 @@ const AllBuyer = () => {
   } = useQuery({
     queryKey: ["buyres"],
     queryFn: () =>
-      fetch("http://localhost:5000/buyers")
+      fetch(
+        "https://b612-used-products-resale-server-side-raihan-778.vercel.app/buyers"
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -27,9 +29,12 @@ const AllBuyer = () => {
 
   const handleDeleteBuyer = (buyer) => {
     console.log(buyer);
-    fetch(`http://localhost:5000/users/${buyer.email}`, {
-      method: "DELETE",
-    })
+    fetch(
+      `https://b612-used-products-resale-server-side-raihan-778.vercel.app/users/${buyer.email}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
