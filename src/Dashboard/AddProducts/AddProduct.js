@@ -102,7 +102,7 @@ const AddProduct = () => {
                 required: "Namd field cannot be empty",
               })}
               type="text"
-              placeholder="Type your name"
+              placeholder="Type your Product Name"
               name="name"
               className="input input-bordered neutral  w-full max-w-xs"
             />

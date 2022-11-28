@@ -11,18 +11,7 @@ const BookingModal = ({
   const { user } = useContext(AuthContext);
   // const [booked, setBooked] = useState(null);
 
-  const {
-    categoryName,
-    image,
-    categoryId,
-    postTime,
-    reSalePrice,
-    originalPrice,
-    useDuration,
-    sellerName,
-    location,
-    productName,
-  } = category;
+  const { categoryName, image, categoryId, price, productName } = category;
 
   const handleBooking = (event) => {
     event.preventDefault();
@@ -30,7 +19,6 @@ const BookingModal = ({
 
     const buyerName = form.name.value;
     const email = form.email.value;
-    const productName = form.productName.value;
     const phone = form.phone.value;
     const price = form.price.value;
     const image = form.image.value;
@@ -45,7 +33,7 @@ const BookingModal = ({
       price: price,
       productName,
       image,
-      category: categoryName,
+      categoryName: categoryName,
       categoryId: categoryId,
     };
 
@@ -92,6 +80,14 @@ const BookingModal = ({
           >
             <input
               type="text"
+              name="price"
+              disabled={user}
+              defaultValue={price}
+              placeholder="Input Price"
+              className=" text-slate-700 bodrder rounded-xl py-5 font-bold input-bordered neutral input-xs w-full"
+            />
+            <input
+              type="text"
               name="name"
               disabled={user}
               defaultValue={user?.displayName}
@@ -131,14 +127,6 @@ const BookingModal = ({
               className=" text-slate-700 bodrder rounded-xl py-5 font-bold input-bordered neutral input-xs w-full "
             />
 
-            <input
-              type="text"
-              name="price"
-              disabled={user}
-              defaultValue={reSalePrice}
-              placeholder="Product Name"
-              className=" text-slate-700 bodrder rounded-xl py-5 font-bold input-bordered neutral input-xs w-full "
-            />
             <input
               type="text"
               name="phone"
