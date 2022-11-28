@@ -14,7 +14,7 @@ const DeleteBuyerModal = ({
       {/* Put this part before </body> tag */}
       <input type="checkbox" id="delete-buyer-modal" className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box">
+        <div className="modal-box neutral">
           <h3 className="font-bold text-lg">{title}</h3>
           <p className="py-4">{message}</p>
           <div className="modal-action">
@@ -27,7 +27,7 @@ const DeleteBuyerModal = ({
               Cancel Process
             </label>
             <label
-              onClick={successAction(modalData)}
+              onClick={() => successAction(modalData)}
               htmlFor="delete-buyer-modal"
               className="btn"
             >

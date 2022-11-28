@@ -8,8 +8,10 @@ const ProductCard = ({ category }) => {
   const {
     categoryName,
     image,
+    email,
     postTime,
-    reSalePrice,
+    price,
+    condition,
     originalPrice,
     useDuration,
     sellerName,
@@ -24,14 +26,16 @@ const ProductCard = ({ category }) => {
         <img src={image} className="h-72 border rounded-xl p-3" alt="Shoes" />
       </figure>
       <div className="card-body text-left">
-        <h2 className="card-title">{productName}</h2>
+        <h2 className="card-title">Product Name:{productName}</h2>
         <h6 className="text-xl font-semibold text-teal-600">{categoryName}</h6>
+        <p>Product Condition: {condition}</p>
+        <p>Email: {email}</p>
         <p>Post Date: {postTime}</p>
         <p>Location: {location}</p>
         <p>Used Duration: {useDuration}</p>
         <p className="badge badge-secondary">Original Price: {originalPrice}</p>
         <p className="badge badge-accent badge-outline">
-          ReSale Price: {reSalePrice}
+          ReSale Price: {price}
         </p>
         <p>Seller Name: {sellerName}</p>
         <div className="card-actions justify-end">

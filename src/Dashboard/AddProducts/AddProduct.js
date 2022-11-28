@@ -35,7 +35,7 @@ const AddProduct = () => {
             price: data.price,
             image: imgData.data.url,
             condition: data.condition,
-            posTiem: data.posttime,
+            postTime: data.posttime,
             originalPrice: data.originalprice,
             categoryName: data.categoryname,
             categoryId: data.categoryid,
@@ -112,12 +112,11 @@ const AddProduct = () => {
             </label>
             <input
               {...register("email", {
-                required: "Please enter a valid email address",
+                required: "Please enter email address",
               })}
-              type="text"
+              type="email"
               placeholder="Type your Email"
               name="email"
-              disabled={user.email}
               defaultValue={user?.email}
               className="input input-bordered neutral max-w-xs"
             />
@@ -134,7 +133,7 @@ const AddProduct = () => {
             </label>
             <select
               {...register("condition", {
-                required: "Please enter a valid email address",
+                required: "Product condition",
               })}
               name="condition"
               type="select"
@@ -157,7 +156,6 @@ const AddProduct = () => {
               })}
               type="text"
               name="sellername"
-              disabled={user.name}
               defaultValue={user.name}
               placeholder="Type here"
               className="input input-bordered neutral  text-slate-700 w-full max-w-xs"
@@ -296,7 +294,7 @@ const AddProduct = () => {
             </label>
             <input
               {...register("phonenumber", {
-                required: "Please enter a valid email address",
+                required: "Please enter a valid phone no",
               })}
               type="text"
               placeholder="Type here"
