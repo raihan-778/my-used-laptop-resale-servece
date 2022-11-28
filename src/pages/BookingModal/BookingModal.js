@@ -130,14 +130,7 @@ const BookingModal = ({
               placeholder="Input you name"
               className=" text-slate-700 bodrder rounded-xl py-5 font-bold input-bordered neutral input-xs w-full "
             />
-            <input
-              type="text"
-              name="productName"
-              disabled={user}
-              defaultValue={productName}
-              placeholder="Product Name"
-              className=" text-slate-700 bodrder rounded-xl py-5 font-bold input-bordered neutral input-xs w-full "
-            />
+
             <input
               type="text"
               name="price"
@@ -155,7 +148,7 @@ const BookingModal = ({
             <input
               type="text"
               name="location"
-              placeholder="location"
+              placeholder="Please mention a suitable location to meet"
               className=" text-slate-700 bodrder rounded-xl py-5 input-bordered neutral input-xs w-full "
             />
             <br />

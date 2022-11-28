@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import toast from "react-hot-toast";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 
 const SellersProduct = () => {
@@ -7,7 +8,7 @@ const SellersProduct = () => {
 
   const url = `https://b612-used-products-resale-server-side-raihan-778.vercel.app/sellersproducts?email=${user?.email}`;
 
-  const { data: myproducts = [] } = useQuery({
+  const { data: myproducts = [], refetch } = useQuery({
     queryKey: ["sellersproducts", user?.email],
     queryFn: async () => {
       const res = await fetch(url);
@@ -15,6 +16,24 @@ const SellersProduct = () => {
       return data;
     },
   });
+
+  const handleAdvertise = (id) => {
+    fetch(
+      `https://b612-used-products-resale-server-side-raihan-778.vercel.app/sellersproducts/${id}`,
+      {
+        method: "PUT",
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          console.log(data);
+          toast.success("advertised successfully");
+          refetch();
+        }
+      });
+  };
+
   return (
     <div className="overflow-x-auto">
       <table className="table   text-slate-700 w-full">
@@ -52,7 +71,12 @@ const SellersProduct = () => {
                   <div className="badge badge-secondary mb-2 badge-outline">
                     Available
                   </div>
-                  <button className="btn btn-sm btn-primary">Advertise</button>
+                  <button
+                    onClick={() => handleAdvertise(product._id)}
+                    className="btn btn-sm btn-primary"
+                  >
+                    Advertise
+                  </button>
                 </div>
               </td>
             </tr>

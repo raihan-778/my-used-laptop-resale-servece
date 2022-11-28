@@ -1,22 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProductsCard = ({ product }) => {
+const AdvertisedProductCard = ({ adversiedProduct }) => {
   const {
-    image,
-    productName,
     categoryName,
-    condition,
-    useDuration,
+    image,
+    postTime,
     price,
+    condition,
     originalPrice,
-  } = product;
+    useDuration,
+    sellerName,
+    location,
+    productName,
+  } = adversiedProduct;
+  console.log(adversiedProduct);
 
   return (
     <div className="card my-5 card-compact w-96 mx-auto neutral shadow-xl">
-      <h2 className="text-3xl font-semibold text-cyan-600">
-        Adversied Product
-      </h2>
       <figure>
         <img src={image} className="h-72 border rounded-xl p-3" alt="Shoes" />
       </figure>
@@ -25,17 +26,18 @@ const ProductsCard = ({ product }) => {
         <h6 className="text-xl font-semibold text-teal-600">{categoryName}</h6>
         <p>Product Condition: {condition}</p>
 
+        <p>Post Date: {postTime}</p>
+        <p>Location: {location}</p>
         <p>Used Duration: {useDuration}</p>
         <p className="badge badge-secondary">Original Price: {originalPrice}</p>
         <p className="badge badge-accent badge-outline">
           ReSale Price: {price}
         </p>
-
+        <p>Seller Name: {sellerName}</p>
         <div className="card-actions justify-end">
-          <Link to="/categories">
-            {" "}
+          <Link to="categories">
             <label htmlFor="booking-modal" className="btn btn-primary">
-              Book Now
+              Want to Buy
             </label>
           </Link>
         </div>
@@ -44,4 +46,4 @@ const ProductsCard = ({ product }) => {
   );
 };
 
-export default ProductsCard;
+export default AdvertisedProductCard;

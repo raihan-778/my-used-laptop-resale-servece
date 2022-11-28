@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import AllSeller from "../../Dashboard/AllSeller/AllSeller";
 import DisplayError from "../../Dashboard/DisplayError/DisplayError";
-import Myproducts from "../../Dashboard/MyProducts/Myproducts";
+
 import DashboardLayout from "../../Layout/DashboardLayout/DashboardLayout";
 import Root from "../../Layout/RootLayout/Root";
 import Blog from "../../pages/Blog/Blog";
@@ -24,6 +24,8 @@ import BuyersProduct from "../../Dashboard/MyProducts/BuyersProduct/BuyersProduc
 import SellersProduct from "../../Dashboard/MyProducts/SellersProduct/SellersProduct";
 import SellerRoute from "../../PrivateRoute/SellerRoute/SellerRoute";
 import AllProducts from "../../pages/AllProducts/AllProducts";
+import MyProducts from "../../Dashboard/MyProducts/MyProducts";
+import AdvertisedProducts from "../../pages/Home/AdvertisedProducts/AdvertisedProducts";
 
 export const router = createBrowserRouter([
   {
@@ -53,6 +55,10 @@ export const router = createBrowserRouter([
       {
         path: "/categories",
         element: <Category></Category>,
+      },
+      {
+        path: "/allproducts/advertise",
+        element: <AdvertisedProducts></AdvertisedProducts>,
       },
       {
         path: "/categories/:categoryName",
@@ -101,6 +107,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/buyersproducts",
         element: <BuyersProduct></BuyersProduct>,
+      },
+      {
+        path: "/dashboard/myproducts",
+        element: <MyProducts></MyProducts>,
       },
       {
         path: "/dashboard/sellersproducts",

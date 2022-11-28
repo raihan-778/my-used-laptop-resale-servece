@@ -31,11 +31,11 @@ const Category = () => {
           </h2>
         </span>
         {categories?.map((category) => (
-          <button className="btn btn-outline btn-accent my-3">
-            <Link to={`/categories/${category.categoryName}`}>
+          <Link to={`/categories/${category.categoryName}`}>
+            <button className="btn btn-outline btn-accent my-3">
               {category.categoryName}
-            </Link>
-          </button>
+            </button>
+          </Link>
         ))}
       </ul>
     </div>

@@ -6,7 +6,7 @@ import useSeller from "../../hooks/useSeller";
 import BuyersProduct from "./BuyersProduct/BuyersProduct";
 import SellersProduct from "./SellersProduct/SellersProduct";
 
-const Myproducts = () => {
+const MyProducts = () => {
   const { user } = useContext(AuthContext);
   const { isSeller } = useSeller(user.email);
   console.log(isSeller);
@@ -28,4 +28,4 @@ const Myproducts = () => {
   );
 };
 
-export default Myproducts;
+export default MyProducts;

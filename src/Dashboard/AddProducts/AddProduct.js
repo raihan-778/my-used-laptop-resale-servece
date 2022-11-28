@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const AddProduct = () => {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
   const {
     register,
     formState: { errors },
@@ -59,6 +61,9 @@ const AddProduct = () => {
             .then((result) => {
               console.log(result);
               toast.success(`${data.name} Added Successful`);
+              if (result) {
+                return <navigate to="/dashboard/sellersproducts"></navigate>;
+              }
             });
         }
       });
@@ -328,7 +333,7 @@ const AddProduct = () => {
 
           <input
             className="btn mt-5 w-full max-w-xs btn-accent"
-            value="Sign Up"
+            value="Add Product"
             type="submit"
           />
         </form>

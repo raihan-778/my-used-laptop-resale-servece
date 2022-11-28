@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -16,7 +17,9 @@ const Header = () => {
             We sell best quality used laptop with resonable price.We believe in
             quality and customers trust.Your faith is Our assets.
           </p>
-          <button className="btn btn-primary">Get Started</button>
+          <Link to="/categories">
+            <button className="btn btn-primary">Visit Shop</button>
+          </Link>
         </div>
       </div>
     </div>
