@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const AddProduct = () => {
   const { user } = useContext(AuthContext);
-  const navigate = useNavigate();
+
   const {
     register,
     formState: { errors },
@@ -28,7 +28,7 @@ const AddProduct = () => {
       .then((imgData) => {
         if (imgData.success) {
           console.log(imgData.data.url);
-          const doctor = {
+          const products = {
             description: data.description,
             productName: data.name,
             sellerName: data.sellername,
@@ -45,7 +45,7 @@ const AddProduct = () => {
             phone: data.phonenumber,
           };
 
-          //save doctors info in the database
+          //save Products info
 
           fetch(
             "https://b612-used-products-resale-server-side-raihan-778.vercel.app/allproducts",
@@ -54,7 +54,7 @@ const AddProduct = () => {
               headers: {
                 "content-type": "application/json",
               },
-              body: JSON.stringify(doctor),
+              body: JSON.stringify(products),
             }
           )
             .then((res) => res.json())
@@ -62,7 +62,7 @@ const AddProduct = () => {
               console.log(result);
               toast.success(`${data.name} Added Successful`);
               if (result) {
-                return <navigate to="/dashboard/sellersproducts"></navigate>;
+                <Navigate to="/"></Navigate>;
               }
             });
         }

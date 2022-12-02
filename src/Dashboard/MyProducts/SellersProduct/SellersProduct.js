@@ -34,6 +34,28 @@ const SellersProduct = () => {
       });
   };
 
+  const handleDelete = (id) => {
+    const proceed = window.confirm(
+      "Are you sure you want delete this booking?"
+    );
+    if (proceed) {
+      fetch(
+        `https://b612-used-products-resale-server-side-raihan-778.vercel.app/sellersporducts/${id}`,
+        {
+          method: "DELETE",
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            console.log(data);
+            toast.success("Product Deteded successfully");
+            refetch();
+          }
+        });
+    }
+  };
+
   return (
     <div className="overflow-x-auto">
       <table className="table   text-slate-700 w-full">
@@ -65,18 +87,28 @@ const SellersProduct = () => {
               </td>
               <td>
                 <div className="flex flex-col mx-2">
-                  <button className="btn btn-sm btn-outline my-2 btn-secondary">
+                  <button
+                    onClick={() => handleDelete(product._id)}
+                    className="btn btn-sm btn-outline my-2 btn-secondary"
+                  >
                     Delete
                   </button>
                   <div className="badge badge-secondary mb-2 badge-outline">
                     Available
                   </div>
-                  <button
-                    onClick={() => handleAdvertise(product._id)}
-                    className="btn btn-sm btn-primary"
-                  >
-                    Advertise
-                  </button>
+
+                  {!product.advertise === "true" ? (
+                    <button
+                      onClick={() => handleAdvertise(product._id)}
+                      className="btn btn-sm btn-primary"
+                    >
+                      Advertise
+                    </button>
+                  ) : (
+                    <button disabled className="btn btn-sm btn-primary">
+                      Advertised
+                    </button>
+                  )}
                 </div>
               </td>
             </tr>

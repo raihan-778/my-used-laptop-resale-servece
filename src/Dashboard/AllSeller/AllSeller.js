@@ -1,11 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import useVerify from "../../hooks/useVerify/useVerify";
 import LoadingSpinner from "../../sharedPage/LoadingSpinner/LoadingSpinner";
 
 import DeleteUserModal from "../DeleteuserModal/DeleteUserModal";
 
 const AllSeller = () => {
+  const { user } = useContext(AuthContext);
   const [deletSeller, setDeleteSeller] = useState(null);
 
   const {
@@ -47,6 +50,23 @@ const AllSeller = () => {
       });
   };
 
+  const handleVerify = (email) => {
+    fetch(
+      `https://b612-used-products-resale-server-side-raihan-778.vercel.app/users/seller/${email}`,
+      {
+        method: "PUT",
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          console.log(data);
+          toast.success("Seller Verified Successfully");
+          refetch();
+        }
+      });
+  };
+
   if (isLoading) {
     return <LoadingSpinner></LoadingSpinner>;
   }
@@ -69,16 +89,25 @@ const AllSeller = () => {
               <tr>
                 <th>{i + 1}</th>
                 <td>
-                  <span className="indicator-item badge badge-primary">
-                    verified
-                  </span>
+                  {seller.status === "verified" && (
+                    <span className="indicator-item badge badge-primary">
+                      verified
+                    </span>
+                  )}
+
                   <div className="grid w-32 rounded-xl h-12 bg-base-300 place-items-center">
                     {seller.name}
                   </div>
                 </td>
                 <td>{seller.email}</td>
                 <td>
-                  <button className="btn btn-success">Verify</button>
+                  <button
+                    onClick={() => handleVerify(seller.email)}
+                    className="btn btn-success"
+                    disabled={seller.status === "verified"}
+                  >
+                    Verify
+                  </button>
                 </td>
                 <td>
                   <label

@@ -1,9 +1,13 @@
 import React, { useContext, useState } from "react";
+import { FcApprove } from "react-icons/fc";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
+import useVerify from "../../../hooks/useVerify/useVerify";
+import LoadingSpinner from "../../../sharedPage/LoadingSpinner/LoadingSpinner";
 import BookingModal from "../../BookingModal/BookingModal";
 
 const ProductCard = ({ category }) => {
   const { user } = useContext(AuthContext);
+  const { product, setProduct } = useState(category);
 
   const {
     categoryName,
@@ -19,7 +23,13 @@ const ProductCard = ({ category }) => {
     productName,
   } = category;
 
-  const { product, setProduct } = useState(category);
+  const [isVerified, isVerifyLoading] = useVerify(email);
+  console.log(email);
+
+  // if (isVerifyLoading) {
+  //   return <LoadingSpinner></LoadingSpinner>;
+  // }
+
   return (
     <div className="card my-5 card-compact w-96 mx-auto neutral shadow-xl">
       <figure>
@@ -37,7 +47,14 @@ const ProductCard = ({ category }) => {
         <p className="badge badge-accent badge-outline">
           ReSale Price: {price}
         </p>
-        <p>Seller Name: {sellerName}</p>
+        {isVerified ? (
+          <div className="flex items-start justify-around">
+            <FcApprove className="text-2xl"></FcApprove>
+            <p>Seller Name: {sellerName}</p>
+          </div>
+        ) : (
+          <p>Seller Name: {sellerName}</p>
+        )}
         <div className="card-actions justify-end">
           <BookingModal
             setproduct={setProduct}

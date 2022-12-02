@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext } from "react";
+import toast from "react-hot-toast";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 
 const BuyersProduct = () => {
@@ -7,7 +8,7 @@ const BuyersProduct = () => {
 
   const url = `https://b612-used-products-resale-server-side-raihan-778.vercel.app/buyersproducts?email=${user?.email}`;
 
-  const { data: myproducts = [] } = useQuery({
+  const { data: myproducts = [], refetch } = useQuery({
     queryKey: ["buyersproducts", user?.email],
     queryFn: async () => {
       const res = await fetch(url);
@@ -15,6 +16,29 @@ const BuyersProduct = () => {
       return data;
     },
   });
+
+  const handleDelete = (id) => {
+    const proceed = window.confirm(
+      "Are you sure you want delete this booking?"
+    );
+    if (proceed) {
+      fetch(
+        `https://b612-used-products-resale-server-side-raihan-778.vercel.app/booking/${id}`,
+        {
+          method: "DELETE",
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            console.log(data);
+            toast.success("Product Deteded successfully");
+            refetch();
+          }
+        });
+    }
+  };
   return (
     <div className="overflow-x-auto">
       <table className="table text-slate-700 w-full">
@@ -46,7 +70,10 @@ const BuyersProduct = () => {
               </td>
               <td>
                 <div className="flex flex-col mx-2">
-                  <button className="btn btn-sm btn-outline my-2 btn-secondary">
+                  <button
+                    onClick={() => handleDelete(product._id)}
+                    className="btn btn-sm btn-outline my-2 btn-secondary"
+                  >
                     Delete
                   </button>
                   <button className="btn btn-sm btn-primary">Pay Now</button>
