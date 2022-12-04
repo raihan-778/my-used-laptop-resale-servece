@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import useToken from "../../hooks/useToken/useToken";
 import useVerify from "../../hooks/useVerify/useVerify";
 import LoadingSpinner from "../../sharedPage/LoadingSpinner/LoadingSpinner";
 
@@ -12,15 +13,17 @@ const AllSeller = () => {
   const [deletSeller, setDeleteSeller] = useState(null);
 
   const {
-    data: sellerInfo = [],
+    data: sellerInfo = [user?.email],
     refetch,
     isLoading,
   } = useQuery({
     queryKey: ["sellers"],
     queryFn: () =>
-      fetch(
-        "https://b612-used-products-resale-server-side-raihan-778.vercel.app/sellers"
-      )
+      fetch("http://localhost:5000/sellers", {
+        headers: {
+          authorization: `bearer ${localStorage.getItem("access_token")}`,
+        },
+      })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -34,12 +37,9 @@ const AllSeller = () => {
 
   const handleDeleteseller = (seller) => {
     console.log(seller);
-    fetch(
-      `https://b612-used-products-resale-server-side-raihan-778.vercel.app/users/${seller.email}`,
-      {
-        method: "DELETE",
-      }
-    )
+    fetch(`http://localhost:5000/users/${seller.email}`, {
+      method: "DELETE",
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -51,12 +51,12 @@ const AllSeller = () => {
   };
 
   const handleVerify = (email) => {
-    fetch(
-      `https://b612-used-products-resale-server-side-raihan-778.vercel.app/users/seller/${email}`,
-      {
-        method: "PUT",
-      }
-    )
+    fetch(`http://localhost:5000/users/seller/${email}`, {
+      method: "PUT",
+      headers: {
+        authorization: `bearer, ${localStorage.getItem("access_token")}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
@@ -85,7 +85,7 @@ const AllSeller = () => {
             </tr>
           </thead>
           {sellerInfo.map((seller, i) => (
-            <tbody>
+            <tbody key={seller._id}>
               <tr>
                 <th>{i + 1}</th>
                 <td>

@@ -1,21 +1,26 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
+import { useContext } from "react";
 import toast from "react-hot-toast";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import LoadingSpinner from "../../sharedPage/LoadingSpinner/LoadingSpinner";
 import DeleteBuyerModal from "../DeleteBuyerModal/DeleteBuyerModal";
 
 const AllBuyer = () => {
+  const { user } = useContext(AuthContext);
   const [deleteBuyer, setDeleteBuyer] = useState("");
   const {
-    data: buyerInfo = [],
+    data: buyerInfo = [user?.email],
     refetch,
     isLoading,
   } = useQuery({
     queryKey: ["buyres"],
     queryFn: () =>
-      fetch(
-        "https://b612-used-products-resale-server-side-raihan-778.vercel.app/buyers"
-      )
+      fetch("http://localhost:5000/buyers", {
+        headers: {
+          authorization: `bearer ${localStorage.getItem("access_token")}`,
+        },
+      })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -29,12 +34,9 @@ const AllBuyer = () => {
 
   const handleDeleteBuyer = (buyer) => {
     console.log(buyer);
-    fetch(
-      `https://b612-used-products-resale-server-side-raihan-778.vercel.app/users/${buyer.email}`,
-      {
-        method: "DELETE",
-      }
-    )
+    fetch(`http://localhost:5000/users/${buyer.email}`, {
+      method: "DELETE",
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -62,7 +64,7 @@ const AllBuyer = () => {
             </tr>
           </thead>
           {buyerInfo.map((buyer, i) => (
-            <tbody>
+            <tbody key={buyer._id}>
               <tr>
                 <th>{i + 1}</th>
                 <td>

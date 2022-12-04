@@ -22,7 +22,7 @@ const DeleteUserModal = ({
           <div className="modal-action">
             <label
               htmlFor="delete-user-modal"
-              onClik={cancelDeleteSeller}
+              onClick={cancelDeleteSeller}
               cancelDeleteSeller
               className="btn"
             >

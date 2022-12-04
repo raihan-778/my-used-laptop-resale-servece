@@ -7,9 +7,7 @@ const Category = () => {
   const { data: categories = [], isLoading } = useQuery({
     queryKey: ["category"],
     queryFn: () =>
-      fetch(
-        "https://b612-used-products-resale-server-side-raihan-778.vercel.app/categories"
-      )
+      fetch("http://localhost:5000/categories")
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -31,7 +29,7 @@ const Category = () => {
           </h2>
         </span>
         {categories?.map((category) => (
-          <Link to={`/categories/${category.categoryName}`}>
+          <Link key={category._id} to={`/categories/${category.categoryName}`}>
             <button className="btn btn-outline btn-accent my-3">
               {category.categoryName}
             </button>

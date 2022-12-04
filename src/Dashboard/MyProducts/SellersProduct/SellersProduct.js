@@ -1,37 +1,54 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useState } from "react";
+import { useEffect } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
+import LoadingSpinner from "../../../sharedPage/LoadingSpinner/LoadingSpinner";
 
 const SellersProduct = () => {
   const { user } = useContext(AuthContext);
 
-  const url = `https://b612-used-products-resale-server-side-raihan-778.vercel.app/sellersproducts?email=${user?.email}`;
+  const url = `http://localhost:5000/sellersproducts?email=${user?.email}`;
 
-  const { data: myproducts = [], refetch } = useQuery({
+  const {
+    data: myproducts = [user?.email],
+    isLoading,
+    refetch,
+  } = useQuery({
     queryKey: ["sellersproducts", user?.email],
     queryFn: async () => {
-      const res = await fetch(url);
+      const res = await fetch(url, {
+        headers: {
+          authorization: `bearer ${localStorage.getItem("access_token")}`,
+        },
+      });
       const data = await res.json();
+      console.log(data);
       return data;
     },
   });
 
+  if (isLoading) {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
+
   const handleAdvertise = (id) => {
-    fetch(
-      `https://b612-used-products-resale-server-side-raihan-778.vercel.app/sellersproducts/${id}`,
-      {
+    useEffect(() => {
+      fetch(`http://localhost:5000/sellersproducts/${id}`, {
         method: "PUT",
-      }
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.modifiedCount > 0) {
-          console.log(data);
-          toast.success("advertised successfully");
-          refetch();
-        }
-      });
+        headers: {
+          authorization: `bearer ${localStorage.getItem("access_token")}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.modifiedCount > 0) {
+            console.log(data);
+            toast.success("advertised successfully");
+            refetch();
+          }
+        });
+    }, []);
   };
 
   const handleDelete = (id) => {
@@ -39,12 +56,9 @@ const SellersProduct = () => {
       "Are you sure you want delete this booking?"
     );
     if (proceed) {
-      fetch(
-        `https://b612-used-products-resale-server-side-raihan-778.vercel.app/sellersporducts/${id}`,
-        {
-          method: "DELETE",
-        }
-      )
+      fetch(`http://localhost:5000/sellersporducts/${id}`, {
+        method: "DELETE",
+      })
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
@@ -97,7 +111,7 @@ const SellersProduct = () => {
                     Available
                   </div>
 
-                  {!product.advertise === "true" ? (
+                  {!product?.advertise ? (
                     <button
                       onClick={() => handleAdvertise(product._id)}
                       className="btn btn-sm btn-primary"

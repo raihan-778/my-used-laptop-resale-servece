@@ -1,15 +1,12 @@
 import { useContext } from "react";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
-const BookingModal = ({
-  category,
-
-  refetch,
-  isLoading,
-}) => {
+const BookingModal = ({ category }) => {
   const { user } = useContext(AuthContext);
   // const [booked, setBooked] = useState(null);
+  const navigate = useNavigate();
 
   const { categoryName, image, categoryId, price, productName } = category;
 
@@ -24,7 +21,7 @@ const BookingModal = ({
     const image = form.image.value;
     const meetingLocation = form.location.value;
     const categoryName = form.categoryName.value;
-    const categoryId = form.categoryId.value;
+    // const categoryId = form.categoryId.value;
     const booking = {
       buyerName: buyerName,
       email,
@@ -37,23 +34,20 @@ const BookingModal = ({
       categoryId: categoryId,
     };
 
-    fetch(
-      "https://b612-used-products-resale-server-side-raihan-778.vercel.app/booking",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(booking),
-      }
-    )
+    fetch("http://localhost:5000/booking", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(booking),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
 
         if (data.acknowledged) {
           toast.success("booking confirmed");
-          refetch();
+          navigate("/dashboard/myproducts");
         } else {
           toast.error(data.message);
         }
@@ -82,7 +76,7 @@ const BookingModal = ({
               type="text"
               name="price"
               disabled={user}
-              defaultValue={price}
+              defaultValue={`ProductPrice: ${price}`}
               placeholder="Input Price"
               className=" text-slate-700 bodrder rounded-xl py-5 font-bold input-bordered neutral input-xs w-full"
             />
@@ -90,7 +84,7 @@ const BookingModal = ({
               type="text"
               name="name"
               disabled={user}
-              defaultValue={user?.displayName}
+              defaultValue={`Customer Name: ${user?.displayName}`}
               placeholder="Input you name"
               className=" text-slate-700 bodrder rounded-xl py-5 font-bold input-bordered neutral input-xs w-full"
             />
@@ -106,15 +100,7 @@ const BookingModal = ({
               type="text"
               name="categoryName"
               disabled={user}
-              defaultValue={categoryName}
-              placeholder="category name"
-              className=" text-slate-700 bodrder rounded-xl py-5 font-bold input-bordered neutral input-xs w-full "
-            />
-            <input
-              type="text"
-              name="categoryId"
-              disabled={user}
-              defaultValue={categoryId}
+              defaultValue={`Product Category: ${categoryName}`}
               placeholder="category name"
               className=" text-slate-700 bodrder rounded-xl py-5 font-bold input-bordered neutral input-xs w-full "
             />

@@ -2,14 +2,21 @@ import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
+import useToken from "../../../hooks/useToken/useToken";
 
 const SignUp = () => {
   const { signUp, googleSignIn, updateUserInfo } = useContext(AuthContext);
   const [signupError, setSignupError] = useState("");
   const [createdUserEmail, setCreatedUserEmail] = useState("");
+  const [token] = useToken(createdUserEmail);
   const googleProvider = new GoogleAuthProvider();
+  const navigate = useNavigate();
+  console.log(token);
+  if (token) {
+    navigate("/");
+  }
 
   const {
     register,
@@ -45,16 +52,13 @@ const SignUp = () => {
 
   const saveUser = (name, email, type) => {
     const user = { name, email, type };
-    fetch(
-      "https://b612-used-products-resale-server-side-raihan-778.vercel.app/users",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(user),
-      }
-    )
+    fetch("http://localhost:5000/users", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
       .then((res) => res.json())
       .then((data) => {
         setCreatedUserEmail(email);

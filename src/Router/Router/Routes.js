@@ -69,7 +69,7 @@ export const router = createBrowserRouter([
         ),
         loader: async ({ params }) => {
           return fetch(
-            `https://b612-used-products-resale-server-side-raihan-778.vercel.app/categories/${params.categoryName}`
+            `http://localhost:5000/categories/${params.categoryName}`
           );
         },
       },

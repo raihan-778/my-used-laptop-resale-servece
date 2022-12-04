@@ -2,32 +2,43 @@ import { useQuery } from "@tanstack/react-query";
 import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
+import LoadingSpinner from "../../../sharedPage/LoadingSpinner/LoadingSpinner";
 
 const BuyersProduct = () => {
   const { user } = useContext(AuthContext);
 
-  const url = `https://b612-used-products-resale-server-side-raihan-778.vercel.app/buyersproducts?email=${user?.email}`;
+  const url = `http://localhost:5000/buyersproducts?email=${user?.email}`;
 
-  const { data: myproducts = [], refetch } = useQuery({
+  const {
+    data: myproducts = [],
+    isLoading,
+    refetch,
+  } = useQuery({
     queryKey: ["buyersproducts", user?.email],
     queryFn: async () => {
-      const res = await fetch(url);
+      const res = await fetch(url, {
+        headers: {
+          authorization: `bearer ${localStorage.getItem("access_token")}`,
+        },
+      });
       const data = await res.json();
+      console.log(data);
       return data;
     },
   });
+
+  if (isLoading) {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
 
   const handleDelete = (id) => {
     const proceed = window.confirm(
       "Are you sure you want delete this booking?"
     );
     if (proceed) {
-      fetch(
-        `https://b612-used-products-resale-server-side-raihan-778.vercel.app/booking/${id}`,
-        {
-          method: "DELETE",
-        }
-      )
+      fetch(`http://localhost:5000/booking/${id}`, {
+        method: "DELETE",
+      })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -52,8 +63,8 @@ const BuyersProduct = () => {
             <th>Action Button</th>
           </tr>
         </thead>
-        {myproducts.map((product, i) => (
-          <tbody>
+        {myproducts?.map((product, i) => (
+          <tbody key={product._id}>
             <tr>
               <th>{i + 1}</th>
               <td>

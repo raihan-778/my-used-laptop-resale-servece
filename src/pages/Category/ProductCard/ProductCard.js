@@ -1,13 +1,14 @@
 import React, { useContext, useState } from "react";
 import { FcApprove } from "react-icons/fc";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
+import useAdmin from "../../../hooks/useAdmin";
 import useVerify from "../../../hooks/useVerify/useVerify";
 import LoadingSpinner from "../../../sharedPage/LoadingSpinner/LoadingSpinner";
 import BookingModal from "../../BookingModal/BookingModal";
 
 const ProductCard = ({ category }) => {
   const { user } = useContext(AuthContext);
-  const { product, setProduct } = useState(category);
+  const [isAdmin, isAdminLoading] = useAdmin(user?.email);
 
   const {
     categoryName,
@@ -26,9 +27,9 @@ const ProductCard = ({ category }) => {
   const [isVerified, isVerifyLoading] = useVerify(email);
   console.log(email);
 
-  // if (isVerifyLoading) {
-  //   return <LoadingSpinner></LoadingSpinner>;
-  // }
+  if (isAdminLoading) {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
 
   return (
     <div className="card my-5 card-compact w-96 mx-auto neutral shadow-xl">
@@ -56,14 +57,8 @@ const ProductCard = ({ category }) => {
           <p>Seller Name: {sellerName}</p>
         )}
         <div className="card-actions justify-end">
-          <BookingModal
-            setproduct={setProduct}
-            product={product}
-            key={category._id}
-            category={category}
-          ></BookingModal>
-
-          <label htmlFor="booking-modal" className="btn btn-primary">
+          <BookingModal key={category._id} category={category}></BookingModal>
+          <label htmlFor="booking-modal" className="btn btn-primary ">
             Book Now
           </label>
         </div>

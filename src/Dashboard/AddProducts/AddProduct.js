@@ -6,6 +6,7 @@ import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const AddProduct = () => {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const {
     register,
@@ -47,22 +48,19 @@ const AddProduct = () => {
 
           //save Products info
 
-          fetch(
-            "https://b612-used-products-resale-server-side-raihan-778.vercel.app/allproducts",
-            {
-              method: "POST",
-              headers: {
-                "content-type": "application/json",
-              },
-              body: JSON.stringify(products),
-            }
-          )
+          fetch("http://localhost:5000/allproducts", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(products),
+          })
             .then((res) => res.json())
             .then((result) => {
               console.log(result);
               toast.success(`${data.name} Added Successful`);
               if (result) {
-                <Navigate to="/"></Navigate>;
+                navigate("/dashboard/myproducts");
               }
             });
         }
