@@ -2,8 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
-import useToken from "../../hooks/useToken/useToken";
-import useVerify from "../../hooks/useVerify/useVerify";
 import LoadingSpinner from "../../sharedPage/LoadingSpinner/LoadingSpinner";
 
 import DeleteUserModal from "../DeleteuserModal/DeleteUserModal";
@@ -31,7 +29,7 @@ const AllSeller = () => {
         }),
   });
 
-  const cancelDeletSeller = () => {
+  const cancelDeleteSeller = () => {
     setDeleteSeller("");
   };
 
@@ -39,6 +37,9 @@ const AllSeller = () => {
     console.log(seller);
     fetch(`http://localhost:5000/users/${seller.email}`, {
       method: "DELETE",
+      headers: {
+        authorization: `bearer ${localStorage.getItem("access_token")}`,
+      },
     })
       .then((res) => res.json())
       .then((data) => {
@@ -129,7 +130,7 @@ const AllSeller = () => {
             title={"Do you want to remove this seller!"}
             message={`Once you have confirmed to remove seller <>${deletSeller.name}</>
              it cannot be undone.`}
-            cancelDeleteSeller={cancelDeletSeller}
+            cancelDeleteSeller={cancelDeleteSeller}
             successAction={handleDeleteseller}
             modalData={deletSeller}
           ></DeleteUserModal>

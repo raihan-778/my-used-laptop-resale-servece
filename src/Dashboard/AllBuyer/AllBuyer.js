@@ -36,6 +36,9 @@ const AllBuyer = () => {
     console.log(buyer);
     fetch(`http://localhost:5000/users/${buyer.email}`, {
       method: "DELETE",
+      headers: {
+        authorization: `bearer ${localStorage.getItem("access_token")}`,
+      },
     })
       .then((res) => res.json())
       .then((data) => {
