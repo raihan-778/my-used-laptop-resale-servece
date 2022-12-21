@@ -17,11 +17,14 @@ const AllSeller = () => {
   } = useQuery({
     queryKey: ["sellers"],
     queryFn: () =>
-      fetch("http://localhost:5000/sellers", {
-        headers: {
-          authorization: `bearer ${localStorage.getItem("access_token")}`,
-        },
-      })
+      fetch(
+        "https://b612-used-products-resale-server-side-raihan-778.vercel.app/sellers",
+        {
+          headers: {
+            authorization: `bearer ${localStorage.getItem("access_token")}`,
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -35,12 +38,15 @@ const AllSeller = () => {
 
   const handleDeleteseller = (seller) => {
     console.log(seller);
-    fetch(`http://localhost:5000/users/${seller.email}`, {
-      method: "DELETE",
-      headers: {
-        authorization: `bearer ${localStorage.getItem("access_token")}`,
-      },
-    })
+    fetch(
+      `https://b612-used-products-resale-server-side-raihan-778.vercel.app/users/${seller.email}`,
+      {
+        method: "DELETE",
+        headers: {
+          authorization: `bearer ${localStorage.getItem("access_token")}`,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -52,12 +58,15 @@ const AllSeller = () => {
   };
 
   const handleVerify = (email) => {
-    fetch(`http://localhost:5000/users/seller/${email}`, {
-      method: "PUT",
-      headers: {
-        authorization: `bearer, ${localStorage.getItem("access_token")}`,
-      },
-    })
+    fetch(
+      `https://b612-used-products-resale-server-side-raihan-778.vercel.app/users/seller/${email}`,
+      {
+        method: "PUT",
+        headers: {
+          authorization: `bearer, ${localStorage.getItem("access_token")}`,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {

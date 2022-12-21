@@ -8,7 +8,7 @@ import LoadingSpinner from "../../../sharedPage/LoadingSpinner/LoadingSpinner";
 const SellersProduct = () => {
   const { user } = useContext(AuthContext);
 
-  const url = `http://localhost:5000/sellersproducts?email=${user?.email}`;
+  const url = `https://b612-used-products-resale-server-side-raihan-778.vercel.app/sellersproducts?email=${user?.email}`;
 
   const {
     data: myproducts = [user?.email],
@@ -33,22 +33,23 @@ const SellersProduct = () => {
   }
 
   const handleAdvertise = (id) => {
-    useEffect(() => {
-      fetch(`http://localhost:5000/sellersproducts/${id}`, {
+    fetch(
+      `https://b612-used-products-resale-server-side-raihan-778.vercel.app/sellersproducts/${id}`,
+      {
         method: "PUT",
         headers: {
           authorization: `bearer ${localStorage.getItem("access_token")}`,
         },
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.modifiedCount > 0) {
-            console.log(data);
-            toast.success("advertised successfully");
-            refetch();
-          }
-        });
-    }, []);
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          console.log(data);
+          toast.success("advertised successfully");
+          refetch();
+        }
+      });
   };
 
   const handleDelete = (id) => {
@@ -56,9 +57,12 @@ const SellersProduct = () => {
       "Are you sure you want delete this booking?"
     );
     if (proceed) {
-      fetch(`http://localhost:5000/sellersporducts/${id}`, {
-        method: "DELETE",
-      })
+      fetch(
+        `https://b612-used-products-resale-server-side-raihan-778.vercel.app/sellersporducts/${id}`,
+        {
+          method: "DELETE",
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {

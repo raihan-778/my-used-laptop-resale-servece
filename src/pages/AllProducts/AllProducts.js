@@ -10,7 +10,9 @@ const AllProducts = () => {
   } = useQuery({
     queryKey: ["allproducts"],
     queryFn: () =>
-      fetch("http://localhost:5000/allproducts")
+      fetch(
+        "https://b612-used-products-resale-server-side-raihan-778.vercel.app/allproducts"
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);

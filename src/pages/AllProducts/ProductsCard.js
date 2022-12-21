@@ -14,9 +14,6 @@ const ProductsCard = ({ product }) => {
 
   return (
     <div className="card my-5 card-compact w-96 mx-auto neutral shadow-xl">
-      <h2 className="text-3xl font-semibold text-cyan-600">
-        Adversied Product
-      </h2>
       <figure>
         <img src={image} className="h-72 border rounded-xl p-3" alt="Shoes" />
       </figure>

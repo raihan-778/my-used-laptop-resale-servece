@@ -48,13 +48,16 @@ const AddProduct = () => {
 
           //save Products info
 
-          fetch("http://localhost:5000/allproducts", {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(products),
-          })
+          fetch(
+            "https://b612-used-products-resale-server-side-raihan-778.vercel.app/allproducts",
+            {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(products),
+            }
+          )
             .then((res) => res.json())
             .then((result) => {
               console.log(result);

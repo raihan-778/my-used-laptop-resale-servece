@@ -16,11 +16,14 @@ const AllBuyer = () => {
   } = useQuery({
     queryKey: ["buyres"],
     queryFn: () =>
-      fetch("http://localhost:5000/buyers", {
-        headers: {
-          authorization: `bearer ${localStorage.getItem("access_token")}`,
-        },
-      })
+      fetch(
+        "https://b612-used-products-resale-server-side-raihan-778.vercel.app/buyers",
+        {
+          headers: {
+            authorization: `bearer ${localStorage.getItem("access_token")}`,
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -34,12 +37,15 @@ const AllBuyer = () => {
 
   const handleDeleteBuyer = (buyer) => {
     console.log(buyer);
-    fetch(`http://localhost:5000/users/${buyer.email}`, {
-      method: "DELETE",
-      headers: {
-        authorization: `bearer ${localStorage.getItem("access_token")}`,
-      },
-    })
+    fetch(
+      `https://b612-used-products-resale-server-side-raihan-778.vercel.app/users/${buyer.email}`,
+      {
+        method: "DELETE",
+        headers: {
+          authorization: `bearer ${localStorage.getItem("access_token")}`,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -66,7 +72,7 @@ const AllBuyer = () => {
               <th>Delete User</th>
             </tr>
           </thead>
-          {buyerInfo.map((buyer, i) => (
+          {buyerInfo?.map((buyer, i) => (
             <tbody key={buyer._id}>
               <tr>
                 <th>{i + 1}</th>
