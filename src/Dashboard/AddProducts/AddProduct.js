@@ -76,7 +76,7 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="flex pt-20 h-auto justify-center w-96 items-center">
+    <div className="flex pt-20 h-auto justify-center w-full items-center">
       <div>
         <h2 className="text-xl  font-bold">Add Product</h2>
         <form onSubmit={handleSubmit(handleAddProduct)}>
