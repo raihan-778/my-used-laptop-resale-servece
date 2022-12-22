@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { Navigate, useNavigate } from "react-router-dom";
@@ -7,6 +8,7 @@ import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 const AddProduct = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [errorMsg, setErrorMsg] = useState("");
 
   const {
     register,
@@ -45,7 +47,6 @@ const AddProduct = () => {
             location: data.location,
             phone: data.phonenumber,
           };
-
           //save Products info
 
           fetch(
@@ -65,6 +66,10 @@ const AddProduct = () => {
               if (result) {
                 navigate("/dashboard/myproducts");
               }
+            })
+            .then((error) => {
+              console.log(error);
+              setErrorMsg(error);
             });
         }
       });
@@ -331,7 +336,9 @@ const AddProduct = () => {
               className="input input-bordered neutral  w-full max-w-xs"
             />
           </div>
-
+          <p className="text-orange-600" role="alert">
+            {errorMsg}
+          </p>
           <input
             className="btn mt-5 w-full max-w-xs btn-accent"
             value="Add Product"

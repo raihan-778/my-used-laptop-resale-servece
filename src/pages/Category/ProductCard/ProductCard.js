@@ -9,6 +9,7 @@ import BookingModal from "../../BookingModal/BookingModal";
 const ProductCard = ({ category }) => {
   const { user } = useContext(AuthContext);
   const [isAdmin, isAdminLoading] = useAdmin(user?.email);
+  const [booked, setBooked] = useState(null);
 
   const {
     categoryName,
@@ -57,8 +58,16 @@ const ProductCard = ({ category }) => {
           <p>Seller Name: {sellerName}</p>
         )}
         <div className="card-actions justify-end">
-          <BookingModal key={category._id} category={category}></BookingModal>
-          <label htmlFor="booking-modal" className="btn btn-primary ">
+          <BookingModal
+            setBooked={setBooked}
+            key={category._id}
+            category={category}
+          ></BookingModal>
+          <label
+            htmlFor="booking-modal"
+            onClick={() => setBooked(category)}
+            className="btn btn-primary "
+          >
             Book Now
           </label>
         </div>

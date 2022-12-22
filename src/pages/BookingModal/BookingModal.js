@@ -3,9 +3,9 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
-const BookingModal = ({ category }) => {
+const BookingModal = ({ category, setBooked }) => {
   const { user } = useContext(AuthContext);
-  // const [booked, setBooked] = useState(null);
+
   const navigate = useNavigate();
 
   const { categoryName, image, categoryId, price, productName } = category;
@@ -47,6 +47,7 @@ const BookingModal = ({ category }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        setBooked(null);
 
         if (data.acknowledged) {
           toast.success("booking confirmed");
