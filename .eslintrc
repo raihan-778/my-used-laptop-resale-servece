@@ -1,40 +1,40 @@
-{
-  "extends": [
-    "react-app",
-    "airbnb",
-    "plugin:jsx-a11y/recommended",
-    "prettier",
-    "plugin:react/jsx-runtime"
-  ],
-  "plugins": ["jsx-a11y", "prettier"],
-  "rules": {
-    "prettier/prettier": ["error"],
-    "semi": 0,
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "no-param-reassign": [
-      "error",
-      {
-        "props": true,
-        "ignorePropertyModificationsFor": ["state"]
-      }
-    ],
-    "react/jsx-props-no-spreading": 0,
-    "jsx-a11y/anchor-is-valid": [
-      "error",
-      {
-        "components": ["Link"],
-        "specialLink": ["hrefLeft", "hrefRight", "onClick"],
-        "aspects": ["noHref", "invalidHref", "preferButton"]
-      }
-    ],
-    "jsx-a11y/click-events-have-key-events": 0,
-    "jsx-a11y/no-static-element-interactions": 0,
-    "import/prefer-default-export": 0,
-    "react/prop-types": 0,
-    "jsx-a11y/label-has-associated-control": 0,
-    "react/function-component-definition": [
-      2,
-      { "namedComponents": "arrow-function" }
-    ]
-  }
-}
+// {
+//   "extends": [
+//     "react-app",
+//     "airbnb",
+//     "plugin:jsx-a11y/recommended",
+//     "prettier",
+//     "plugin:react/jsx-runtime"
+//   ],
+//   "plugins": ["jsx-a11y", "prettier"],
+//   "rules": {
+//     "prettier/prettier": ["error"],
+//     "semi": 0,
+//     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+//     "no-param-reassign": [
+//       "error",
+//       {
+//         "props": true,
+//         "ignorePropertyModificationsFor": ["state"]
+//       }
+//     ],
+//     "react/jsx-props-no-spreading": 0,
+//     "jsx-a11y/anchor-is-valid": [
+//       "error",
+//       {
+//         "components": ["Link"],
+//         "specialLink": ["hrefLeft", "hrefRight", "onClick"],
+//         "aspects": ["noHref", "invalidHref", "preferButton"]
+//       }
+//     ],
+//     "jsx-a11y/click-events-have-key-events": 0,
+//     "jsx-a11y/no-static-element-interactions": 0,
+//     "import/prefer-default-export": 0,
+//     "react/prop-types": 0,
+//     "jsx-a11y/label-has-associated-control": 0,
+//     "react/function-component-definition": [
+//       2,
+//       { "namedComponents": "arrow-function" }
+//     ]
+//   }
+// }

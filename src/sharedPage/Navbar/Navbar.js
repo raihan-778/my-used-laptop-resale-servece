@@ -16,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar neutral my-5  rounded-xl">
+    <div className="navbar neutral my-5 ">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -39,8 +39,12 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-compact neutral dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <Link to="/">Home</Link>
-            <Link to="/blog">Blog</Link>
+            <button className="btn-sm mx-2 rounded-lg btn-primary">
+              <Link to="/">Home</Link>
+            </button>
+            <button className="btn-sm mx-2 rounded-lg btn-primary">
+              <Link to="/blog">Blog</Link>
+            </button>
 
             {user?.email ? (
               <>
@@ -77,23 +81,36 @@ const Navbar = () => {
       <div className="navbar-center  hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
           <li>
-            <Link to="/">Home</Link>
+            <button className="btn-sm mx-2 rounded-lg btn-primary">
+              <Link to="/">Home</Link>
+            </button>
           </li>
+
           <li>
-            <Link to="/allproducts">All Products</Link>
+            <button className="btn-sm mx-2 rounded-lg btn-primary">
+              <Link to="/allproducts">All Products</Link>
+            </button>
           </li>
+
           <li>
-            <Link to="/blog">Blog</Link>
+            <button className="btn-sm mx-2 rounded-lg btn-primary">
+              <Link to="/blog">Blog</Link>
+            </button>
           </li>
+
           {user?.email ? (
             <li>
-              <Link to="/dashboard" className="justify-between">
-                Dashboard
-              </Link>
+              <button className="btn-sm mx-2 rounded-lg btn-primary">
+                <Link to="/dashboard" className="justify-between">
+                  Dashboard
+                </Link>
+              </button>
             </li>
           ) : (
             <li>
-              <Link to="/login">Login</Link>
+              <button className="btn-sm mx-2 rounded-lg btn-primary">
+                <Link to="/login">Login</Link>
+              </button>
             </li>
           )}
         </ul>

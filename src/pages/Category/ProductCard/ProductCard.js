@@ -35,7 +35,7 @@ const ProductCard = ({ category }) => {
   return (
     <div className="card my-5 card-compact w-96 mx-auto neutral shadow-xl">
       <figure>
-        <img src={image} className="h-72 border rounded-xl p-3" alt="Shoes" />
+        <img src={image} className="h-72  w-96 rounded-xl p-3" alt="Shoes" />
       </figure>
       <div className="card-body text-left">
         <h2 className="card-title">Product Name:{productName}</h2>

@@ -23,7 +23,7 @@ const AllProducts = () => {
   return (
     <div>
       <div>
-        <h2>product</h2>
+        <h2 className="text-3xl font-bold text-indigo-700">All Products</h2>
         <div className="grid grid-cols-1 gap-4 mx-auto md:grid-cols-2 lg:grid-cols-3">
           {productsInfo.map((product) => (
             <ProductsCard key={product._id} product={product}></ProductsCard>

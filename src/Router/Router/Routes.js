@@ -26,6 +26,7 @@ import SellerRoute from "../../PrivateRoute/SellerRoute/SellerRoute";
 import AllProducts from "../../pages/AllProducts/AllProducts";
 import MyProducts from "../../Dashboard/MyProducts/MyProducts";
 import AdvertisedProducts from "../../pages/Home/AdvertisedProducts/AdvertisedProducts";
+import Payment from "../../Dashboard/Payment/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -119,9 +120,9 @@ export const router = createBrowserRouter([
             <SellersProduct></SellersProduct>
           </SellerRoute>
         ),
-        loader: async ({ params }) => {
-          return fetch(``);
-        },
+        // loader: async ({ params }) => {
+        //   return fetch(``);
+        // },
       },
       {
         path: "/dashboard/reporteditem",
@@ -130,6 +131,15 @@ export const router = createBrowserRouter([
             <ReportedItem></ReportedItem>
           </AdminRoute>
         ),
+      },
+      {
+        path: "/dashboard/payment/:id",
+        loader: async ({ params }) => {
+          return fetch(
+            `https://b612-used-products-resale-server-side-raihan-778.vercel.app/booking/${params.id}`
+          );
+        },
+        element: <Payment></Payment>,
       },
     ],
   },

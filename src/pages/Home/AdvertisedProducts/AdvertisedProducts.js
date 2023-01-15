@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
+import { Slide } from "react-awesome-reveal";
 import LoadingSpinner from "../../../sharedPage/LoadingSpinner/LoadingSpinner";
 import AdvertisedProductCard from "./AdvertisedProductCard";
 
@@ -23,16 +24,24 @@ const AdvertisedProducts = () => {
     return <LoadingSpinner></LoadingSpinner>;
   }
   return (
-    <div className="grid grid-cols-1 gap-4 mx-auto md:grid-cols-2 lg:grid-cols-3">
-      {advertisedProducts && (
-        <>
-          {advertisedProducts.map((adversiedProduct) => (
-            <AdvertisedProductCard
-              adversiedProduct={adversiedProduct}
-            ></AdvertisedProductCard>
-          ))}
-        </>
-      )}
+    <div className="my-4 mx-auto">
+      <Slide>
+        {" "}
+        <h2 className="text-3xl font-bold text-blue-600">
+          Advertised Products
+        </h2>
+      </Slide>
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg: mx-auto lg:grid-cols-3">
+        {advertisedProducts && (
+          <>
+            {advertisedProducts.map((adversiedProduct) => (
+              <AdvertisedProductCard
+                adversiedProduct={adversiedProduct}
+              ></AdvertisedProductCard>
+            ))}
+          </>
+        )}
+      </div>
     </div>
   );
 };

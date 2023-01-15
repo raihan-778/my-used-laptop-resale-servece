@@ -1,9 +1,12 @@
 import React from "react";
+import { Slide } from "react-awesome-reveal";
 
 const Advertise = () => {
   return (
     <div>
-      <h2>This page for product advertisement</h2>
+      <Slide>
+        <h2>This page for product advertisement</h2>
+      </Slide>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext } from "react";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 import LoadingSpinner from "../../../sharedPage/LoadingSpinner/LoadingSpinner";
 
@@ -55,7 +56,7 @@ const BuyersProduct = () => {
   };
   return (
     <div className="overflow-x-auto">
-      <table className="table text-slate-700 w-full">
+      <table className="table bg-slate-800 text-slate-200 w-full">
         <thead>
           <tr>
             <th></th>
@@ -90,7 +91,9 @@ const BuyersProduct = () => {
                   >
                     Delete
                   </button>
-                  <button className="btn btn-sm btn-primary">Pay Now</button>
+                  <Link to={`/dashboard/payment/{product._id}`}>
+                    <button className="btn btn-sm btn-primary">Pay Now</button>
+                  </Link>
                 </div>
               </td>
             </tr>

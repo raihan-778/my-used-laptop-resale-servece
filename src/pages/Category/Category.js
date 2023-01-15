@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { Fade, Zoom } from "react-awesome-reveal";
 
 import { Link } from "react-router-dom";
 import LoadingSpinner from "../../sharedPage/LoadingSpinner/LoadingSpinner";
@@ -21,23 +22,38 @@ const Category = () => {
     return <LoadingSpinner></LoadingSpinner>;
   }
 
+  //lenovo logo:src="https://i.ibb.co/qjRnDhx/lenovo150.png"
+  //dell logo:src="https://i.ibb.co/1r0pXct/dell150.png"
+  //hp logo:src="https://i.ibb.co/9cTkZVw/1hp150.png"
+
   return (
     <div>
-      <ul className="menu menu-compact lg:menu-normal bg-base-100 w-56 p-2 rounded-box">
-        <span className="border rounded-xl py-2">
-          {" "}
-          <h2 className="text-xl font-semibold text-center  text-cyan-400">
-            All Products Categories
-          </h2>
-        </span>
-        {categories?.map((category) => (
-          <Link key={category._id} to={`/categories/${category.categoryName}`}>
-            <button className="btn btn-outline btn-accent my-3">
-              {category.categoryName}
-            </button>
-          </Link>
-        ))}
-      </ul>
+      <Fade>
+        <h2 className="text-3xl font-bold text-sky-600 mb-5">
+          Product Categories
+        </h2>
+      </Fade>
+      <Zoom duration={1500}>
+        <div className="grid grid-cols-3 gap-3 ">
+          {categories?.map((category) => (
+            <div className="p-3 flex-col w-1/2 mx-auto justify-center border-slate-100 border rounded-xl bg-slate-100 items-center">
+              <figure className="w-[150px] mx-auto justify-center items-center rounded-xl">
+                <img className="rounded-xl" src={category.img} alt="Shoes" />
+              </figure>
+              <div>
+                <Link
+                  key={category._id}
+                  to={`/categories/${category.categoryName}`}
+                >
+                  <button className="btn w-[150px] btn-outline btn-accent my-3">
+                    {category.categoryName}
+                  </button>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Zoom>
     </div>
   );
 };
