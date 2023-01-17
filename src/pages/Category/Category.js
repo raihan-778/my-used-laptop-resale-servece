@@ -34,7 +34,7 @@ const Category = () => {
         </h2>
       </Fade>
       <Zoom duration={1500}>
-        <div className="grid grid-cols-3 gap-3 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 ">
           {categories?.map((category) => (
             <div className="p-3 flex-col w-1/2 mx-auto justify-center border-slate-100 border rounded-xl bg-slate-100 items-center">
               <figure className="w-[150px] mx-auto justify-center items-center rounded-xl">

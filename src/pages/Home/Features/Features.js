@@ -11,7 +11,7 @@ import { FcApprove } from "react-icons/fc";
 
 const Features = () => {
   return (
-    <section className="m-4 md:m-8 neutral rounded-xl  dark:bg-gray-800 dark:text-gray-100">
+    <section className="mx-4 my-10 md:m-8 neutral rounded-xl  dark:bg-gray-800 dark:text-gray-100">
       <div className="container mx-auto p-4 my-6 space-y-2 text-center">
         <Rotate>
           <h2 className="text-5xl font-bold">Why Should You Chose Us?</h2>

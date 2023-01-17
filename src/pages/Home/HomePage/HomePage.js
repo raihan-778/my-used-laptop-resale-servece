@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import Category from "../../Category/Category";
 import AdvertisedProducts from "../AdvertisedProducts/AdvertisedProducts";
 import Banner from "../Banner/Banner";
+import MyTestimonial from "../../../sharedPage/Testimonial/MyTestimonial";
 const HomePage = () => {
   return (
     <div className="mx-5">
@@ -12,6 +13,7 @@ const HomePage = () => {
       <Features></Features>
       <Category></Category>
       <AdvertisedProducts></AdvertisedProducts>
+      <MyTestimonial></MyTestimonial>
     </div>
   );
 };

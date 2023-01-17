@@ -24,14 +24,14 @@ const AdvertisedProducts = () => {
     return <LoadingSpinner></LoadingSpinner>;
   }
   return (
-    <div className="my-4 mx-auto">
+    <div className="my-4">
       <Slide>
         {" "}
         <h2 className="text-3xl font-bold text-blue-600">
           Advertised Products
         </h2>
       </Slide>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg: mx-auto lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 mx-auto lg:grid-cols-3">
         {advertisedProducts && (
           <>
             {advertisedProducts.map((adversiedProduct) => (
