@@ -5,12 +5,14 @@ import Category from "../../Category/Category";
 import AdvertisedProducts from "../AdvertisedProducts/AdvertisedProducts";
 import Banner from "../Banner/Banner";
 import MyTestimonial from "../../../sharedPage/Testimonial/MyTestimonial";
+import FeaturedBrands from "../Featured Brands/FeaturedBrands";
 const HomePage = () => {
   return (
     <div className="mx-5">
       <Header></Header>
       <Banner></Banner>
       <Features></Features>
+      <FeaturedBrands></FeaturedBrands>
       <Category></Category>
       <AdvertisedProducts></AdvertisedProducts>
       <MyTestimonial></MyTestimonial>

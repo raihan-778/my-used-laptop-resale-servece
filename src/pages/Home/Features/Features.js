@@ -11,7 +11,7 @@ import { FcApprove } from "react-icons/fc";
 
 const Features = () => {
   return (
-    <section className="mx-auto h-96 my-10 neutral rounded-xl  dark:bg-gray-800 dark:text-gray-100">
+    <section className="mx-auto h-auto my-10 neutral rounded-xl  dark:bg-gray-800 dark:text-gray-100">
       <div className="container p-4 my-6 space-y-2 text-center">
         <Rotate>
           <h2 className="text-5xl text-center font-bold">
@@ -19,7 +19,7 @@ const Features = () => {
           </h2>
         </Rotate>
       </div>
-      <div className="container mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="container mx-auto grid justify-center gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         <JackInTheBox cascade damping={0.1}>
           <div className="flex flex-col items-center p-4">
             <FaOpencart className="text-3xl text-warning font-bold"></FaOpencart>
