@@ -13,11 +13,11 @@ const Footer = () => {
             backgroundPosition: "center",
             filter: "brightness(80%) saturate(140%)",
           }}
-          className=" text-slate-100 mx-5 rounded-xl"
+          className=" text-slate-100 rounded-xl"
         >
           <footer className="footer p-5 rounded-xl ">
             <div>
-              <span className="footer-title  text-[#FB2576] ">
+              <span className="footer-title text-3xl font-bold  text-[#FB2576] ">
                 Our Services
               </span>
               <Link to="/" className="link link-hover">
@@ -34,7 +34,9 @@ const Footer = () => {
               </Link>
             </div>
             <div>
-              <span className="footer-title text-[#FB2576]">Our Products</span>
+              <span className="footer-title text-3xl font-bold text-[#FB2576]">
+                Our Products
+              </span>
               <Link to="/" className="link link-hover">
                 Large Collection
               </Link>
@@ -46,7 +48,9 @@ const Footer = () => {
               </Link>
             </div>
             <div>
-              <span className="footer-title  text-[#FB2576]">Our Address</span>
+              <span className="footer-title text-3xl font-bold  text-[#FB2576]">
+                Our Address
+              </span>
               <Link to="/" className="link link-hover">
                 Citygate, Chittagong, Bangladesh.
               </Link>

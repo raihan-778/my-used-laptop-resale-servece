@@ -11,10 +11,12 @@ import { FcApprove } from "react-icons/fc";
 
 const Features = () => {
   return (
-    <section className="mx-4 my-10 md:m-8 neutral rounded-xl  dark:bg-gray-800 dark:text-gray-100">
-      <div className="container mx-auto p-4 my-6 space-y-2 text-center">
+    <section className="mx-auto h-96 my-10 neutral rounded-xl  dark:bg-gray-800 dark:text-gray-100">
+      <div className="container p-4 my-6 space-y-2 text-center">
         <Rotate>
-          <h2 className="text-5xl font-bold">Why Should You Chose Us?</h2>
+          <h2 className="text-5xl text-center font-bold">
+            Why Should You Chose Us?
+          </h2>
         </Rotate>
       </div>
       <div className="container mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3">

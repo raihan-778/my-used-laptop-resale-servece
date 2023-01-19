@@ -29,6 +29,29 @@ const Banner = () => {
     <img src={product.img}></img>;
   });
 
+  // const images=[
+  //   {
+  //     img:"https://i.ibb.co/yf0HvKC/banner1.jpg",
+  //     id:1
+  //   },
+  //   {
+  //     img:"https://i.ibb.co/jh8RnT8/banner3.jpg",
+  //     id:2
+  //   },
+  //   {
+  //     img:"https://i.ibb.co/GQnYX7P/banner2.jpg",
+  //     id:3
+  //   },
+  //   {
+  //     img:"https://i.ibb.co/HrvY06Z/banner4.jpg",
+  //     id:4
+  //   },
+  //   {
+  //     img:"https://i.ibb.co/dB6V3PZ/banner5.jpg",
+  //     id:5
+  //   },
+  // ]
+
   let slides = [
     <img
       className="borde rounded-xl"
@@ -58,7 +81,7 @@ const Banner = () => {
   ];
 
   return (
-    <div>
+    <div className="neutral rounded-xl p-10">
       <Slide>
         <h2 className="text-3xl my-10 font-extrabold text-blue-600">
           Upcoming Porducts & Services

@@ -27,7 +27,7 @@ const Category = () => {
   //hp logo:src="https://i.ibb.co/9cTkZVw/1hp150.png"
 
   return (
-    <div>
+    <div className="neutral rounded-xl py-5 h-96  mx-auto">
       <Fade>
         <h2 className="text-3xl font-bold text-sky-600 mb-5">
           Product Categories
