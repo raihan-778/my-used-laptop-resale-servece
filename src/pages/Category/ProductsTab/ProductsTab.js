@@ -96,7 +96,7 @@ const ProductsTab = () => {
             <h2>Any content 2</h2>
           </TabPanel>
           <TabPanel className="bg-blue-600 rounded-xl">
-            <Carousel cols={3} rows={1} gap={20} loop>
+            <Carousel cols={3} rows={1} gap={10} loop>
               <Carousel.Item>
                 <div className="card p-5 card-p-5 compact w-60 bg-cyan-50 text-blue-700 shadow-xl">
                   <figure className="h-[250px]">

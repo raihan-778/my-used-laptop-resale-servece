@@ -24,10 +24,10 @@ const Banner = () => {
   const callback = function (index) {
     console.log("callback", index);
   };
-  productsInfo.map((product) => {
-    console.log(product.image);
-    <img src={product.img}></img>;
-  });
+  // productsInfo.map((product) => {
+  //   console.log(product.image);
+  //   <img src={product.img}></img>;
+  // });
 
   // const images=[
   //   {

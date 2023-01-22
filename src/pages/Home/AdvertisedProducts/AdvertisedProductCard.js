@@ -22,7 +22,7 @@ const AdvertisedProductCard = ({ advertisedProduct }) => {
     <>
       <Zoom>
         <div>
-          <div className="card my-5 mx-auto card-compact w-96 neutral shadow-xl">
+          <div className="card  my-5 mx-auto card-compact w-96 neutral shadow-xl">
             <figure>
               <img
                 src={image}

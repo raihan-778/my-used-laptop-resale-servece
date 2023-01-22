@@ -29,8 +29,8 @@ const Header = () => {
               <div className="flex flex-col lg:flex-row items-center justify-between">
                 <div className="space-x-2 px-5 text-center py-2 lg:py-0">
                   <div className="mb-3">
-                    <span>On first deal!</span>
-                    <span className="font-bold text-violet-700 text-lg">
+                    <span>On first deal! </span>
+                    <span className="font-bold text-sky-400 text-lg">
                       with ReliableTech
                     </span>
                   </div>
@@ -90,7 +90,7 @@ const Header = () => {
           <div className="card-actions mx-auto ">
             <Link to="/categories">
               <Zoom>
-                <button className="btn justify-center btn-primary ">
+                <button className=" justify-center btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-blue-500 hover:to-yellow-800 font-bold  transition ease-in-out delay-100 hover:scale-105 text-white duration-200">
                   Visit Shop
                 </button>
               </Zoom>
