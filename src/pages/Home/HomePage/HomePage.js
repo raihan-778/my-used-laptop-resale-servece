@@ -8,7 +8,7 @@ import MyTestimonial from "../../../sharedPage/Testimonial/MyTestimonial";
 import FeaturedBrands from "../Featured Brands/FeaturedBrands";
 const HomePage = () => {
   return (
-    <div className="mx-5">
+    <div className="mx-5 pt-24">
       <Header></Header>
       <Banner></Banner>
       <Features></Features>

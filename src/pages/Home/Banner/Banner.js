@@ -53,7 +53,7 @@ const Banner = () => {
   // ]
 
   let slides = [
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card h-[400px] w-96 bg-base-100 shadow-xl">
       <figure>
         {" "}
         <img
@@ -71,7 +71,7 @@ const Banner = () => {
         <p>All popular Brands watch will be availabe soon!</p>
       </div>
     </div>,
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card h-[400px] w-96 bg-base-100 shadow-xl">
       <figure>
         {" "}
         <img
@@ -88,7 +88,7 @@ const Banner = () => {
         <p>Will get your best router soon!</p>
       </div>
     </div>,
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card h-[400px] w-96 bg-base-100 shadow-xl">
       <figure>
         {" "}
         <img
@@ -105,7 +105,7 @@ const Banner = () => {
         <p>Arivel soon!</p>
       </div>
     </div>,
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card h-[400px] w-96 bg-base-100 shadow-xl">
       <figure>
         {" "}
         <img
@@ -122,7 +122,7 @@ const Banner = () => {
         <p>Best Quality gamming console!</p>
       </div>
     </div>,
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card h-[400px] w-96 bg-base-100 shadow-xl">
       <figure>
         {" "}
         <img

@@ -23,8 +23,12 @@ const FeaturedBrands = () => {
     },
   };
   return (
-    <div>
+    <div className=" p-5 rounded-xl mb-10 neutral">
+      <h2 className=" mb-5 text-3xl font-bold text-blue-600">
+        Our Populer Brands
+      </h2>
       <Carousel
+        className="mb-5"
         responsive={responsive}
         swipeable={false}
         draggable={false}
@@ -32,9 +36,9 @@ const FeaturedBrands = () => {
         ssr={true} // means to render carousel on server-side.
         infinite={true}
         autoPlay={true}
-        autoPlaySpeed={1000}
+        autoPlaySpeed={1500}
         keyBoardControl={true}
-        customTransition="all .5"
+        customTransition="all 1"
         transitionDuration={500}
         containerClass="carousel-container"
         removeArrowOnDeviceType={["tablet", "mobile"]}
@@ -42,12 +46,86 @@ const FeaturedBrands = () => {
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
       >
-        <div>
-          <img src="" alt="" />
+        <div className="avatar">
+          <div className="w-72 h-48 rounded-xl">
+            <img
+              className="w-1/2"
+              src="https://i.ibb.co/qrVgvwh/mi-logo.png"
+              border="0"
+            />
+          </div>
         </div>
-        <div>Item 2</div>
-        <div>Item 3</div>
-        <div>Item 4</div>
+        <div className="avatar">
+          <div className="w-72 h-48 rounded-xl">
+            <img
+              className="w-1/2"
+              src="https://i.ibb.co/QdPSNNM/Huawei-logo.jpg"
+              alt="Huawei-logo"
+              border="0"
+            />
+          </div>
+        </div>
+        <div className="avatar">
+          <div className="w-72 h-48 rounded-xl">
+            {" "}
+            <img
+              className="w-1/2"
+              src="https://i.ibb.co/xmDNKBZ/samsung.png"
+              alt="samsung"
+              border="0"
+            />
+          </div>
+        </div>
+        <div className="avatar">
+          <div className="w-72 h-48 rounded-xl">
+            <img
+              className="w-1/2"
+              src="https://i.ibb.co/bKrdGjP/vivo-mobile-brand-logo.png"
+              alt="vivo-mobile-brand-logo"
+              border="0"
+            />
+          </div>
+        </div>
+        <div className="avatar">
+          <div className="w-72 h-48 rounded-xl">
+            <img
+              className="w-1/2"
+              src="https://i.ibb.co/1r0pXct/dell150.png"
+              alt="dell150"
+              border="0"
+            />
+          </div>
+        </div>
+        <div className="avatar">
+          <div className="w-72 h-48 rounded-xl">
+            <img
+              className="w-1/2"
+              src="https://i.ibb.co/qjRnDhx/lenovo150.png"
+              alt="dell150"
+              border="0"
+            />
+          </div>
+        </div>
+        <div className="avatar">
+          <div className="w-72 h-48 rounded-xl">
+            <img
+              className="w-1/2 bg-white"
+              src="https://i.ibb.co/9cTkZVw/1hp150.png"
+              alt="dell150"
+              border="0"
+            />
+          </div>
+        </div>
+        <div className="avatar">
+          <div className="w-72 h-48 rounded-xl">
+            <img
+              className="w-1/2"
+              src="https://i.ibb.co/D4bDvg0/camera-logo.png"
+              alt="dell150"
+              border="0"
+            />
+          </div>
+        </div>
       </Carousel>
     </div>
   );

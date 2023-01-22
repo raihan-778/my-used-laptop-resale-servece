@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { Slide } from "react-awesome-reveal";
+
 import LoadingSpinner from "../../../sharedPage/LoadingSpinner/LoadingSpinner";
 import AdvertisedProductCard from "./AdvertisedProductCard";
 
@@ -34,9 +35,9 @@ const AdvertisedProducts = () => {
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 mx-auto lg:grid-cols-3">
         {advertisedProducts && (
           <>
-            {advertisedProducts.map((adversiedProduct) => (
+            {advertisedProducts.map((advertisedProduct) => (
               <AdvertisedProductCard
-                adversiedProduct={adversiedProduct}
+                advertisedProduct={advertisedProduct}
               ></AdvertisedProductCard>
             ))}
           </>

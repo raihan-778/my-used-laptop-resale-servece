@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { Fade, Zoom } from "react-awesome-reveal";
+import { Fade, Slide, Zoom } from "react-awesome-reveal";
 
 import { Link } from "react-router-dom";
 import LoadingSpinner from "../../sharedPage/LoadingSpinner/LoadingSpinner";
@@ -26,11 +26,11 @@ const Category = () => {
   return (
     <div className="grid neutral grid-cols-1 rounded-xl lg:grid-cols-4 md:grid-cols-3 ">
       <div className=" rounded-xl py-3 h-96  mx-auto">
-        <Fade>
+        <Slide direction="left">
           <h2 className="text-2xl my-5 font-bold text-sky-600">
             Product Categories
           </h2>
-        </Fade>
+        </Slide>
         <Zoom duration={1500}>
           <div className="grid grid-cols-1 my-10 gap-3 ">
             {categories?.map((category) => (
@@ -53,6 +53,7 @@ const Category = () => {
           </div>
         </Zoom>
       </div>
+
       <div className="lg:col-span-3 px-5 md:col-span-2">
         {" "}
         <ProductsTab></ProductsTab>

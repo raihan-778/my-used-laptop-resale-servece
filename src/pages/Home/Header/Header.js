@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <>
       <div>
-        <div className="p-6 py-12 bg-cyan-100 rounded-xl dark:text-gray-900">
+        <div className="p-6 py-12 neutral rounded-xl dark:text-gray-900">
           <div className="container grid grid-cols-2 gap-4 mx-auto">
             <Slide direction="left">
               <div className="w-full rounded-xl">
@@ -49,17 +49,17 @@ const Header = () => {
         </figure>
         <div className="card-body my-auto">
           <div>
-            <div className="grid grid-cols-1 gap-4">
-              <div className="w-96 grid grid-cols-2 gap-5 mx-auto">
+            <div className="grid grid-cols-1 gap-12">
+              <div className="w-1/2 grid grid-cols-2 gap-5 mx-auto">
                 {" "}
                 <img
-                  className="w-full"
+                  className="w-full "
                   src="https://i.ibb.co/wYvqNnj/smartwatch.webp"
                   alt="smartwatch"
                   border="0"
                 />
                 <img
-                  className="w-full"
+                  className="w-full "
                   src="https://i.ibb.co/vQVH9hx/soundsystem.webp"
                   alt="soundsystem"
                   border="0"

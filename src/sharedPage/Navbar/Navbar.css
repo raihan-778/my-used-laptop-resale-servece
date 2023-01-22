@@ -2,5 +2,11 @@
   background-color: #001253;
   color: #fbfacd;
 }
-.text-start {
+.fixed {
+  background-color: #f0f0f0;
+  transition: 3s all ease-in-out;
+}
+
+.fixed button {
+  background-color: green;
 }

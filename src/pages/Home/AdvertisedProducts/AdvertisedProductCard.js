@@ -1,8 +1,9 @@
 import React from "react";
 import { Zoom } from "react-awesome-reveal";
+
 import { Link } from "react-router-dom";
 
-const AdvertisedProductCard = ({ adversiedProduct }) => {
+const AdvertisedProductCard = ({ advertisedProduct }) => {
   const {
     categoryName,
     image,
@@ -14,8 +15,8 @@ const AdvertisedProductCard = ({ adversiedProduct }) => {
     sellerName,
     location,
     productName,
-  } = adversiedProduct;
-  console.log(adversiedProduct);
+  } = advertisedProduct;
+  console.log(advertisedProduct);
 
   return (
     <>

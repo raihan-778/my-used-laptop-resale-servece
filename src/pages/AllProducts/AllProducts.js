@@ -23,7 +23,7 @@ const AllProducts = () => {
 
   return (
     <div>
-      <div>
+      <div className="bg-cyan-100">
         <Slide>
           <h2 className="text-3xl font-bold text-indigo-700">All Products</h2>
         </Slide>
