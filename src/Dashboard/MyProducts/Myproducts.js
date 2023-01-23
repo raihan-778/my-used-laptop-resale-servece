@@ -1,6 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import useSeller from "../../hooks/useSeller";
 import BuyersProduct from "./BuyersProduct/BuyersProduct";

@@ -14,7 +14,7 @@ const Features = () => {
     <section className="mx-auto h-auto my-10 neutral rounded-xl  dark:bg-gray-800 dark:text-gray-100">
       <div className="container p-4 my-6 space-y-2 text-center">
         <Rotate>
-          <h2 className="text-5xl text-center font-bold">
+          <h2 className="text-3xl text-center font-bold">
             Why Should You Chose Us?
           </h2>
         </Rotate>

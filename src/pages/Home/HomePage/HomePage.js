@@ -10,7 +10,9 @@ const HomePage = () => {
   return (
     <div className="mx-5 pt-24">
       <Header></Header>
-      <Banner></Banner>
+      <div className="hidden lg:block md:block">
+        <Banner></Banner>
+      </div>
       <Features></Features>
       <FeaturedBrands></FeaturedBrands>
       <Category></Category>
