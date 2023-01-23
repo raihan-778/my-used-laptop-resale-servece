@@ -27,7 +27,7 @@ const Category = () => {
     <div className="grid neutral grid-cols-1 rounded-xl lg:grid-cols-4 md:grid-cols-3 ">
       <div className=" rounded-xl py-3 h-96  mx-auto">
         <Slide direction="left">
-          <h2 className="text-2xl my-5 font-bold text-sky-600">
+          <h2 className="text-3xl my-5 font-bold text-sky-600">
             Product Categories
           </h2>
         </Slide>

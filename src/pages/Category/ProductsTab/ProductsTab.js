@@ -8,7 +8,7 @@ const ProductsTab = () => {
   return (
     <div className="py-3">
       <Slide direction="right">
-        <h2 className="my-5 text-2xl font-bold text-sky-400">
+        <h2 className="my-5 text-3xl font-bold text-sky-400">
           Newly Added Products
         </h2>
       </Slide>

@@ -22,7 +22,7 @@ const AdvertisedProductCard = ({ advertisedProduct }) => {
     <>
       <Zoom>
         <div>
-          <div className="card  my-5 mx-auto card-compact w-96 neutral shadow-xl">
+          <div className="card  my-5 mx-auto card-compact w-88 neutral shadow-xl">
             <figure>
               <img
                 src={image}
@@ -49,7 +49,10 @@ const AdvertisedProductCard = ({ advertisedProduct }) => {
               <p>Seller Name: {sellerName}</p>
               <div className="card-actions justify-end">
                 <Link to="categories">
-                  <label htmlFor="booking-modal" className="btn btn-primary">
+                  <label
+                    htmlFor="booking-modal"
+                    className="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-blue-500 hover:to-yellow-800 font-bold  transition ease-in-out delay-100 hover:scale-105 text-white duration-200"
+                  >
                     Want to Buy
                   </label>
                 </Link>

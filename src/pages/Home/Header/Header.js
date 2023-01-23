@@ -13,7 +13,7 @@ const Header = () => {
     <>
       <div>
         <div className="p-6 py-12 neutral rounded-xl dark:text-gray-900">
-          <div className="container grid grid-cols-2 gap-4 mx-auto">
+          <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  gap-4 mx-auto">
             <Slide direction="left">
               <div className="w-full rounded-xl">
                 <img
@@ -77,7 +77,7 @@ const Header = () => {
             </div>
           </div>
           <JackInTheBox>
-            <h1 className="mb-5 text-5xl text-slate-100 font-bold">
+            <h1 className="mb-5 text-3xl text-slate-100 font-bold">
               Welcome to your trusted Re-sele Shop
             </h1>
           </JackInTheBox>

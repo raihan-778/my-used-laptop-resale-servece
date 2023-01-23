@@ -30,7 +30,7 @@ const AdvertisedProducts = () => {
         {" "}
         <h2 className="text-3xl font-bold text-sky-400">Advertised Products</h2>
       </Slide>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 mx-auto lg:grid-cols-3">
+      <div className="grid grid-cols-1 mx-auto gap-4 md:grid-cols-2 md:mx-auto lg:mx-auto lg:grid-cols-3 ">
         {advertisedProducts && (
           <>
             {advertisedProducts.map((advertisedProduct) => (

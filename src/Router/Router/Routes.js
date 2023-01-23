@@ -24,10 +24,9 @@ import BuyersProduct from "../../Dashboard/MyProducts/BuyersProduct/BuyersProduc
 import SellersProduct from "../../Dashboard/MyProducts/SellersProduct/SellersProduct";
 import SellerRoute from "../../PrivateRoute/SellerRoute/SellerRoute";
 import AllProducts from "../../pages/AllProducts/AllProducts";
-import MyProducts from "../../Dashboard/MyProducts/MyProducts";
 import AdvertisedProducts from "../../pages/Home/AdvertisedProducts/AdvertisedProducts";
 import Payment from "../../Dashboard/Payment/Payment";
-
+import MyProducts from "../../Dashboard/MyProducts/MyProducts";
 export const router = createBrowserRouter([
   {
     path: "/",
