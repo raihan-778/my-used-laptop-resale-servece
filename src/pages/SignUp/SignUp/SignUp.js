@@ -75,7 +75,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex  h-[800px] justify-center  items-center">
+    <div className="flex bg-[#0A2647] mx-auto my-5 h-[800px] justify-center  items-center">
       <div>
         <h2 className="text-xl  font-bold">Sign Up</h2>
         <form onSubmit={handleSubmit(handleSignUp)}>

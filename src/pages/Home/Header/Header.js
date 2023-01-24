@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <>
       <div>
-        <div className="p-6 py-12 neutral rounded-xl dark:text-gray-900">
+        <div className="p-6 py-12 bg-[rgb(250,250,250)]  rounded-xl shadow-xl text-gray-900">
           <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  gap-4 mx-auto">
             <Slide direction="left">
               <div className="w-full rounded-xl">

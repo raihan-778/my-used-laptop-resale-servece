@@ -46,10 +46,10 @@ const Navbar = () => {
                   tabIndex={0}
                   className="menu menu-compact neutral dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
                 >
-                  <button className="btn-sm mx-2 rounded-lg btn-primary">
+                  <button className="btn-sm my-2 rounded-lg btn-primary">
                     <Link to="/">Home</Link>
                   </button>
-                  <button className="btn-sm mx-2 rounded-lg btn-primary">
+                  <button className="btn-sm my-2 rounded-lg btn-primary">
                     <Link to="/blog">Blog</Link>
                   </button>
 
@@ -57,7 +57,7 @@ const Navbar = () => {
                     <>
                       <label
                         htmlFor="dashboard-drawer"
-                        className="btn btn-primary drawer-button"
+                        className="btn btn-primary my-2 drawer-button"
                       >
                         Open drawer
                       </label>
