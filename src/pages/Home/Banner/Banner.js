@@ -26,11 +26,11 @@ const Banner = () => {
   };
 
   let slides = [
-    <div className="card hidden lg:block md:block w-96 bg-blue-600 shadow-xl">
+    <div className="card hidden lg:block md:block w-96 neutral shadow-xl">
       <figure>
         {" "}
         <img
-          className="borde  rounded-xl h-52"
+          className="borde  rounded-xl h-52 w-full"
           src="https://i.ibb.co/yf0HvKC/banner1.jpg"
           alt="1"
         />
@@ -44,11 +44,11 @@ const Banner = () => {
         <p>All popular Brands watch availabe soon!</p>
       </div>
     </div>,
-    <div className="card 30  w-96 bg-blue-600 shadow-xl">
+    <div className="card 30  w-96 neutral shadow-xl">
       <figure>
         {" "}
         <img
-          className="borde  rounded-xl h-52"
+          className="borde  rounded-xl h-52 w-full"
           src="https://i.ibb.co/GQnYX7P/banner2.jpg"
           alt="2"
         />
@@ -61,11 +61,11 @@ const Banner = () => {
         <p>Will get your best router soon!</p>
       </div>
     </div>,
-    <div className="card 30 w-96 bg-blue-600 shadow-xl">
+    <div className="card 30 w-96 neutral shadow-xl">
       <figure>
         {" "}
         <img
-          className="borde  rounded-xl h-52"
+          className="borde  rounded-xl h-52 w-full"
           src="https://i.ibb.co/jh8RnT8/banner3.jpg"
           alt="3"
         />
@@ -78,11 +78,11 @@ const Banner = () => {
         <p>Arivel soon!</p>
       </div>
     </div>,
-    <div className="card 30 w-96 bg-blue-600 shadow-xl">
+    <div className="card 30 w-96 neutral shadow-xl">
       <figure>
         {" "}
         <img
-          className="borde  rounded-xl h-52"
+          className="borde  rounded-xl h-52 w-full"
           src="https://i.ibb.co/HrvY06Z/banner4.jpg"
           alt="4"
         />
@@ -95,11 +95,11 @@ const Banner = () => {
         <p>Best Quality gamming console!</p>
       </div>
     </div>,
-    <div className="card 30sm:hodden w-96 bg-blue-600 shadow-xl">
+    <div className="card 30sm:hodden w-96 neutral shadow-xl">
       <figure>
         {" "}
         <img
-          className="borde  rounded-xl h-52"
+          className="borde  rounded-xl h-52 w-full"
           src="https://i.ibb.co/dB6V3PZ/banner5.jpg"
           alt="5"
         />
@@ -115,7 +115,7 @@ const Banner = () => {
   ];
 
   return (
-    <div className="bg-[#BFEAF5] rounded-xl p-10">
+    <div className="bg-[rgb(250,250,250)]  rounded-xl p-10">
       <Slide>
         <h2 className="text-3xl my-10 font-extrabold text-blue-600">
           Upcoming Porducts & Services

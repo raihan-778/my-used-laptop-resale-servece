@@ -22,7 +22,7 @@ const AdvertisedProductCard = ({ advertisedProduct }) => {
     <>
       <Zoom>
         <div>
-          <div className="card w-3/4 transition hover:skew-y-2  hover:all ease-in-out  my-5 mx-auto card-compact neutral shadow-xl">
+          <div className="card w-3/4 transition hover:-translate-y-3  hover:all ease-in-out  my-5 mx-auto card-compact neutral shadow-xl">
             <figure>
               <img
                 src={image}

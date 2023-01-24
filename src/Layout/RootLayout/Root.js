@@ -8,7 +8,7 @@ import "./Root.css";
 const Root = () => {
   return (
     <div>
-      <nav className="fixed top-[-20px] left-0 right-0 z-50">
+      <nav className="fixed top-0 left-0 right-0 z-50">
         <Navbar></Navbar>
       </nav>
       <Outlet></Outlet>

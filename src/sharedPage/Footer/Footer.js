@@ -1,23 +1,16 @@
 import React from "react";
 import { Zoom } from "react-awesome-reveal";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <>
       <Zoom duration={1500}>
-        <section
-          style={{
-            background: `url(https://i.ibb.co/THGkmFP/footer.jpg)`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "brightness(80%) saturate(140%)",
-          }}
-          className=" text-slate-100 rounded-xl"
-        >
+        <section className=" text-slate-100 bg-[#0A2647] rounded-xl">
           <footer className="footer p-5 rounded-xl ">
             <div>
-              <span className="footer-title text-3xl font-bold  text-[#FB2576] ">
+              <span className="footer-title text-2xl font-bold  text-[#FAAB78] ">
                 Our Services
               </span>
               <Link to="/" className="link link-hover">
@@ -34,21 +27,40 @@ const Footer = () => {
               </Link>
             </div>
             <div>
-              <span className="footer-title text-3xl font-bold text-[#FB2576]">
-                Our Products
+              <span className="footer-title text-2xl font-bold text-[#FAAB78]">
+                About ReliableTech
               </span>
               <Link to="/" className="link link-hover">
-                Large Collection
+                Company Info
               </Link>
               <Link to="/" className="link link-hover">
-                Populer Brand with high configeration
+                Investors
               </Link>
               <Link to="/" className="link link-hover">
-                Used but defect free Product
+                Career
               </Link>
             </div>
             <div>
-              <span className="footer-title text-3xl font-bold  text-[#FB2576]">
+              <span className="footer-title text-2xl font-bold  text-[#eb9860]">
+                Stay Connected
+              </span>
+              <div className="grid grid-cols-4 mx-auto gap-2">
+                <Link to="/" className="link link-hover">
+                  <FaFacebook className="text-2xl text-[#00FFF6]  transition hover:scale-110  hover:all ease-in-out   "></FaFacebook>
+                </Link>
+                <Link to="/" className="link link-hover">
+                  <FaLinkedin className="text-2xl text-[#00FFF6] rounded-xl transition hover:scale-110  hover:all ease-in-out "></FaLinkedin>
+                </Link>
+                <Link to="/" className="link link-hover">
+                  <FaTwitter className="text-2xl text-[#00FFF6] rounded-xl transition hover:scale-110  hover:all ease-in-out  "></FaTwitter>
+                </Link>
+                <Link to="/" className="link link-hover">
+                  <FaInstagram className="text-2xl text-red-500 transition hover:scale-110  hover:all ease-in-out "></FaInstagram>
+                </Link>
+              </div>
+            </div>
+            <div>
+              <span className="footer-title text-2xl font-bold  text-[#FAAB78]">
                 Our Address
               </span>
               <Link to="/" className="link link-hover">

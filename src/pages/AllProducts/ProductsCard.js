@@ -15,41 +15,39 @@ const ProductsCard = ({ product }) => {
 
   return (
     <>
-      <Slide direction="right">
-        <div className="card my-5 card-compact w-88 mx-auto neutral shadow-xl">
-          <figure className="rounded-xl p-3">
-            <img
-              src={image}
-              className="h-72 w-96 border-neutral rounded-lg p-3"
-              alt="Shoes"
-            />
-          </figure>
-          <div className="card-body text-left">
-            <h2 className="card-title">Product Name:{productName}</h2>
-            <h6 className="text-xl font-semibold text-teal-600">
-              {categoryName}
-            </h6>
-            <p>Product Condition: {condition}</p>
+      <div className="card w-3/4 transition hover:-translate-y-3  hover:all ease-in-out  my-5 mx-auto card-compact neutral shadow-xl">
+        <figure className="rounded-xl mt-3 p-3">
+          <img
+            src={image}
+            className="h-[200px] w-full rounded-xl p-3"
+            alt="laptop"
+          />
+        </figure>
+        <div className="card-body text-left">
+          <h2 className="card-title">Product Name:{productName}</h2>
+          <h6 className="text-xl font-semibold text-teal-600">
+            {categoryName}
+          </h6>
+          <p>Product Condition: {condition}</p>
 
-            <p>Used Duration: {useDuration}</p>
-            <p className="badge badge-secondary">
-              Original Price: {originalPrice}
-            </p>
-            <p className="badge badge-accent badge-outline">
-              ReSale Price: {price}
-            </p>
+          <p>Used Duration: {useDuration}</p>
+          <p className="badge badge-secondary">
+            Original Price: {originalPrice}
+          </p>
+          <p className="badge badge-accent badge-outline">
+            ReSale Price: {price}
+          </p>
 
-            <div className="card-actions justify-end">
-              <Link to="/categories">
-                {" "}
-                <label htmlFor="booking-modal" className="btn btn-primary">
-                  Book Now
-                </label>
-              </Link>
-            </div>
+          <div className="card-actions justify-end">
+            <Link to="/categories">
+              {" "}
+              <label htmlFor="booking-modal" className="btn btn-primary">
+                Book Now
+              </label>
+            </Link>
           </div>
         </div>
-      </Slide>
+      </div>
     </>
   );
 };
