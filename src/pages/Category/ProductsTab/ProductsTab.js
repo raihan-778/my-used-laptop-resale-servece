@@ -39,13 +39,13 @@ const ProductsTab = () => {
             <Tab>VR Box</Tab>
             <Tab>Smart Watch</Tab>
           </TabList>
-          <TabPanel className="neutral rounded-xl">
+          <TabPanel className=" shadow-xl rounded-xl">
             <Carousel cols={3} rows={1} gap={20} loop>
               <Carousel.Item>
                 <div className="card p-5 card-p-5 compact w-60 bg-cyan-50 text-blue-700 shadow-xl">
                   <figure className="h-[250px]">
                     <img
-                      className="w-3/4 rounded-xl bg-cyan-700 p-5"
+                      className="w-3/4 transition hover:scale-110 hover:all ease-in-out rounded-xl bg-cyan-700 p-5"
                       src="https://i.ibb.co/wgPkWkG/samsung-zfould.png"
                       alt="phone"
                     />
@@ -63,7 +63,7 @@ const ProductsTab = () => {
                 <div className="card p-5 card-p-5 compact w-60 bg-cyan-50 text-blue-700 shadow-xl">
                   <figure className="h-[250px]">
                     <img
-                      className="w-3/4 rounded-xl bg-cyan-700 p-5"
+                      className="w-3/4 transition hover:scale-110 hover:all ease-in-out rounded-xl bg-cyan-700 p-5"
                       src="https://i.ibb.co/YWVzjkx/samsungwebp.webp"
                       alt="phone"
                     />
@@ -80,7 +80,7 @@ const ProductsTab = () => {
                 <div className="card p-5 card-p-5 compact w-60 bg-cyan-50 text-blue-700 shadow-xl">
                   <figure className="h-[250px]">
                     <img
-                      className="w-3/4 rounded-xl bg-cyan-700 p-5"
+                      className="w-3/4 transition hover:scale-110 hover:all ease-in-out rounded-xl bg-cyan-700 p-5"
                       src="https://i.ibb.co/h9zc5XT/samsung-s9.webp"
                       alt="phone"
                     />
@@ -97,7 +97,7 @@ const ProductsTab = () => {
                 <div className="card p-5 card-p-5 compact w-60 bg-cyan-50 text-blue-700 shadow-xl">
                   <figure className="h-[250px]">
                     <img
-                      className="w-3/4 rounded-xl bg-cyan-700 p-5"
+                      className="w-3/4 transition hover:scale-110 hover:all ease-in-out rounded-xl bg-cyan-700 p-5"
                       src="https://i.ibb.co/dc5kj9s/samsung-note20-ultrawebp.webp"
                       alt="Shoes"
                     />
@@ -121,7 +121,7 @@ const ProductsTab = () => {
                 <div className="card p-5 card-p-5 compact w-60 bg-cyan-50 text-blue-700 shadow-xl">
                   <figure className="h-[250px]">
                     <img
-                      className="w-3/4 rounded-full bg-cyan-700 p-5"
+                      className="w-3/4 transition hover:scale-110 hover:all ease-in-out rounded-full bg-cyan-700 p-5"
                       src="https://i.ibb.co/t3nyGZn/watch4.jpg"
                       alt="Shoes"
                     />
@@ -140,7 +140,7 @@ const ProductsTab = () => {
                 <div className="card p-5 card-p-5 compact w-60 bg-cyan-50 text-blue-700 shadow-xl">
                   <figure className="h-[250px]">
                     <img
-                      className="w-3/4 rounded-full bg-cyan-700 p-5"
+                      className="w-3/4 transition hover:scale-110 hover:all ease-in-out rounded-full bg-cyan-700 p-5"
                       src="https://i.ibb.co/kyLYndq/watch1.jpg"
                       alt="Shoes"
                     />
@@ -159,7 +159,7 @@ const ProductsTab = () => {
                 <div className="card p-5 card-p-5 compact w-60 bg-cyan-50 text-blue-700 shadow-xl">
                   <figure className="h-[250px]">
                     <img
-                      className="w-3/4 rounded-full bg-cyan-700 p-5"
+                      className="w-3/4 transition hover:scale-110 hover:all ease-in-out rounded-full bg-cyan-700 p-5"
                       src="https://i.ibb.co/YttmJ3J/watch3.jpg"
                       alt="Shoes"
                     />
@@ -178,7 +178,7 @@ const ProductsTab = () => {
                 <div className="card p-5 card-p-5 compact w-60 bg-cyan-50 text-blue-700 shadow-xl">
                   <figure className="h-[250px]">
                     <img
-                      className="w-3/4 rounded-full bg-cyan-700 p-5"
+                      className="w-3/4 transition hover:scale-110 hover:all ease-in-out rounded-full bg-cyan-700 p-5"
                       src="https://i.ibb.co/wKcC9m2/watch5jpg.jpg"
                       alt="Shoes"
                     />
@@ -197,7 +197,7 @@ const ProductsTab = () => {
                 <div className="card p-5 card-p-5 compact w-60 bg-cyan-50 text-blue-700 shadow-xl">
                   <figure className="h-[250px]">
                     <img
-                      className="w-3/4 rounded-full bg-cyan-700 p-5"
+                      className="w-3/4 transition hover:scale-110 hover:all ease-in-out rounded-full bg-cyan-700 p-5"
                       src="https://i.ibb.co/26jQJT2/watch6jpg.jpg"
                       alt="Shoes"
                     />
@@ -220,7 +220,7 @@ const ProductsTab = () => {
                 <div className="card p-5 card-p-5 compact w-60 bg-cyan-50 text-blue-700 shadow-xl">
                   <figure className="h-[250px]">
                     <img
-                      className="w-3/4 rounded-full bg-cyan-700 p-5"
+                      className="w-3/4 transition hover:scale-110 hover:all ease-in-out rounded-full bg-cyan-700 p-5"
                       src="https://i.ibb.co/t3nyGZn/watch4.jpg"
                       alt="Shoes"
                     />
@@ -244,7 +244,7 @@ const ProductsTab = () => {
                 <div className="card p-5 card-p-5 compact w-60 bg-cyan-50 text-blue-700 shadow-xl">
                   <figure className="h-[250px]">
                     <img
-                      className="w-3/4 rounded-full bg-cyan-700 p-5"
+                      className="w-3/4 transition hover:scale-110 hover:all ease-in-out rounded-full bg-cyan-700 p-5"
                       src="https://i.ibb.co/kyLYndq/watch1.jpg"
                       alt="Shoes"
                     />
@@ -263,7 +263,7 @@ const ProductsTab = () => {
                 <div className="card p-5 card-p-5 compact w-60 bg-cyan-50 text-blue-700 shadow-xl">
                   <figure className="h-[250px]">
                     <img
-                      className="w-3/4 rounded-full bg-cyan-700 p-5"
+                      className="w-3/4 transition hover:scale-110 hover:all ease-in-out rounded-full bg-cyan-700 p-5"
                       src="https://i.ibb.co/YttmJ3J/watch3.jpg"
                       alt="Shoes"
                     />
@@ -282,7 +282,7 @@ const ProductsTab = () => {
                 <div className="card p-5 card-p-5 compact w-60 bg-cyan-50 text-blue-700 shadow-xl">
                   <figure className="h-[250px]">
                     <img
-                      className="w-3/4 rounded-full bg-cyan-700 p-5"
+                      className="w-3/4 transition hover:scale-110 hover:all ease-in-out rounded-full bg-cyan-700 p-5"
                       src="https://i.ibb.co/wKcC9m2/watch5jpg.jpg"
                       alt="Shoes"
                     />
@@ -301,7 +301,7 @@ const ProductsTab = () => {
                 <div className="card p-5 card-p-5 compact w-60 bg-cyan-50 text-blue-700 shadow-xl">
                   <figure className="h-[250px]">
                     <img
-                      className="w-3/4 rounded-full bg-cyan-700 p-5"
+                      className="w-3/4 transition hover:scale-110 hover:all ease-in-out rounded-full bg-cyan-700 p-5"
                       src="https://i.ibb.co/26jQJT2/watch6jpg.jpg"
                       alt="Shoes"
                     />

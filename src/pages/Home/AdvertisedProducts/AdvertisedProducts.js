@@ -26,7 +26,7 @@ const AdvertisedProducts = () => {
     return <LoadingSpinner></LoadingSpinner>;
   }
   return (
-    <div className="my-4 shadow-[3px_7px_23px_19px_rgba(64,71,120,0.87);] rounded-xl">
+    <div className="my-4 shadow-lg rounded-xl">
       <Slide>
         {" "}
         <h2 className="text-3xl font-bold text-sky-400">Advertised Products</h2>
