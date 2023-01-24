@@ -22,7 +22,7 @@ const AdvertisedProductCard = ({ advertisedProduct }) => {
     <>
       <Zoom>
         <div>
-          <div className="card  my-5 mx-auto card-compact w-88 neutral shadow-xl">
+          <div className="card  my-5 mx-auto card-compact neutral shadow-xl">
             <figure>
               <img
                 src={image}
@@ -37,16 +37,16 @@ const AdvertisedProductCard = ({ advertisedProduct }) => {
               </h6>
               <p>Product Condition: {condition}</p>
 
-              <p>Post Date: {postTime}</p>
-              <p>Location: {location}</p>
-              <p>Used Duration: {useDuration}</p>
+              {/* <p>Post Date: {postTime}</p> */}
+              {/* <p>Location: {location}</p>
+              <p>Used Duration: {useDuration}</p> */}
               <p className="badge badge-secondary">
                 Original Price: {originalPrice}
               </p>
               <p className="badge badge-accent badge-outline">
                 ReSale Price: {price}
               </p>
-              <p>Seller Name: {sellerName}</p>
+              {/* <p>Seller Name: {sellerName}</p> */}
               <div className="card-actions justify-end">
                 <Link to="categories">
                   <label

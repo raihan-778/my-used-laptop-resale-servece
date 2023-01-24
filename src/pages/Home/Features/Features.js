@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  AttentionSeeker,
-  Flip,
-  JackInTheBox,
-  Roll,
-  Rotate,
-} from "react-awesome-reveal";
+import { AttentionSeeker, JackInTheBox, Slide } from "react-awesome-reveal";
 import { FaOpencart, FaSearch, FaRegThumbsUp } from "react-icons/fa";
 import { FcApprove } from "react-icons/fc";
 
@@ -13,11 +7,11 @@ const Features = () => {
   return (
     <section className="mx-auto h-auto my-10 neutral rounded-xl  dark:bg-gray-800 dark:text-gray-100">
       <div className="container p-4 my-6 space-y-2 text-center">
-        <Rotate>
+        <Slide direction="left">
           <h2 className="text-3xl text-center font-bold">
             Why Should You Chose Us?
           </h2>
-        </Rotate>
+        </Slide>
       </div>
       <div className="container mx-auto grid justify-center gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         <JackInTheBox cascade damping={0.1}>

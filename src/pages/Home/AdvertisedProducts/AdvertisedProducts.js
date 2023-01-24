@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { Slide } from "react-awesome-reveal";
+import Carousel from "react-grid-carousel";
 
 import LoadingSpinner from "../../../sharedPage/LoadingSpinner/LoadingSpinner";
 import AdvertisedProductCard from "./AdvertisedProductCard";
@@ -30,14 +31,18 @@ const AdvertisedProducts = () => {
         {" "}
         <h2 className="text-3xl font-bold text-sky-400">Advertised Products</h2>
       </Slide>
-      <div className="grid grid-cols-1 mx-auto gap-4 md:grid-cols-2 md:mx-auto lg:mx-auto lg:grid-cols-3 ">
+      <div>
         {advertisedProducts && (
           <>
-            {advertisedProducts.map((advertisedProduct) => (
-              <AdvertisedProductCard
-                advertisedProduct={advertisedProduct}
-              ></AdvertisedProductCard>
-            ))}
+            <Carousel cols={3} row={1} gap={10} loop>
+              {advertisedProducts.map((advertisedProduct) => (
+                <Carousel.Item key={advertisedProduct._id}>
+                  <AdvertisedProductCard
+                    advertisedProduct={advertisedProduct}
+                  ></AdvertisedProductCard>
+                </Carousel.Item>
+              ))}
+            </Carousel>
           </>
         )}
       </div>

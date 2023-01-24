@@ -23,7 +23,7 @@ const FeaturedBrands = () => {
     },
   };
   return (
-    <div className=" p-5 rounded-xl mb-10 neutral">
+    <div className=" p-5 rounded-xl mb-10 bg-[#BFEAF5]">
       <h2 className=" mb-5 text-3xl font-bold text-blue-600">
         Our Populer Brands
       </h2>

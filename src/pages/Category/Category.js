@@ -24,7 +24,7 @@ const Category = () => {
   }
 
   return (
-    <div className="grid neutral grid-cols-1 rounded-xl lg:grid-cols-4 md:grid-cols-3 ">
+    <div className="grid  bg-[#BFEAF5]  grid-cols-1 rounded-xl lg:grid-cols-4 md:grid-cols-3 ">
       <div className=" rounded-xl py-3 h-96  mx-auto">
         <Slide direction="left">
           <h2 className="text-3xl my-5 font-bold text-sky-600">
@@ -34,9 +34,13 @@ const Category = () => {
         <Zoom duration={1500}>
           <div className="grid grid-cols-1 my-10 gap-3 ">
             {categories?.map((category) => (
-              <div className="p-2 flex-col w-[200px] h-24 mx-auto justify-center transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105  duration-200   border-slate-100 border rounded-xl bg-slate-100 items-center">
-                <figure className="w-[30px] h-[20px] mx-auto justify-center items-center rounded-sm">
-                  <img className="rounded-xl" src={category.img} alt="pc" />
+              <div className="p-2 flex bg-[#FFFBF5] w-[200px] h-20 mx-auto justify-center transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105  duration-200   border-slate-100 border items-center">
+                <figure className="w-[60px] h-auto mx-auto justify-center items-center rounded-xl">
+                  <img
+                    className="rounded-sm h-auto w-full"
+                    src={category.img}
+                    alt="pc"
+                  />
                 </figure>
                 <div>
                   <Link

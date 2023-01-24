@@ -115,7 +115,7 @@ const Banner = () => {
   ];
 
   return (
-    <div className="neutral rounded-xl p-10">
+    <div className="bg-[#BFEAF5] rounded-xl p-10">
       <Slide>
         <h2 className="text-3xl my-10 font-extrabold text-blue-600">
           Upcoming Porducts & Services
