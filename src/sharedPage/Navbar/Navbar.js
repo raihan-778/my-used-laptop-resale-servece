@@ -23,7 +23,7 @@ const Navbar = () => {
     <>
       <Zoom duration={2000}>
         <div className={fix && `fixed`}>
-          <div className={"navbar neutral my-5 "}>
+          <div className={"navbar neutral "}>
             <div className="navbar-start">
               <div className="dropdown">
                 <label tabIndex={0} className="btn btn-ghost lg:hidden">

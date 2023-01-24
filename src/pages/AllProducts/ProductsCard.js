@@ -1,5 +1,5 @@
 import React from "react";
-import { Hinge, Rotate } from "react-awesome-reveal";
+import { Hinge, Rotate, Slide } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 
 const ProductsCard = ({ product }) => {
@@ -15,8 +15,8 @@ const ProductsCard = ({ product }) => {
 
   return (
     <>
-      <Rotate>
-        <div className="card my-5 card-compact w-96 mx-auto neutral shadow-xl">
+      <Slide direction="right">
+        <div className="card my-5 card-compact w-88 mx-auto neutral shadow-xl">
           <figure className="rounded-xl p-3">
             <img
               src={image}
@@ -49,7 +49,7 @@ const ProductsCard = ({ product }) => {
             </div>
           </div>
         </div>
-      </Rotate>
+      </Slide>
     </>
   );
 };
