@@ -125,6 +125,7 @@ const Banner = () => {
         slides={slides}
         autoplay={true}
         interval={2000}
+        arrows={true}
         onSlideChange={callback}
       />
     </div>

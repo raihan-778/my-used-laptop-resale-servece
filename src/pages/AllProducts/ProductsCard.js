@@ -15,7 +15,7 @@ const ProductsCard = ({ product }) => {
 
   return (
     <>
-      <div className="card w-3/4 transition hover:-translate-y-3  hover:all ease-in-out  my-5 mx-auto card-compact neutral shadow-xl">
+      <div className="card w-full transition hover:-translate-y-3  hover:all ease-in-out  my-5 mx-auto card-compact neutral shadow-xl">
         <figure className="rounded-xl mt-3 p-3">
           <img
             src={image}

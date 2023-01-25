@@ -23,7 +23,7 @@ const Navbar = () => {
     <>
       <Zoom duration={2000}>
         <div className={fix && `fixed`}>
-          <div className={"navbar neutral "}>
+          <div className={"navbar bg-[#ECECEC] shadow-xl text-cyan-400"}>
             <div className="navbar-start">
               <div className="dropdown">
                 <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -80,7 +80,7 @@ const Navbar = () => {
                 className="btn btn-ghost normal-case font-semibold text-2xl"
               >
                 RT
-                <sub className="text-green-300">
+                <sub className="text-green-500">
                   <small>ReliableTech</small>
                 </sub>
               </Link>

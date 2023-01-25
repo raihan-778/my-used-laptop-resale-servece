@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { Slide } from "react-awesome-reveal";
 import Carousel from "react-grid-carousel";
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 
 import LoadingSpinner from "../../../sharedPage/LoadingSpinner/LoadingSpinner";
 import AdvertisedProductCard from "./AdvertisedProductCard";
@@ -33,8 +34,26 @@ const AdvertisedProducts = () => {
       </Slide>
       <div>
         {advertisedProducts && (
-          <>
-            <Carousel cols={3} row={1} gap={10} loop>
+          <div>
+            <Carousel
+              cols={3}
+              row={1}
+              gap={10}
+              loop
+              responsiveLayout={[
+                {
+                  breakpoint: 1200,
+                  cols: 3,
+                },
+                {
+                  breakpoint: 990,
+                  cols: 2,
+                },
+              ]}
+              mobileBreakpoint={670}
+              arrowRight={<FaArrowAltCircleRight type="right" />}
+              arrowLeft={<FaArrowAltCircleLeft type="left" />}
+            >
               {advertisedProducts.map((advertisedProduct) => (
                 <Carousel.Item key={advertisedProduct._id}>
                   <AdvertisedProductCard
@@ -43,7 +62,7 @@ const AdvertisedProducts = () => {
                 </Carousel.Item>
               ))}
             </Carousel>
-          </>
+          </div>
         )}
       </div>
     </div>
