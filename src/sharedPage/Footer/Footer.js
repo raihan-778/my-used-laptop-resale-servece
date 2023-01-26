@@ -9,7 +9,7 @@ const Footer = () => {
       <section className=" text-slate-100 bg-[#0A2647] rounded-xl">
         <footer className="footer p-5 rounded-xl ">
           <div>
-            <span className="footer-title text-2xl font-bold  text-[#FAAB78] ">
+            <span className="footer-title lg:text-2xl md:text-2xl text-xl font-bold  text-[#FAAB78] ">
               Our Services
             </span>
             <Link to="/" className="link link-hover">
@@ -19,14 +19,14 @@ const Footer = () => {
               Best Quality Products
             </Link>
             <Link to="/" className="link link-hover">
-              Used but quality products from trusted seller
+              Trusted seller
             </Link>
             <Link to="/" className="link link-hover">
               Customers Setisfection
             </Link>
           </div>
           <div>
-            <span className="footer-title text-2xl font-bold text-[#FAAB78]">
+            <span className="footer-title lg:text-2xl md:text-2xl text-xl font-bold text-[#FAAB78]">
               About ReliableTech
             </span>
             <Link to="/" className="link link-hover">
@@ -40,26 +40,26 @@ const Footer = () => {
             </Link>
           </div>
           <div>
-            <span className="footer-title text-2xl font-bold  text-[#eb9860]">
+            <span className="footer-title lg:text-2xl md:text-2xl text-xl font-bold  text-[#eb9860]">
               Stay Connected
             </span>
             <div className="grid grid-cols-4 mx-auto gap-2">
               <Link to="/" className="link link-hover">
-                <FaFacebook className="text-2xl text-[#00FFF6]  transition hover:scale-110  hover:all ease-in-out   "></FaFacebook>
+                <FaFacebook className="lg:text-2xl md:text-2xl text-xl text-[#f0f0f0]   transition hover:scale-110 hover:text-[#FC7300] hover:all ease-in-out   "></FaFacebook>
               </Link>
               <Link to="/" className="link link-hover">
-                <FaLinkedin className="text-2xl text-[#00FFF6] rounded-xl transition hover:scale-110  hover:all ease-in-out "></FaLinkedin>
+                <FaLinkedin className="lg:text-2xl md:text-2xl text-xl text-[#f0f0f0]    transition hover:scale-110 hover:text-[#FC7300]  hover:all ease-in-out "></FaLinkedin>
               </Link>
               <Link to="/" className="link link-hover">
-                <FaTwitter className="text-2xl text-[#00FFF6] rounded-xl transition hover:scale-110  hover:all ease-in-out  "></FaTwitter>
+                <FaTwitter className="lg:text-2xl md:text-2xl text-xl text-[#f0f0f0]    transition hover:scale-110 hover:text-[#FC7300]  hover:all ease-in-out  "></FaTwitter>
               </Link>
               <Link to="/" className="link link-hover">
-                <FaInstagram className="text-2xl text-red-500 transition hover:scale-110  hover:all ease-in-out "></FaInstagram>
+                <FaInstagram className="lg:text-2xl md:text-2xl text-xl text-[#f0f0f0]  transition hover:scale-110  hover:all hover:text-[#FC7300]  ease-in-out "></FaInstagram>
               </Link>
             </div>
           </div>
           <div>
-            <span className="footer-title text-2xl font-bold  text-[#FAAB78]">
+            <span className="footer-title lg:text-2xl md:text-2xl text-xl font-bold  text-[#FAAB78]">
               Our Address
             </span>
             <Link to="/" className="link link-hover">

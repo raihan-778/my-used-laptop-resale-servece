@@ -34,7 +34,7 @@ const AdvertisedProducts = () => {
       </Slide>
       <div>
         {advertisedProducts && (
-          <div>
+          <div className="bg-[rgb(250,250,250)] ">
             <Carousel
               cols={3}
               row={1}

@@ -5,7 +5,7 @@ import { FcApprove } from "react-icons/fc";
 
 const Features = () => {
   return (
-    <section className="mx-auto h-auto my-10 neutral rounded-xl  text-gray-600">
+    <section className="mx-auto h-auto my-10 bg-[#78CBE1] rounded-xl  text-gray-50">
       <div className="container p-4 my-6 space-y-2 text-center">
         <Slide direction="left">
           <h2 className="text-3xl text-center font-bold">

@@ -26,7 +26,7 @@ const Banner = () => {
   };
 
   let slides = [
-    <div className="card hidden lg:block md:block w-96 neutral shadow-xl">
+    <div className="card hidden lg:block md:block w-96 bg-[#e2e9f1] text-slate-700 shadow-xl">
       <figure>
         {" "}
         <img
@@ -44,7 +44,7 @@ const Banner = () => {
         <p>All popular Brands watch availabe soon!</p>
       </div>
     </div>,
-    <div className="card 30  w-96 neutral shadow-xl">
+    <div className="card 30  w-96 bg-[#e2e9f1] text-slate-700 shadow-xl">
       <figure>
         {" "}
         <img
@@ -61,7 +61,7 @@ const Banner = () => {
         <p>Will get your best router soon!</p>
       </div>
     </div>,
-    <div className="card 30 w-96 neutral shadow-xl">
+    <div className="card 30 w-96 bg-[#e2e9f1] text-slate-700 shadow-xl">
       <figure>
         {" "}
         <img
@@ -78,7 +78,7 @@ const Banner = () => {
         <p>Arivel soon!</p>
       </div>
     </div>,
-    <div className="card 30 w-96 neutral shadow-xl">
+    <div className="card 30 w-96 bg-[#e2e9f1] text-slate-700 shadow-xl">
       <figure>
         {" "}
         <img
@@ -95,7 +95,7 @@ const Banner = () => {
         <p>Best Quality gamming console!</p>
       </div>
     </div>,
-    <div className="card 30sm:hodden w-96 neutral shadow-xl">
+    <div className="card 30sm:hodden w-96 bg-[#e2e9f1] text-slate-700 shadow-xl">
       <figure>
         {" "}
         <img

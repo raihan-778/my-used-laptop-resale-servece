@@ -43,7 +43,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="card w-full bg-base-100 my-10 shadow-xl image-full">
+      <div className="card w-full h-3/4 bg-base-100 my-10 shadow-xl image-full">
         <figure>
           <img src="https://i.ibb.co/sK751gv/header2.jpg" alt="Shoes" />
         </figure>
