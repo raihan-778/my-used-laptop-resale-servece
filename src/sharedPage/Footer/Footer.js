@@ -1,15 +1,47 @@
 import React from "react";
 import { Zoom } from "react-awesome-reveal";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import {
+  FaFacebookSquare,
+  FaInstagram,
+  FaLinkedin,
+  FaSms,
+  FaTwitterSquare,
+  FaRegEnvelopeOpen,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <>
-      <section className=" text-slate-100 bg-[#0A2647] rounded-xl">
+      <section className=" text-slate-600 bg-[#FFFBF5] rounded-xl">
+        <div className="bg-[#408ED4] text-slate-50 flex h-24 justify-around">
+          <div className="flex  mt-5">
+            <FaRegEnvelopeOpen className="text-5xl mr-2"></FaRegEnvelopeOpen>
+            <div className="text-left">
+              <h2>Sign Up For Our Newsletter</h2>
+              <p>Get e-mail updates about our all news & exclusive offers</p>
+            </div>
+          </div>
+          <fieldset className="w-1/4 space-y-1 flex justify-center  dark:text-gray-100">
+            <div className="flex mt-5">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter Your email address"
+                className="flex flex-1 text-right px-5 h-10 rounded-l-full sm:text-sm  text-gray-600 bg-gray-100 "
+              />
+              <span className="flex items-center px-3 h-10 pointer-events-none sm:text-sm rounded-r-full bg-yellow-300">
+                <button className="btn-sm text-slate-600 font-semibold bg-yellow-300">
+                  Subscribe
+                </button>
+              </span>
+            </div>
+          </fieldset>
+        </div>
         <footer className="footer p-5 rounded-xl ">
           <div>
-            <span className="footer-title lg:text-2xl md:text-2xl text-xl font-bold  text-[#FAAB78] ">
+            <span className="footer-title lg:text-2xl md:text-2xl text-xl font-bold  text-[#0014FF] ">
               Our Services
             </span>
             <Link to="/" className="link link-hover">
@@ -26,7 +58,7 @@ const Footer = () => {
             </Link>
           </div>
           <div>
-            <span className="footer-title lg:text-2xl md:text-2xl text-xl font-bold text-[#FAAB78]">
+            <span className="footer-title lg:text-2xl md:text-2xl text-xl font-bold text-[#0014FF]">
               About ReliableTech
             </span>
             <Link to="/" className="link link-hover">
@@ -40,30 +72,36 @@ const Footer = () => {
             </Link>
           </div>
           <div>
-            <span className="footer-title lg:text-2xl md:text-2xl text-xl font-bold  text-[#eb9860]">
+            <span className="footer-title lg:text-2xl md:text-2xl text-xl font-bold  text-[#0014FF]">
               Stay Connected
             </span>
             <div className="grid grid-cols-4 mx-auto gap-2">
               <Link to="/" className="link link-hover">
-                <FaFacebook className="lg:text-2xl md:text-2xl text-xl text-[#f0f0f0]   transition hover:scale-110 hover:text-[#FC7300] hover:all ease-in-out   "></FaFacebook>
+                <FaFacebookSquare className="lg:text-2xl md:text-2xl text-xl text-[#408ED4]   transition hover:scale-110 hover:text-[#FC7300] hover:all ease-in-out   "></FaFacebookSquare>
               </Link>
               <Link to="/" className="link link-hover">
-                <FaLinkedin className="lg:text-2xl md:text-2xl text-xl text-[#f0f0f0]    transition hover:scale-110 hover:text-[#FC7300]  hover:all ease-in-out "></FaLinkedin>
+                <FaLinkedin className="lg:text-2xl md:text-2xl text-xl text-[#555555]    transition hover:scale-110 hover:text-[#FC7300]  hover:all ease-in-out "></FaLinkedin>
               </Link>
               <Link to="/" className="link link-hover">
-                <FaTwitter className="lg:text-2xl md:text-2xl text-xl text-[#f0f0f0]    transition hover:scale-110 hover:text-[#FC7300]  hover:all ease-in-out  "></FaTwitter>
+                <FaTwitterSquare className="lg:text-2xl md:text-2xl text-xl text-[#00BFF3]   transition hover:scale-110 hover:text-[#FC7300]  hover:all ease-in-out  "></FaTwitterSquare>
               </Link>
               <Link to="/" className="link link-hover">
-                <FaInstagram className="lg:text-2xl md:text-2xl text-xl text-[#f0f0f0]  transition hover:scale-110  hover:all hover:text-[#FC7300]  ease-in-out "></FaInstagram>
+                <FaInstagram className="lg:text-2xl md:text-2xl text-xl text-[#D02D2D]  transition hover:scale-110  hover:all hover:text-[#FC7300]  ease-in-out "></FaInstagram>
               </Link>
             </div>
           </div>
           <div>
-            <span className="footer-title lg:text-2xl md:text-2xl text-xl font-bold  text-[#FAAB78]">
+            <span className="footer-title lg:text-2xl md:text-2xl text-xl font-bold  text-[#0014FF]">
               Our Address
             </span>
             <Link to="/" className="link link-hover">
               Citygate, Chittagong, Bangladesh.
+            </Link>
+            <Link to="/" className="link link-hover">
+              <strong>Phone Number:</strong> +8801945433032
+            </Link>
+            <Link to="/" className="link link-hover">
+              <strong>Email:</strong> raihanarif778@gmail.com
             </Link>
           </div>
         </footer>
