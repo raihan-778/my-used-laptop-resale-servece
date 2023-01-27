@@ -63,8 +63,8 @@ const ProductsTab = () => {
               arrowLeft={<FaArrowAltCircleLeft type="left" />}
             >
               <Carousel.Item>
-                <div className="">
-                  <div className="card relative my-5 card-p-5 compact w-60 text-blue-700 shadow-xl">
+                <div className="relative">
+                  <div className="card  my-5 card-p-5 compact w-60 text-blue-700 shadow-xl">
                     <figure className="h-[300px]">
                       <img
                         className="w-3/4 h-auto transition hover:scale-110 hover:all ease-in-out rounded-xl p-5"
@@ -79,7 +79,7 @@ const ProductsTab = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="card my-5 card-p-5 compact bg-transparent-50 w-60 absolute top-5 left-0 text-red-700 shadow-xl">
+                  <div className="card my-5 card-p-5 compact bg-transparent-50 w-60 absolute right-[20px] top-8 z-10  text-red-700 ">
                     <figure className="h-[300px] flex flex-col justify-end items-center">
                       <HiShoppingCart className="text-2xl ">
                         <Link href="#"></Link>
