@@ -8,5 +8,5 @@
 }
 
 .fixed button {
-  background-color: green;
+  border: 2px solid rgb(43, 190, 190);
 }

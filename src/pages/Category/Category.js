@@ -24,7 +24,7 @@ const Category = () => {
   }
 
   return (
-    <div className="grid  bg-[rgb(250,250,250)] shadow-xl grid-cols-1 rounded-xl lg:grid-cols-4 md:grid-cols-3 ">
+    <div className="grid my-20 bg-[rgb(250,250,250)] shadow-xl grid-cols-1 rounded-xl lg:grid-cols-4 md:grid-cols-3 ">
       <div className=" rounded-xl py-3 h-96  mx-auto">
         <Slide direction="left">
           <h2 className="text-3xl my-5 font-bold text-sky-600">

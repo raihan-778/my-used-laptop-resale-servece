@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <>
       <section className=" text-slate-600 bg-[#FFFBF5] rounded-xl">
-        <div className="bg-[#408ED4] text-slate-50 flex h-24 justify-around">
+        <div className="bg-[#408ED4] text-slate-50  flex h-24 justify-around ">
           <div className="flex  mt-5">
             <FaRegEnvelopeOpen className="text-5xl mr-2"></FaRegEnvelopeOpen>
             <div className="text-left">

@@ -9,8 +9,8 @@ import {
 
 const ReviewCarousel = () => {
   return (
-    <div>
-      <h2 className="text-3xl font-bold text-sky-600">
+    <div className="my-20 shadow-lg bg-[rgb(250,250,250)]  rounded-xl">
+      <h2 className="text-3xl font-bold py-5 text-sky-600">
         What Our Customer Says About Us
       </h2>
       <Carousel
@@ -37,7 +37,7 @@ const ReviewCarousel = () => {
         arrowLeft={<FaArrowAltCircleLeft type="left" />}
       >
         <Carousel.Item>
-          <div className="flex w-full flex-col mx-auto my-6 neutral rounded-lg shadow-lg">
+          <div className="flex w-full flex-col mx-auto mb-5 neutral rounded-lg shadow-lg">
             <div className="px-4 py-12 h-60 rounded-t-lg sm:px-8 md:px-12 bg-gray-900">
               <FaQuoteLeft className="text-sky-400"></FaQuoteLeft>
               <p className="relative px-6 py-1 text-sm italic text-center text-gray-100">
@@ -61,7 +61,7 @@ const ReviewCarousel = () => {
           </div>
         </Carousel.Item>
         <Carousel.Item>
-          <div className="flex  flex-col mx-auto my-6 neutral rounded-lg shadow-lg">
+          <div className="flex  flex-col mx-auto mb-5 neutral rounded-lg shadow-lg">
             <div className="px-4 py-12 h-60 rounded-t-lg sm:px-8 md:px-12 bg-gray-900">
               <FaQuoteLeft className="text-sky-400"></FaQuoteLeft>
               <p className="relative px-6 py-1 text-sm italic text-center text-gray-100">
@@ -85,7 +85,7 @@ const ReviewCarousel = () => {
           </div>
         </Carousel.Item>
         <Carousel.Item>
-          <div className="flex  flex-col mx-auto my-6 neutral rounded-lg shadow-lg">
+          <div className="flex  flex-col mx-auto mb-5 neutral rounded-lg shadow-lg">
             <div className="px-4 py-12 h-60 rounded-t-lg sm:px-8 md:px-12 bg-gray-900">
               <FaQuoteLeft className="text-sky-400"></FaQuoteLeft>
               <p className="relative px-6 py-1 text-sm italic text-center text-gray-100">
@@ -110,7 +110,7 @@ const ReviewCarousel = () => {
           </div>
         </Carousel.Item>
         <Carousel.Item>
-          <div className="flex  flex-col mx-auto my-6 neutral rounded-lg shadow-lg">
+          <div className="flex  flex-col mx-auto mb-5 neutral rounded-lg shadow-lg">
             <div className="px-4 h-38 py-12 h-60 rounded-t-lg sm:px-8 md:px-12 bg-gray-900">
               <FaQuoteLeft className="text-sky-400"></FaQuoteLeft>
               <p className="relative px-6 py-1 text-sm italic text-center text-gray-100">
@@ -135,7 +135,7 @@ const ReviewCarousel = () => {
           </div>
         </Carousel.Item>
         <Carousel.Item>
-          <div className="flex  flex-col mx-auto my-6 neutral rounded-lg shadow-lg">
+          <div className="flex  flex-col mx-auto mb-5 neutral rounded-lg shadow-lg">
             <div className="px-4 py-12 h-60 rounded-t-lg sm:px-8 md:px-12 bg-gray-900">
               <FaQuoteLeft className="text-sky-400"></FaQuoteLeft>
               <p className="relative px-6 py-1 text-sm italic text-center text-gray-100">

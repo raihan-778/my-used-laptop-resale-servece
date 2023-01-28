@@ -21,7 +21,7 @@ const AdvertisedProductCard = ({ advertisedProduct }) => {
   return (
     <>
       <Zoom>
-        <div className="card w-full transition hover:-translate-y-3  hover:all ease-in-out  my-5 mx-auto card-compact bg-[#e2e9f1] text-slate-500 shadow-xl">
+        <div className="card w-full transition hover:-translate-y-3  hover:all ease-in-out mx-auto card-compact bg-[#e2e9f1] text-slate-500 shadow-xl">
           <figure>
             <img
               src={image}

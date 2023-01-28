@@ -5,10 +5,10 @@ import { FcApprove } from "react-icons/fc";
 
 const Features = () => {
   return (
-    <section className="mx-auto h-auto my-10 bg-[#78CBE1] rounded-xl  text-gray-50">
-      <div className="container p-4 my-6 space-y-2 text-center">
+    <section className="mx-auto h-auto my-20 bg-[#B9F3FC]  rounded-xl  text-[#00337C]">
+      <div className="container p-4 my-6 space-y-2 ">
         <Slide direction="left">
-          <h2 className="text-3xl text-center font-bold">
+          <h2 className="text-3xl text-blue-600 font-bold">
             Why Should You Chose Us?
           </h2>
         </Slide>

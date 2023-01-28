@@ -27,14 +27,16 @@ const AdvertisedProducts = () => {
     return <LoadingSpinner></LoadingSpinner>;
   }
   return (
-    <div className="my-4 shadow-lg rounded-xl">
+    <div className="my-20 shadow-lg bg-[rgb(250,250,250)]  rounded-xl">
       <Slide>
         {" "}
-        <h2 className="text-3xl font-bold text-sky-400">Advertised Products</h2>
+        <h2 className="text-3xl py-5 font-bold text-sky-400">
+          Advertised Products
+        </h2>
       </Slide>
       <div>
         {advertisedProducts && (
-          <div className="bg-[rgb(250,250,250)] ">
+          <div>
             <Carousel
               cols={3}
               row={1}

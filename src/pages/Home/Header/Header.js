@@ -11,8 +11,8 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
-      <div>
-        <div className="p-6 py-12 bg-[rgb(250,250,250)]  rounded-xl shadow-xl text-gray-900">
+      <div className=" mb-20 mt-10">
+        <div className="py-12  bg-[rgb(250,250,250)]  rounded-xl relative shadow-xl text-gray-900">
           <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  gap-4 mx-auto">
             <Slide direction="left">
               <div className="w-full rounded-xl">
@@ -29,8 +29,8 @@ const Header = () => {
               <div className="flex flex-col lg:flex-row items-center justify-between">
                 <div className="space-x-2 px-5 text-center py-2 lg:py-0">
                   <div className="mb-3">
-                    <span>On first deal! </span>
-                    <span className="font-bold text-sky-400 text-lg">
+                    <span className="text-xl font-bold">On first deal! </span>
+                    <span className="font-bold text-2xl text-sky-400 ">
                       with ReliableTech
                     </span>
                   </div>
@@ -42,6 +42,12 @@ const Header = () => {
             </Slide>
           </div>
         </div>
+        <img
+          className="absolute top-20 w-44 lg:right-10 md:hidden sm:hidden lg:block "
+          src="https://i.ibb.co/Ns8wTSz/poster-054.png"
+          alt="poster-054"
+          border="0"
+        />
       </div>
       <div className="card w-full h-3/4 bg-base-100 my-10 shadow-xl image-full">
         <figure>
@@ -82,9 +88,17 @@ const Header = () => {
             </h1>
           </JackInTheBox>
           <Fade delay={1e3} cascade damping={1e-1}>
-            <p className="mb-5 font-semibold text-indigo-200">
-              We sell best quality used laptop with resonable price.We believe
-              in quality and customers trust.Your faith is Our assets.
+            <p>
+              Welcome to our website, where you'll find a curated collection of
+              vintage and pre-owned items that have been carefully selected and
+              revitalized for your shopping pleasure. From vintage products and
+              antique electronics to previously owned Laptop, our
+              "Reliable-Tech" are sure to delight and inspire. Whether you're
+              looking to add a touch of nostalgia to your home decor, or
+              searching for that perfect vintage statement piece, we've got you
+              covered. Our website is your one-stop-shop for all things vintage
+              and pre-owned. Browse our collection today and discover the charm
+              of yesterday's treasures for yourself.
             </p>
           </Fade>
           <div className="card-actions mx-auto ">

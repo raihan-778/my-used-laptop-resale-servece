@@ -115,7 +115,7 @@ const Banner = () => {
   ];
 
   return (
-    <div className="bg-[rgb(250,250,250)]  rounded-xl p-10">
+    <div className="bg-[rgb(250,250,250)] my-20 rounded-xl p-10">
       <Slide>
         <h2 className="text-3xl my-10 font-extrabold text-blue-600">
           Upcoming Porducts & Services

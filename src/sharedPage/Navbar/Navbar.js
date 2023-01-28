@@ -44,12 +44,12 @@ const Navbar = () => {
                 </label>
                 <ul
                   tabIndex={0}
-                  className="menu menu-compact neutral dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                  className="menu menu-compact bg-[#ECECEC] dropdown-content mt-3 p-2 shadow text-slate-600 rounded-box w-52"
                 >
-                  <button className="btn-sm my-2 rounded-lg btn-primary">
+                  <button className="btn-sm btn-outline btn-accent my-2 rounded-lg ">
                     <Link to="/">Home</Link>
                   </button>
-                  <button className="btn-sm my-2 rounded-lg btn-primary">
+                  <button className="btn-sm btn-outline btn-accent my-2 rounded-lg ">
                     <Link to="/blog">Blog</Link>
                   </button>
 
@@ -57,7 +57,7 @@ const Navbar = () => {
                     <>
                       <label
                         htmlFor="dashboard-drawer"
-                        className="btn btn-primary my-2 drawer-button"
+                        className="btn  my-2 drawer-button"
                       >
                         Open drawer
                       </label>
@@ -88,26 +88,26 @@ const Navbar = () => {
             <div className="navbar-center  hidden lg:flex">
               <ul className="menu menu-horizontal p-0">
                 <li>
-                  <button className="btn-sm mx-2 rounded-lg btn-primary">
+                  <button className="btn-sm btn-outline btn-accent mx-2 rounded-lg ">
                     <Link to="/">Home</Link>
                   </button>
                 </li>
 
                 <li>
-                  <button className="btn-sm mx-2 rounded-lg btn-primary">
+                  <button className="btn-sm btn-outline btn-accent mx-2 rounded-lg ">
                     <Link to="/allproducts">All Products</Link>
                   </button>
                 </li>
 
                 <li>
-                  <button className="btn-sm mx-2 rounded-lg btn-primary">
+                  <button className="btn-sm btn-outline btn-accent mx-2 rounded-lg ">
                     <Link to="/blog">Blog</Link>
                   </button>
                 </li>
 
                 {user?.email ? (
                   <li>
-                    <button className="btn-sm mx-2 rounded-lg btn-primary">
+                    <button className="btn-sm btn-outline btn-accent mx-2 rounded-lg ">
                       <Link to="/dashboard" className="justify-between">
                         Dashboard
                       </Link>
@@ -115,7 +115,7 @@ const Navbar = () => {
                   </li>
                 ) : (
                   <li>
-                    <button className="btn-sm mx-2 rounded-lg btn-primary">
+                    <button className="btn-sm btn-outline btn-accent mx-2 rounded-lg ">
                       <Link to="/login">Login</Link>
                     </button>
                   </li>
