@@ -15,7 +15,10 @@ const HomePage = () => {
         <Banner></Banner>
       </div>
       <Features></Features>
-      <FeaturedBrands></FeaturedBrands>
+      <div className="hidden md:block lg:block">
+        <FeaturedBrands></FeaturedBrands>
+      </div>
+
       <Category></Category>
       <AdvertisedProducts></AdvertisedProducts>
       <MyTestimonial></MyTestimonial>

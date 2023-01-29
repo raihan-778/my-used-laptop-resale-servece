@@ -43,7 +43,7 @@ const Header = () => {
           </div>
         </div>
         <img
-          className="absolute top-20 w-44 lg:right-10 md:hidden sm:hidden lg:block "
+          className="absolute top-20 w-44 lg:right-10 hidden lg:block "
           src="https://i.ibb.co/Ns8wTSz/poster-054.png"
           alt="poster-054"
           border="0"
@@ -88,7 +88,7 @@ const Header = () => {
             </h1>
           </JackInTheBox>
           <Fade delay={1e3} cascade damping={1e-1}>
-            <p>
+            <p className="text-left">
               Welcome to our website, where you'll find a curated collection of
               vintage and pre-owned items that have been carefully selected and
               revitalized for your shopping pleasure. From vintage products and

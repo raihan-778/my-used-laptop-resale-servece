@@ -14,24 +14,25 @@ const Footer = () => {
   return (
     <>
       <section className=" text-slate-600 bg-[#FFFBF5] rounded-xl">
-        <div className="bg-[#408ED4] text-slate-50  flex h-24 justify-around ">
-          <div className="flex  mt-5">
+        <div className="bg-[#408ED4] text-slate-50  grid gap-y-2.5 grid-cols-1  lg:grid-cols-2 lg:gap-4 mx-auto h-46 lg:h-24 ">
+          <div className="flex justify-center mx-3 lg:justify-end  mt-5">
             <FaRegEnvelopeOpen className="text-5xl mr-2"></FaRegEnvelopeOpen>
             <div className="text-left">
               <h2>Sign Up For Our Newsletter</h2>
               <p>Get e-mail updates about our all news & exclusive offers</p>
             </div>
           </div>
-          <fieldset className="w-1/4 space-y-1 flex justify-center  dark:text-gray-100">
-            <div className="flex mt-5">
+
+          <fieldset className="w-full mx-auto mb-5 lg:w-1/4 md:w-1/2 space-y-1 flex justify-center  dark:text-gray-100">
+            <div className="flex max-w-md justify-start md:justify-center mt-5">
               <input
                 type="email"
                 name="email"
                 id="email"
                 placeholder="Enter Your email address"
-                className="flex flex-1 text-right px-5 h-10 rounded-l-full sm:text-sm  text-gray-600 bg-gray-100 "
+                className="flex flex-1 text-right px-5 h-10 lg:rounded-l-full rounded-l-lg sm:text-sm  text-gray-600 bg-gray-100 "
               />
-              <span className="flex items-center px-3 h-10 pointer-events-none sm:text-sm rounded-r-full bg-yellow-300">
+              <span className="flex items-center px-3 h-10 pointer-events-none sm:text-sm lg:rounded-r-full rounded-r-lg bg-yellow-300">
                 <button className="btn-sm text-slate-600 font-semibold bg-yellow-300">
                   Subscribe
                 </button>

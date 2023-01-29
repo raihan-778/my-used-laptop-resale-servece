@@ -27,7 +27,7 @@ const AdvertisedProducts = () => {
     return <LoadingSpinner></LoadingSpinner>;
   }
   return (
-    <div className="my-20 shadow-lg bg-[rgb(250,250,250)]  rounded-xl">
+    <div className="my-20 shadow-lg bg-[rgb(250,250,250)] mx-auto rounded-xl">
       <Slide>
         {" "}
         <h2 className="text-3xl py-5 font-bold text-sky-400">

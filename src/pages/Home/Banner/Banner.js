@@ -3,30 +3,31 @@ import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Carousel } from "3d-react-carousal";
 import { Slide } from "react-awesome-reveal";
+import AdvertisedBanner from "./AdvertisedBanner";
 
 const Banner = () => {
-  const {
-    data: productsInfo = [],
-    refetch,
-    isLoading,
-  } = useQuery({
-    queryKey: ["allproducts"],
-    queryFn: () =>
-      fetch(
-        "https://b612-used-products-resale-server-side-raihan-778.vercel.app/allproducts"
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          return data;
-        }),
-  });
+  // const {
+  //   data: productsInfo = [],
+  //   refetch,
+  //   isLoading,
+  // } = useQuery({
+  //   queryKey: ["allproducts"],
+  //   queryFn: () =>
+  //     fetch(
+  //       "https://b612-used-products-resale-server-side-raihan-778.vercel.app/allproducts"
+  //     )
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         console.log(data);
+  //         return data;
+  //       }),
+  // });
   const callback = function (index) {
     console.log("callback", index);
   };
 
   let slides = [
-    <div className="card hidden lg:block md:block w-96 bg-[#e2e9f1] text-slate-700 shadow-xl">
+    <div className="card  w-96 bg-[#e2e9f1] text-slate-700 shadow-xl">
       <figure>
         {" "}
         <img
@@ -115,19 +116,24 @@ const Banner = () => {
   ];
 
   return (
-    <div className="bg-[rgb(250,250,250)] my-20 rounded-xl p-10">
-      <Slide>
-        <h2 className="text-3xl my-10 font-extrabold text-blue-600">
-          Upcoming Porducts & Services
-        </h2>
-      </Slide>
-      <Carousel
-        slides={slides}
-        autoplay={true}
-        interval={2000}
-        arrows={true}
-        onSlideChange={callback}
-      />
+    <div className="grid grid-cols-3 bg-[rgb(250,250,250)] rounded-lg gap-2">
+      <div className="col-span-2 my-20 w-full  rounded-xl p-10">
+        <Slide>
+          <h2 className="text-3xl my-10 font-extrabold text-blue-600">
+            Upcoming Porducts & Services
+          </h2>
+        </Slide>
+        <Carousel
+          slides={slides}
+          autoplay={true}
+          interval={2000}
+          arrows={false}
+          onSlideChange={callback}
+        />
+      </div>
+      <div>
+        <AdvertisedBanner></AdvertisedBanner>
+      </div>
     </div>
   );
 };
