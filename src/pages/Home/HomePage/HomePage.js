@@ -11,7 +11,7 @@ const HomePage = () => {
   return (
     <div className="mx-5 pt-24">
       <Header></Header>
-      <div className="hidden shadow-xl lg:block md:block">
+      <div className="shadow-xl lg:block md:block">
         <Banner></Banner>
       </div>
       <Features></Features>
@@ -21,7 +21,7 @@ const HomePage = () => {
 
       <Category></Category>
       <AdvertisedProducts></AdvertisedProducts>
-      <MyTestimonial></MyTestimonial>
+      {/* <MyTestimonial></MyTestimonial> */}
       <ReviewCarousel></ReviewCarousel>
     </div>
   );

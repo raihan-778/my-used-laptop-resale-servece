@@ -65,7 +65,7 @@ const FeaturedBrands = () => {
             />
           </div>
         </div>
-        <div className="avatar shadow-lg transition all ease-in-out hover:shadow-sky-900 ">
+        <div className="avatar shadow-lg transition  delay-150 ease-in-out hover:shadow-sky-900 ">
           <div className="w-96 h-52 rounded-xl">
             {" "}
             <img

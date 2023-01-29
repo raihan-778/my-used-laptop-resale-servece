@@ -28,7 +28,7 @@ const ReviewCarousel = () => {
             cols: 2,
           },
           {
-            breakpoint: 668,
+            breakpoint: 670,
             cols: 1,
           },
         ]}
@@ -37,7 +37,7 @@ const ReviewCarousel = () => {
         arrowLeft={<FaArrowAltCircleLeft type="left" />}
       >
         <Carousel.Item>
-          <div className="flex w-full flex-col mx-auto mb-5 neutral rounded-lg shadow-lg">
+          <div className="flex w-full flex-col mx-auto mb-5 rounded-lg shadow-lg">
             <div className="px-4 py-12 h-60 rounded-t-lg sm:px-8 md:px-12 bg-gray-900">
               <FaQuoteLeft className="text-sky-400"></FaQuoteLeft>
               <p className="relative px-6 py-1 text-sm italic text-center text-gray-100">

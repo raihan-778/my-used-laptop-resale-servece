@@ -49,6 +49,11 @@ const Navbar = () => {
                   <button className="btn-sm btn-outline btn-accent my-2 rounded-lg ">
                     <Link to="/">Home</Link>
                   </button>
+
+                  <button className="btn-sm btn-outline btn-accent my-2 rounded-lg ">
+                    <Link to="/allproducts">All Products</Link>
+                  </button>
+
                   <button className="btn-sm btn-outline btn-accent my-2 rounded-lg ">
                     <Link to="/blog">Blog</Link>
                   </button>
@@ -66,7 +71,9 @@ const Navbar = () => {
                       </Link>
                     </>
                   ) : (
-                    <Link to="/login">Login</Link>
+                    <button className="btn-sm btn-outline btn-secondery my-2 rounded-lg ">
+                      <Link to="/login">Login</Link>
+                    </button>
                   )}
                 </ul>
               </div>

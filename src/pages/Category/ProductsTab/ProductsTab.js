@@ -11,21 +11,7 @@ import { HiShoppingCart, HiEye, HiHeart } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 
 const ProductsTab = () => {
-  // const [phones, setPhones] = useState("");
-
-  // useEffect(() => {
-  //   fetch("/phoneCollection.json")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       setPhones(data);
-  //     });
-  // }, []);
-
-  // const handleClick = () => {
-  //   console.log("fetch data", phones);
-  //   // console.log(phones);
-  // };
+  const [hovered, setHovered] = useState(false);
 
   return (
     <div className="py-3">
@@ -63,8 +49,16 @@ const ProductsTab = () => {
               arrowLeft={<FaArrowAltCircleLeft type="left" />}
             >
               <Carousel.Item>
-                <div className="relative">
-                  <div className="card  my-5 card-p-5 compact w-60 text-blue-700 shadow-xl">
+                <div
+                  className="relative"
+                  onMouseEnter={() => setHovered(true)}
+                  onMouseLeave={() => setHovered(false)}
+                >
+                  <div
+                    className={`card transition ease-in-out  ${
+                      hovered ? "blur-sm " : ""
+                    } my-5 card-p-5 compact w-60 text-blue-700 shadow-xl`}
+                  >
                     <figure className="h-[300px]">
                       <img
                         className="w-3/4 h-auto transition hover:scale-110 hover:all ease-in-out rounded-xl p-5"
@@ -79,19 +73,23 @@ const ProductsTab = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="card my-5 card-p-5 compact bg-transparent-50 w-60 absolute right-[20px] top-8 z-10  text-red-700 ">
-                    <figure className="h-[300px] flex flex-col justify-end items-center">
-                      <HiShoppingCart className="text-2xl ">
-                        <Link href="#"></Link>
-                      </HiShoppingCart>
-                      <HiEye className="text-2xl">
-                        <Link href="#"></Link>
-                      </HiEye>
-                      <HiHeart className="text-2xl">
-                        <Link href="#"></Link>
-                      </HiHeart>
-                    </figure>
-                  </div>
+                  {hovered && (
+                    <>
+                      <div className="card my-5 card-p-5 compact bg-slate-400 bg-opacity-20  w-60 absolute top-0 left-0 z-10 text-red-700 ">
+                        <figure className="h-[300px] flex justify-around items-center">
+                          <HiShoppingCart className="text-2xl ">
+                            <Link href="#"></Link>
+                          </HiShoppingCart>
+                          <HiEye className="text-2xl">
+                            <Link href="#"></Link>
+                          </HiEye>
+                          <HiHeart className="text-2xl">
+                            <Link href="#"></Link>
+                          </HiHeart>
+                        </figure>
+                      </div>
+                    </>
+                  )}
                 </div>
               </Carousel.Item>
 
@@ -148,8 +146,158 @@ const ProductsTab = () => {
               </Carousel.Item>
             </Carousel>
           </TabPanel>
-          <TabPanel>
-            <h2>Any content 2</h2>
+          <TabPanel className="rounded-xl">
+            <Carousel
+              cols={3}
+              rows={1}
+              gap={10}
+              loop
+              responsiveLayout={[
+                {
+                  breakpoint: 1200,
+                  cols: 3,
+                },
+                {
+                  breakpoint: 990,
+                  cols: 2,
+                },
+              ]}
+              mobileBreakpoint={670}
+              arrowRight={<FaArrowAltCircleRight type="right" />}
+              arrowLeft={<FaArrowAltCircleLeft type="left" />}
+            >
+              <Carousel.Item>
+                <div className="relative">
+                  <div className="card  my-5 card-p-5 compact w-60 text-blue-700 shadow-xl">
+                    <figure>
+                      <img
+                        className="w-full h-[220px] transition hover:scale-110 hover:all ease-in-out rounded-xl p-5"
+                        src="https://i.ibb.co/hL039tL/s-l1600-16.jpg"
+                        alt="phone"
+                      />
+                    </figure>
+                    <div className="card-p-5 body h-[160px] p-5">
+                      <h2 className="font-bold text-xl text-center">Nikon</h2>
+                      <p className="font-semibold text-amber-600">
+                        Nikon D3500 24.2MP Camera w/ 18-55mm, Battery and
+                        Charger
+                      </p>
+                    </div>
+                  </div>
+                  <div className="card my-5 card-p-5 bg bg-slate-500 bg-opacity-20 compact opacity-0 transition ease-in-out hover:opacity-100  w-60  absolute right-20px bottom-28 z-10  text-red-700">
+                    <figure className="h-[300px] flex justify-around items-center">
+                      <HiShoppingCart className="text-2xl ">
+                        <Link href="#"></Link>
+                      </HiShoppingCart>
+                      <HiEye className="text-2xl">
+                        <Link href="#"></Link>
+                      </HiEye>
+                      <HiHeart className="text-2xl">
+                        <Link href="#"></Link>
+                      </HiHeart>
+                    </figure>
+                  </div>
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <div className="relative">
+                  <div className="card  my-5 card-p-5 compact w-60 text-blue-700 shadow-xl">
+                    <figure>
+                      <img
+                        className="w-full h-[220px] transition hover:scale-110 hover:all ease-in-out rounded-xl p-5"
+                        src="https://i.ibb.co/VVVnk0Z/camera7.webp"
+                        alt="phone"
+                      />
+                    </figure>
+                    <div className="card-p-5 body h-[160px] p-5">
+                      <h2 className="font-bold text-xl text-center">Canon</h2>
+                      <p className="font-semibold text-amber-600">
+                        Canon DSLR Camera EOS w/ 18-55mm, 1D Mark IV EOS-R6
+                      </p>
+                    </div>
+                  </div>
+                  <div className="card my-5 card-p-5 bg bg-slate-500 bg-opacity-20 compact opacity-0 transition ease-in-out hover:opacity-100  w-60  absolute right-20px bottom-28 z-10  text-red-700">
+                    <figure className="h-[300px] flex justify-around items-center">
+                      <HiShoppingCart className="text-2xl ">
+                        <Link href="#"></Link>
+                      </HiShoppingCart>
+                      <HiEye className="text-2xl">
+                        <Link href="#"></Link>
+                      </HiEye>
+                      <HiHeart className="text-2xl">
+                        <Link href="#"></Link>
+                      </HiHeart>
+                    </figure>
+                  </div>
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <div className="relative">
+                  <div className="card  my-5 card-p-5 compact w-60 text-blue-700 shadow-xl">
+                    <figure>
+                      <img
+                        className="w-full h-[220px] transition hover:scale-110 hover:all ease-in-out rounded-xl p-5"
+                        src="https://i.ibb.co/pQ6qYzq/camera6webp.webp"
+                        alt="phone"
+                      />
+                    </figure>
+                    <div className="card-p-5 body h-[160px] p-5">
+                      <h2 className="font-bold text-xl text-center">Cannon</h2>
+                      <p className="font-semibold text-amber-600">
+                        [MINT] Canon EOS 7D 18.0MP Black Body w/ Charger Digital
+                        SLR Camera
+                      </p>
+                    </div>
+                  </div>
+                  <div className="card my-5 card-p-5 bg bg-slate-500 bg-opacity-20 compact opacity-0 transition ease-in-out hover:opacity-100  w-60  absolute right-20px bottom-28 z-10  text-red-700">
+                    <figure className="h-[300px] flex justify-around items-center">
+                      <HiShoppingCart className="text-2xl ">
+                        <Link href="#"></Link>
+                      </HiShoppingCart>
+                      <HiEye className="text-2xl">
+                        <Link href="#"></Link>
+                      </HiEye>
+                      <HiHeart className="text-2xl">
+                        <Link href="#"></Link>
+                      </HiHeart>
+                    </figure>
+                  </div>
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <div className="relative">
+                  <div className="card  my-5 card-p-5 compact w-60  text-blue-700 shadow-xl">
+                    <figure>
+                      <img
+                        className="w-full h-[220px] transition hover:scale-110 hover:all ease-in-out rounded-xl p-5"
+                        src="https://i.ibb.co/hgr4HCS/camera3webp.webp"
+                        alt="phone"
+                      />
+                    </figure>
+                    <div className="card-p-5 body h-[160px] p-5">
+                      <h2 className="font-bold text-xl text-center">Cannon</h2>
+                      <p className="font-semibold text-amber-600">
+                        [Near Mint] Canon EOS 7D 18.0MP Digital SLR Camera Black
+                        w/ Charger
+                      </p>
+                    </div>
+                  </div>
+                  <div className="card my-5 card-p-5 bg  bg-slate-500 bg-opacity-10 compact opacity-0 transition ease-in-out hover:opacity-100  w-60 h-auto  absolute right-20px -bottom-5 z-10 text-opacity-80 text-slate-600">
+                    <figure className="h-[300px] flex justify-around items-center">
+                      <HiShoppingCart className="text-2xl ">
+                        <Link href="#"></Link>
+                      </HiShoppingCart>
+                      <HiEye className="text-2xl">
+                        <Link href="#"></Link>
+                      </HiEye>
+                      <HiHeart className="text-2xl">
+                        <Link href="#"></Link>
+                      </HiHeart>
+                    </figure>
+                  </div>
+                </div>
+              </Carousel.Item>
+            </Carousel>
           </TabPanel>
           <TabPanel className=" rounded-xl">
             <Carousel
@@ -174,7 +322,7 @@ const ProductsTab = () => {
                 <div className="card my-5 card-p-5 compact w-60 text-blue-700 shadow-xl">
                   <figure className="h-[300px]">
                     <img
-                      className="w-3/4 h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
+                      className="w-full h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
                       src="https://i.ibb.co/t3nyGZn/watch4.jpg"
                       alt="Shoes"
                     />
@@ -193,7 +341,7 @@ const ProductsTab = () => {
                 <div className="card my-5 card-p-5 compact w-60 text-blue-700 shadow-xl">
                   <figure className="h-[300px]">
                     <img
-                      className="w-3/4 h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
+                      className="w-full h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
                       src="https://i.ibb.co/kyLYndq/watch1.jpg"
                       alt="Shoes"
                     />
@@ -212,7 +360,7 @@ const ProductsTab = () => {
                 <div className="card my-5 card-p-5 compact w-60 text-blue-700 shadow-xl">
                   <figure className="[h-300px]">
                     <img
-                      className="w-3/4 h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
+                      className="w-full h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
                       src="https://i.ibb.co/YttmJ3J/watch3.jpg"
                       alt="Shoes"
                     />
@@ -231,7 +379,7 @@ const ProductsTab = () => {
                 <div className="card my-5 card-p-5 compact w-60 text-blue-700 shadow-xl">
                   <figure className="h-[300px]">
                     <img
-                      className="w-3/4 h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
+                      className="w-full h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
                       src="https://i.ibb.co/wKcC9m2/watch5jpg.jpg"
                       alt="Shoes"
                     />
@@ -250,7 +398,7 @@ const ProductsTab = () => {
                 <div className="card my-5 card-p-5 compact w-60 text-blue-700 shadow-xl">
                   <figure className="h-[300px]">
                     <img
-                      className="w-3/4 h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
+                      className="w-full h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
                       src="https://i.ibb.co/26jQJT2/watch6jpg.jpg"
                       alt="Shoes"
                     />
@@ -291,7 +439,7 @@ const ProductsTab = () => {
                 <div className="card my-5 card-p-5 compact w-60 text-blue-700 shadow-xl">
                   <figure className="h-[300px]">
                     <img
-                      className="w-3/4 h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
+                      className="w-full h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
                       src="https://i.ibb.co/t3nyGZn/watch4.jpg"
                       alt="Shoes"
                     />
@@ -307,15 +455,10 @@ const ProductsTab = () => {
                 </div>
               </Carousel.Item>
               <Carousel.Item>
-                {/* 
-
-
-
-<a href="https://ibb.co/BPgxk9D"><img src="https://i.ibb.co/26jQJT2/watch6jpg.jpg" alt="watch6jpg" border="0"></a> */}
                 <div className="card my-5 card-p-5 compact w-60 text-blue-700 shadow-xl">
                   <figure className="h-[300px]">
                     <img
-                      className="w-3/4 h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
+                      className="w-full h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
                       src="https://i.ibb.co/kyLYndq/watch1.jpg"
                       alt="Shoes"
                     />
@@ -334,7 +477,7 @@ const ProductsTab = () => {
                 <div className="card my-5 card-p-5 compact w-60 text-blue-700 shadow-xl">
                   <figure className="h-[300px]">
                     <img
-                      className="w-3/4 h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
+                      className="w-full h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
                       src="https://i.ibb.co/YttmJ3J/watch3.jpg"
                       alt="Shoes"
                     />
@@ -353,7 +496,7 @@ const ProductsTab = () => {
                 <div className="card my-5 card-p-5 compact w-60 text-blue-700 shadow-xl">
                   <figure className="h-[300px]">
                     <img
-                      className="w-3/4 h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
+                      className="w-full h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
                       src="https://i.ibb.co/wKcC9m2/watch5jpg.jpg"
                       alt="Shoes"
                     />
@@ -372,7 +515,7 @@ const ProductsTab = () => {
                 <div className="card my-5 card-p-5 compact w-60 text-blue-700 shadow-xl">
                   <figure className="h-[300px]">
                     <img
-                      className="w-3/4 h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
+                      className="w-full h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
                       src="https://i.ibb.co/26jQJT2/watch6jpg.jpg"
                       alt="Shoes"
                     />

@@ -23,9 +23,11 @@ const AllProducts = () => {
 
   return (
     <div>
-      <div className="bg-cyan-100 mt-11">
+      <div className="my-20 shadow-lg bg-[rgb(250,250,250)] mx-auto rounded-xl">
         <Slide>
-          <h2 className="text-3xl font-bold text-indigo-700">All Products</h2>
+          <h2 className="text-3xl font-bold py-10 text-indigo-700">
+            All Products
+          </h2>
         </Slide>
 
         <div className="grid grid-cols-1 gap-4 mx-auto md:grid-cols-2 lg:grid-cols-3">

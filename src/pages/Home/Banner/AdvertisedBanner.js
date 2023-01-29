@@ -8,22 +8,19 @@ const AdvertisedBanner = () => {
     "February 28, 2023 00:00:00"
   );
   return (
-    <div className="relative">
-      <div className="absolute z-10 ">
+    <div className="relative mx-auto">
+      <div className="absolute sm:left-12 lg:left-12 md:left-24   z-10 ">
         {" "}
         <img
           src="https://i.ibb.co/t3jG2Gs/sale-offer.webp"
           alt="sale-offer"
           border="0"
+          className="sm:w-full"
         />
       </div>
-      <div className="card card-compact w-3/4 h-3/4 bg-[rgb(250,250,250)] text-slate-600 shadow-xl">
+      <div className="card mx-auto card-compact w-3/4 h-3/4 bg-[rgb(250,250,250)] text-slate-600 shadow-xl">
         <figure>
-          <img
-            className="w-full"
-            src="https://i.ibb.co/8NnLVyc/s-l1600-1.png"
-            alt="drone"
-          />
+          <img src="https://i.ibb.co/8NnLVyc/s-l1600-1.png" alt="drone" />
         </figure>
         <div className="card-body">
           <h2 className="text-sm font-semibold text-justify">
@@ -37,8 +34,8 @@ const AdvertisedBanner = () => {
             <s> 149$</s>
             <span className="text-[#D61355]"> 110$</span>
           </p>
-          <p className=" flex justify-start items-center">
-            <p className="flex justify-start items-center">
+          <p className=" flex justify-center lg:justify-start  items-center">
+            <p className="flex justify-center lg:justify-start items-center">
               <span>
                 <FcRating></FcRating>
               </span>
@@ -60,7 +57,7 @@ const AdvertisedBanner = () => {
             </p>
           </p>
           <h3 className="text-xl font-semibold">Hurry Up! Offer Ends in: </h3>
-          <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
+          <div className="grid grid-flow-col mx-auto gap-5 text-center auto-cols-max">
             <div className="flex flex-col p-2 bg-sky-600 rounded-box mx-auto text-white">
               <span className=" font-mono text-2xl">
                 <span>{days}</span>

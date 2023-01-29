@@ -37,7 +37,7 @@ const Banner = () => {
         />
         ,
       </figure>
-      <div className="card-body">
+      <div className="card-body hidden md:block lg:block">
         <h2 className="card-title">
           Smart Watch
           <div className="badge badge-secondary">NEW</div>
@@ -54,7 +54,7 @@ const Banner = () => {
           alt="2"
         />
       </figure>
-      <div className="card-body">
+      <div className="card-body hidden md:block lg:block">
         <h2 className="card-title">
           Wifi Router
           <div className="badge badge-secondary">NEW</div>
@@ -71,7 +71,7 @@ const Banner = () => {
           alt="3"
         />
       </figure>
-      <div className="card-body">
+      <div className="card-body hidden md:block lg:block">
         <h2 className="card-title">
           Ipad
           <div className="badge badge-secondary">NEW</div>
@@ -88,7 +88,7 @@ const Banner = () => {
           alt="4"
         />
       </figure>
-      <div className="card-body">
+      <div className="card-body hidden md:block lg:block">
         <h2 className="card-title">
           Gamming Console
           <div className="badge badge-secondary">NEW</div>
@@ -105,7 +105,7 @@ const Banner = () => {
           alt="5"
         />
       </figure>
-      <div className="card-body">
+      <div className="card-body hidden md:block lg:block">
         <h2 className="card-title">
           Headpons & Airpod
           <div className="badge badge-secondary">NEW</div>
@@ -116,7 +116,7 @@ const Banner = () => {
   ];
 
   return (
-    <div className="grid grid-cols-3 bg-[rgb(250,250,250)] rounded-lg gap-2">
+    <div className="grid grid-cols-1 mx-auto lg:grid-cols-3 bg-[rgb(250,250,250)] rounded-lg gap-2">
       <div className="col-span-2 my-20 w-full  rounded-xl p-10">
         <Slide>
           <h2 className="text-3xl my-10 font-extrabold text-blue-600">

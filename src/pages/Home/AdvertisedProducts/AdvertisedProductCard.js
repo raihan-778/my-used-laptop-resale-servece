@@ -1,5 +1,5 @@
 import React from "react";
-import { Zoom } from "react-awesome-reveal";
+import { Slide } from "react-awesome-reveal";
 
 import { Link } from "react-router-dom";
 
@@ -20,8 +20,8 @@ const AdvertisedProductCard = ({ advertisedProduct }) => {
 
   return (
     <>
-      <Zoom>
-        <div className="card w-full transition hover:-translate-y-3  hover:all ease-in-out mx-auto card-compact bg-[#e2e9f1] text-slate-500 shadow-xl">
+      <Slide direction="up">
+        <div className="card w-full transition delay-100 ease-in-out  hover:-translate-y-3  mx-auto card-compact bg-[#e2e9f1] text-slate-500 shadow-xl">
           <figure>
             <img
               src={image}
@@ -58,7 +58,7 @@ const AdvertisedProductCard = ({ advertisedProduct }) => {
             </div>
           </div>
         </div>
-      </Zoom>
+      </Slide>
     </>
   );
 };
