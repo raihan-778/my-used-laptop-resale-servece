@@ -21,7 +21,7 @@ const AdvertisedProductCard = ({ advertisedProduct }) => {
   return (
     <>
       <Slide direction="up">
-        <div className="card w-full transition delay-100 ease-in-out  hover:-translate-y-3  mx-auto card-compact bg-[#e2e9f1] text-slate-500 shadow-xl">
+        <div className="card w-full  transition delay-100 ease-in-out  hover:-translate-y-3  mx-auto card-compact bg-[#e2e9f1] text-slate-500 shadow-xl">
           <figure>
             <img
               src={image}

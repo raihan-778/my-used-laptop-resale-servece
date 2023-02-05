@@ -117,7 +117,7 @@ const Banner = () => {
 
   return (
     <div className="grid grid-cols-1 mx-auto lg:grid-cols-3 bg-[rgb(250,250,250)] rounded-lg gap-2">
-      <div className="col-span-2 my-20 w-full  rounded-xl p-10">
+      <div className="col-span-2 w-full  rounded-xl ">
         <Slide>
           <h2 className="text-3xl my-10 font-extrabold text-blue-600">
             Upcoming Porducts & Services

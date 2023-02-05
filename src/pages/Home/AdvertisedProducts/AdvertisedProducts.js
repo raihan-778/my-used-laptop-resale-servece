@@ -38,7 +38,7 @@ const AdvertisedProducts = () => {
         {advertisedProducts && (
           <div>
             <Carousel
-              cols={3}
+              cols={4}
               row={1}
               gap={10}
               loop

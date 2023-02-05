@@ -31,7 +31,7 @@ const Category = () => {
             Product Categories
           </h2>
         </Slide>
-        <Zoom duration={1500}>
+        <Zoom duration={1000}>
           <div className="grid grid-cols-1 my-10 gap-3 ">
             {categories?.map((category) => (
               <div className="p-2 flex bg-[#e2e9f1] w-[200px] rounded-md h-20 mx-auto justify-center transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105  duration-200   border-slate-100 border items-center">

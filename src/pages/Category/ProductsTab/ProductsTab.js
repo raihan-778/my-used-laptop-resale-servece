@@ -1,17 +1,37 @@
 import React from "react";
-import { useState } from "react";
+
 import { useEffect } from "react";
 import { Slide, Zoom } from "react-awesome-reveal";
 import Carousel from "react-grid-carousel";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import "./phoneCollection.json";
+
 import { HiShoppingCart, HiEye, HiHeart } from "react-icons/hi2";
 import { Link } from "react-router-dom";
+import PhoneCarousel from "./ProductCarousel/PhoneCarousel";
+import { useQuery } from "@tanstack/react-query";
+import LoadingSpinner from "../../../sharedPage/LoadingSpinner/LoadingSpinner";
 
 const ProductsTab = () => {
-  const [hovered, setHovered] = useState(false);
+  const { data: productData = [], isLoading } = useQuery({
+    queryKey: ["phone"],
+    queryFn: () =>
+      fetch("http://localhost:5000/upcoming-product?category=phone")
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          return data;
+        }),
+  });
+
+  if (isLoading) {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
+
+  const handleClidk = () => {
+    console.log(productData);
+  };
 
   return (
     <div className="py-3">
@@ -22,12 +42,14 @@ const ProductsTab = () => {
       </Slide>
       <Zoom duration={1500}>
         <Tabs className="mx-auto my-10">
-          <TabList className="bg-[#78CBE1] text-slate-50 w-full mb-5 rounded-lg">
-            <Tab>Smart Phone</Tab>
-            <Tab>Camera</Tab>
-            <Tab>VR Box</Tab>
-            <Tab>Smart Watch</Tab>
-          </TabList>
+          {
+            <TabList className="bg-[#78CBE1] text-slate-50 w-full mb-5 rounded-lg">
+              <Tab onClick={handleClidk}>Smart Phone</Tab>
+              <Tab>Camera</Tab>
+              <Tab>VR Box</Tab>
+              <Tab>Smart Watch</Tab>
+            </TabList>
+          }
           <TabPanel className="rounded-xl">
             <Carousel
               cols={3}
@@ -48,102 +70,15 @@ const ProductsTab = () => {
               arrowRight={<FaArrowAltCircleRight type="right" />}
               arrowLeft={<FaArrowAltCircleLeft type="left" />}
             >
-              <Carousel.Item>
-                <div
-                  className="relative"
-                  onMouseEnter={() => setHovered(true)}
-                  onMouseLeave={() => setHovered(false)}
-                >
-                  <div
-                    className={`card transition ease-in-out  ${
-                      hovered ? "blur-sm " : ""
-                    } my-5 card-p-5 compact w-60 text-blue-700 shadow-xl`}
-                  >
-                    <figure className="h-[300px]">
-                      <img
-                        className="w-3/4 h-auto transition hover:scale-110 hover:all ease-in-out rounded-xl p-5"
-                        src="https://i.ibb.co/wgPkWkG/samsung-zfould.png"
-                        alt="phone"
-                      />
-                    </figure>
-                    <div className="card-p-5 body">
-                      <h2 className="font-bold text-xl text-center">Samsung</h2>
-                      <p className="font-semibold text-amber-600">
-                        Samsung Z Fould
-                      </p>
-                    </div>
-                  </div>
-                  {hovered && (
-                    <>
-                      <div className="card my-5 card-p-5 compact bg-slate-400 bg-opacity-20  w-60 absolute top-0 left-0 z-10 text-red-700 ">
-                        <figure className="h-[300px] flex justify-around items-center">
-                          <HiShoppingCart className="text-2xl ">
-                            <Link href="#"></Link>
-                          </HiShoppingCart>
-                          <HiEye className="text-2xl">
-                            <Link href="#"></Link>
-                          </HiEye>
-                          <HiHeart className="text-2xl">
-                            <Link href="#"></Link>
-                          </HiHeart>
-                        </figure>
-                      </div>
-                    </>
-                  )}
-                </div>
-              </Carousel.Item>
-
-              <Carousel.Item>
-                <div className="card my-5 card-p-5 compact w-60 text-blue-700 shadow-xl">
-                  <figure className="h-[300px]">
-                    <img
-                      className="w-3/4 h-auto transition hover:scale-110 hover:all ease-in-out rounded-xl  p-5"
-                      src="https://i.ibb.co/YWVzjkx/samsungwebp.webp"
-                      alt="phone"
-                    />
-                  </figure>
-                  <div className="card-p-5 body">
-                    <h2 className="font-bold text-xl text-center">Samsung</h2>
-                    <p className="font-semibold text-amber-600">
-                      Samsung Note 20
-                    </p>
-                  </div>
-                </div>
-              </Carousel.Item>
-              <Carousel.Item>
-                <div className="card my-5 card-p-5 compact w-60 text-blue-700 shadow-xl">
-                  <figure className="h-[300px]">
-                    <img
-                      className="w-3/4 h-auto transition hover:scale-110 hover:all ease-in-out rounded-xl  p-5"
-                      src="https://i.ibb.co/h9zc5XT/samsung-s9.webp"
-                      alt="phone"
-                    />
-                  </figure>
-                  <div className="card-p-5 body">
-                    <h2 className="font-bold text-xl text-center">Samsung</h2>
-                    <p className="font-semibold text-amber-600">
-                      Samsung Note 10 Lite
-                    </p>
-                  </div>
-                </div>
-              </Carousel.Item>
-              <Carousel.Item>
-                <div className="card my-5 card-p-5 compact w-60 text-blue-700 shadow-xl">
-                  <figure className="h-[300px]">
-                    <img
-                      className="w-3/4 h-auto transition hover:scale-110 hover:all ease-in-out rounded-xl  p-5"
-                      src="https://i.ibb.co/dc5kj9s/samsung-note20-ultrawebp.webp"
-                      alt="Shoes"
-                    />
-                  </figure>
-                  <div className="card-p-5 body">
-                    <h2 className="font-bold text-xl text-center">Samsung</h2>
-                    <p className="font-semibold text-amber-600">
-                      Note 20 Ultra
-                    </p>
-                  </div>
-                </div>
-              </Carousel.Item>
+              {productData &&
+                productData?.map((singleProduct) => (
+                  <Carousel.Item>
+                    <PhoneCarousel
+                      singleProduct={singleProduct}
+                      key={singleProduct.id}
+                    ></PhoneCarousel>
+                  </Carousel.Item>
+                ))}
             </Carousel>
           </TabPanel>
           <TabPanel className="rounded-xl">
@@ -324,7 +259,7 @@ const ProductsTab = () => {
                     <img
                       className="w-full h-auto transition hover:scale-110 hover:all ease-in-out rounded-full  p-5"
                       src="https://i.ibb.co/t3nyGZn/watch4.jpg"
-                      alt="Shoes"
+                      alt="watch"
                     />
                   </figure>
                   <div className="card-p-5 body">

@@ -8,8 +8,8 @@ const AdvertisedBanner = () => {
     "February 28, 2023 00:00:00"
   );
   return (
-    <div className="relative mx-auto">
-      <div className="absolute sm:left-12 lg:left-12 md:left-24   z-10 ">
+    <div className=" mx-auto ">
+      {/* <div className="absolute  sm:left-18  lg:left-12 md:left-24   z-10 ">
         {" "}
         <img
           src="https://i.ibb.co/t3jG2Gs/sale-offer.webp"
@@ -17,10 +17,14 @@ const AdvertisedBanner = () => {
           border="0"
           className="sm:w-full"
         />
-      </div>
+      </div> */}
       <div className="card mx-auto card-compact w-3/4 h-3/4 bg-[rgb(250,250,250)] text-slate-600 shadow-xl">
         <figure>
-          <img src="https://i.ibb.co/8NnLVyc/s-l1600-1.png" alt="drone" />
+          <img
+            src="https://i.ibb.co/z5m33v6/advertise-banner.png"
+            alt="advertise-banner"
+            border="0"
+          />
         </figure>
         <div className="card-body">
           <h2 className="text-sm font-semibold text-justify">

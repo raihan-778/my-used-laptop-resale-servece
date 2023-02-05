@@ -1,0 +1,86 @@
+[
+  {
+    "category": "phone",
+    "title": "Samsung Note 10",
+    "description": "Comming Soon",
+    "brand": "Samsung",
+    "img": "https://i.ibb.co/mN4DZZc/samsung-10.webp"
+  },
+  {
+    "category": "phone",
+    "title": "Samsung Note-20 Ultra",
+    "description": "Comming Soon",
+    "brand": "Samsung",
+    "img": "https://i.ibb.co/dc5kj9s/samsung-note20-ultrawebp.webp"
+  },
+  {
+    "category": "phone",
+    "title": "Samsung Note 20 Ultra 5g",
+    "description": "Comming Soon",
+    "brand": "Samsung",
+    "img": "https://i.ibb.co/mXBXdKd/samsungs20-ultra.webp"
+  },
+  {
+    "category": "phone",
+    "title": "Samsung Z Fould",
+    "description": "Comming Soon",
+    "brand": "Samsung",
+    "img": "https://i.ibb.co/YWVzjkx/samsungwebp.webp"
+  },
+  {
+    "category": "phone",
+    "title": "Samsung Z Fould 5g",
+    "description": "Comming Soon",
+    "brand": "Samsung",
+    "img": "https://i.ibb.co/wgPkWkG/samsung-zfould.png"
+  },
+  {
+    "category": "watch",
+    "title": "Apple Watch Series 6 40mm 44mm GPS+ WIFI + LTE UNLOCKED",
+    "description": "Comming Soon",
+    "brand": "Apple",
+    "img": "https://i.ibb.co/t3nyGZn/watch4.jpg"
+  },
+  {
+    "category": "watch",
+    "title": "Samsung Galaxy Watch 4 40mm GPS + WiFi + Bluetooth R860 Smart Watch",
+    "description": "Comming Soon",
+    "brand": "Samsung",
+    "img": "https://i.ibb.co/kyLYndq/watch1.jpg"
+  },
+  {
+    "category": "watch",
+    "title": "Amazfit GTR 2e -Smart Watch - Obsidian Black",
+    "description": "Comming Soon",
+    "brand": "Amazfit",
+    "img": "https://i.ibb.co/YttmJ3J/watch3.jpg"
+  },
+  {
+    "category": "watch",
+    "title": "HUAWEI WATCH Buds Bluetooth Smart Watch Ai Noise Cancellation Earbuds",
+    "description": "Comming Soon",
+    "brand": "Huawei",
+    "img": "https://i.ibb.co/wKcC9m2/watch5jpg.jpg"
+  },
+  {
+    "category": "watch",
+    "title": "Haylou GST Smart Watch",
+    "description": "Comming Soon",
+    "brand": "Haylou",
+    "img": "https://i.ibb.co/26jQJT2/watch6jpg.jpg"
+  },
+  {
+    "category": "watch",
+    "title": "Xiaomi Amazfit GTS 1.65",
+    "description": "Comming Soon",
+    "brand": "Xiaomi",
+    "img": "https://i.ibb.co/t3nyGZn/watch4.jpg"
+  },
+  {
+    "category": "watch",
+    "title": "Garmin Venu Fitness GPS Smartwatch | Authentic | Bluetooth | ANT+ | Fitness",
+    "description": "Comming Soon",
+    "brand": "Garmin",
+    "img": "https://i.ibb.co/kyLYndq/watch1.jpg"
+  }
+]
