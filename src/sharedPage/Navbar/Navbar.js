@@ -19,6 +19,10 @@ const Navbar = () => {
 
   window.addEventListener("scroll", setFixed);
 
+  const handleSignOut = () => {
+    logOut();
+  };
+
   return (
     <>
       <Zoom duration={2000}>
