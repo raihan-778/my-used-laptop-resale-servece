@@ -7,6 +7,7 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const { user, setUser, logOut } = useContext(AuthContext);
+  const [logOutErr, setLogOutErr] = useState("");
 
   const [fix, setFix] = useState(false);
 
@@ -20,7 +21,19 @@ const Navbar = () => {
   window.addEventListener("scroll", setFixed);
 
   const handleSignOut = () => {
-    logOut();
+    console.log("logout clicked");
+    logOut()
+      .then(() => {
+        console.log(user);
+        user && setUser("");
+        toast.success("User logout successfully");
+
+        setLogOutErr("");
+      })
+      .catch((err) => {
+        console.error(err.message);
+        setLogOutErr(err.message);
+      });
   };
 
   return (
